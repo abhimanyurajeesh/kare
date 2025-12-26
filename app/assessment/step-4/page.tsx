@@ -134,7 +134,7 @@ export default function Step4Page() {
                   <AccordionContent className="text-sm text-slate-600">
                     <p>
                       Government tobacco cessation services are available through health 
-                      facilities. Ask at your nearest Family Health Centre about quit 
+                      facilities. Ask at your nearest <strong>Janakeeya Arogya Kendram</strong>  about quit 
                       programs and counseling support.
                     </p>
                   </AccordionContent>
@@ -317,4 +317,6 @@ export default function Step4Page() {
     </AppShell>
   );
 }
+
+
 

@@ -265,3 +265,5 @@ export function getSugarStatus(type: SugarType | null, value: number | null): { 
   return { label: "Normal", color: "emerald" };
 }
 
+
+

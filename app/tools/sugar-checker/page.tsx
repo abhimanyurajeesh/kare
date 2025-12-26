@@ -21,19 +21,17 @@ import {
   CheckCircle2
 } from "lucide-react";
 
-type SugarType = "fbs" | "rbs" | "ppbs" | "hba1c";
+type SugarType = "fbs" | "rbs" | "hba1c";
 
 const SUGAR_TESTS = [
   { value: "fbs", label: "Fasting Blood Sugar (FBS)", unit: "mg/dL", description: "Measured after 8+ hours of fasting" },
   { value: "rbs", label: "Random Blood Sugar (RBS)", unit: "mg/dL", description: "Measured at any time of day" },
-  { value: "ppbs", label: "Post-Prandial Blood Sugar (PPBS)", unit: "mg/dL", description: "Measured 2 hours after eating" },
   { value: "hba1c", label: "HbA1c", unit: "%", description: "Average blood sugar over 2-3 months" },
 ];
 
 const SUGAR_THRESHOLDS = {
   fbs: { normal: 100, prediabetes: 126 },
   rbs: { normal: 140, prediabetes: 200 },
-  ppbs: { normal: 140, prediabetes: 200 },
   hba1c: { normal: 5.7, prediabetes: 6.5 },
 };
 
@@ -355,4 +353,6 @@ export default function SugarCheckerPage() {
     </div>
   );
 }
+
+
 

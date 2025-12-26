@@ -324,9 +324,9 @@ export default function Step3Page() {
             <AlertTriangle className="h-4 w-4 text-amber-600" />
             <AlertTitle className="text-amber-900 font-semibold">Higher risk detected</AlertTitle>
             <AlertDescription className="text-amber-800">
-              Your score suggests higher NCD risk. We recommend consulting a doctor 
-              at a nearby health facility for further evaluation. You can still continue 
-              to see lifestyle recommendations.
+              <span>
+              Your score suggests higher risk for diabetes or hypertension. We recommend visiting the nearest <strong>Janakeeya Arogya Kendram</strong> for further evaluation. 
+              </span>
             </AlertDescription>
           </Alert>
         )}
@@ -353,4 +353,6 @@ export default function Step3Page() {
     </AppShell>
   );
 }
+
+
 

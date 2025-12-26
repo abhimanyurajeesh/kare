@@ -1,15 +1,13 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { AppShell } from "@/components/app-shell";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Separator } from "@/components/ui/separator";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, DialogClose } from "@/components/ui/dialog";
 import { StatusBadge, getStatusType } from "@/components/status-badge";
 import { InterpretationRow } from "@/components/interpretation-row";
 import { DisclaimerAlert } from "@/components/disclaimer-alert";
@@ -26,17 +24,21 @@ import {
   HeartPulse,
   Droplet,
   ClipboardList,
-  Stethoscope
+  Stethoscope,
+  FileText,
+  Loader2
 } from "lucide-react";
 import { 
   useAssessment, 
   getBPStatus, 
   getSugarStatus,
 } from "@/lib/assessment-context";
+import { generateHealthPDF } from "@/lib/generate-pdf";
 import { toast } from "sonner";
 
 export default function Step6Page() {
   const router = useRouter();
+  const [isGenerating, setIsGenerating] = useState(false);
   const { 
     data, 
     resetAssessment, 
@@ -63,7 +65,7 @@ export default function Step6Page() {
     const advice: string[] = [];
 
     if (isHighCBACRisk) {
-      advice.push("Please consult a doctor at a nearby health facility for NCD risk evaluation.");
+      advice.push("Please visit the nearest Janakeeya Arogya Kendram for NCD risk evaluation.");
     }
 
     if (hasCancerSymptoms) {
@@ -157,101 +159,34 @@ export default function Step6Page() {
     router.push("/");
   };
 
-  const generatePDFContent = () => {
-    const date = new Date().toLocaleDateString("en-IN", {
-      year: "numeric",
-      month: "long",
-      day: "numeric"
-    });
-
-    return `
-═══════════════════════════════════════════════════════════════
-                    HEALTHY LIFE CAMPAIGN
-                  Health Risk Assessment Summary
-═══════════════════════════════════════════════════════════════
-
-Date: ${date}
-
-───────────────────────────────────────────────────────────────
-                      YOUR MEASUREMENTS
-───────────────────────────────────────────────────────────────
-
-${bmi ? `BMI: ${bmi} (${bmiCategory?.label})` : "BMI: Not calculated"}
-
-${data.bpEntered 
-  ? `Blood Pressure: ${data.systolic}/${data.diastolic} mmHg (${bpStatus.label})`
-  : "Blood Pressure: Not entered"
-}
-
-${data.sugarEntered 
-  ? `Blood Sugar (${data.sugarType?.toUpperCase()}): ${data.sugarValue} ${data.sugarType === "hba1c" ? "%" : "mg/dL"} (${sugarStatus.label})`
-  : "Blood Sugar: Not entered"
-}
-
-───────────────────────────────────────────────────────────────
-                       RISK SCORES
-───────────────────────────────────────────────────────────────
-
-CBAC Score: ${cbacScore} (${isHighCBACRisk ? "Higher risk" : "Lower risk"})
-Cancer Symptoms Reported: ${hasCancerSymptoms ? "Yes" : "No"}
-
-───────────────────────────────────────────────────────────────
-                      KEY ADVICE
-───────────────────────────────────────────────────────────────
-
-${keyAdvice.length > 0 
-  ? keyAdvice.map((a, i) => `${i + 1}. ${a}`).join("\n")
-  : "Maintain your healthy habits and continue regular check-ups."
-}
-
-───────────────────────────────────────────────────────────────
-                     DIET GUIDANCE
-───────────────────────────────────────────────────────────────
-
-${dietTips.map(t => `• ${t}`).join("\n")}
-${sugarTips.length > 0 ? "\nFor blood sugar:\n" + sugarTips.map(t => `• ${t}`).join("\n") : ""}
-
-───────────────────────────────────────────────────────────────
-                   ACTIVITY GUIDANCE
-───────────────────────────────────────────────────────────────
-
-${activityTips.map(t => `• ${t}`).join("\n")}
-
-═══════════════════════════════════════════════════════════════
-                       DISCLAIMER
-═══════════════════════════════════════════════════════════════
-
-This tool provides general risk information and is NOT a medical
-diagnosis. It does NOT provide treatment advice.
-
-If you have symptoms or concerns, please consult a doctor or 
-visit your nearest health facility for proper evaluation.
-
-───────────────────────────────────────────────────────────────
-                      PRIVACY NOTE
-───────────────────────────────────────────────────────────────
-
-We did not collect your name, phone number, or any personal
-identifiers. All calculations were done on your device.
-
-═══════════════════════════════════════════════════════════════
-                 Healthy Life Campaign © ${new Date().getFullYear()}
-═══════════════════════════════════════════════════════════════
-`.trim();
-  };
-
-  const handleDownload = () => {
-    const content = generatePDFContent();
-    const blob = new Blob([content], { type: "text/plain" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `health-assessment-${new Date().toISOString().split("T")[0]}.txt`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    toast.success("Summary downloaded successfully!");
+  const handleDownload = async () => {
+    setIsGenerating(true);
+    try {
+      // Small delay for UX
+      await new Promise(resolve => setTimeout(resolve, 500));
+      
+      generateHealthPDF({
+        data,
+        bmi,
+        bmiCategory,
+        cbacScore,
+        hasCancerSymptoms,
+        keyAdvice,
+        dietTips,
+        sugarTips,
+        activityTips,
+      });
+      
+      toast.success("PDF downloaded successfully!", {
+        description: "Check your downloads folder"
+      });
+    } catch (error) {
+      toast.error("Failed to generate PDF", {
+        description: "Please try again"
+      });
+    } finally {
+      setIsGenerating(false);
+    }
   };
 
   return (
@@ -282,12 +217,15 @@ identifiers. All calculations were done on your device.
               We recommend consulting a doctor
             </AlertTitle>
             <AlertDescription className="text-amber-800">
-              Based on your assessment, please visit a nearby health facility for further evaluation.
+              <div>Based on your assessment, please visit the nearest <strong>Janakeeya Arogya Kendram</strong>  for further evaluation. or contact your ASHA for further assistance.</div>
+              <Button className="mt-3 bg-emerald-600 hover:bg-emerald-700 gap-2 w-full">
+                <Building2 className="w-4 h-4" />
+                <div>
+                  Find nearby JAK
+                </div>
+              </Button>
             </AlertDescription>
-            <Button className="mt-3 bg-emerald-600 hover:bg-emerald-700 gap-2">
-              <Building2 className="w-4 h-4" />
-              Find nearby health facility
-            </Button>
+            
           </Alert>
         )}
 
@@ -466,33 +404,71 @@ identifiers. All calculations were done on your device.
                 className="w-full bg-emerald-600 hover:bg-emerald-700 gap-2"
               >
                 <Download className="w-5 h-5" />
-                Download Summary
+                Download Summary (PDF)
               </Button>
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
-                <DialogTitle>Download your summary</DialogTitle>
+                <DialogTitle className="flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-emerald-600" />
+                  Download your summary
+                </DialogTitle>
                 <DialogDescription>
-                  This will save a text file on your device with your assessment results.
+                  Generate a beautifully formatted PDF with all your assessment results.
                 </DialogDescription>
               </DialogHeader>
-              <div className="py-4">
+              <div className="py-4 space-y-4">
+                <div className="bg-slate-50 rounded-lg p-4 space-y-2">
+                  <p className="text-sm font-medium text-slate-900">Your PDF will include:</p>
+                  <ul className="text-sm text-slate-600 space-y-1">
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                      Body measurements & BMI
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                      Risk scores & interpretations
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                      Personalised recommendations
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                      Diet & activity guidance
+                    </li>
+                  </ul>
+                </div>
                 <Alert className="bg-emerald-50 border-emerald-200">
                   <CheckCircle2 className="h-4 w-4 text-emerald-600" />
                   <AlertDescription className="text-emerald-800">
-                    The file will be saved on your device only. We don&apos;t store or see it.
+                    The PDF will be saved on your device only. We don&apos;t store or see it.
                   </AlertDescription>
                 </Alert>
               </div>
               <DialogFooter>
-                <Button variant="outline">Cancel</Button>
-                <Button 
-                  className="bg-emerald-600 hover:bg-emerald-700 gap-2"
-                  onClick={handleDownload}
-                >
-                  <Download className="w-4 h-4" />
-                  Download
-                </Button>
+                <DialogClose asChild>
+                  <Button variant="outline">Cancel</Button>
+                </DialogClose>
+                <DialogClose asChild>
+                  <Button 
+                    className="bg-emerald-600 hover:bg-emerald-700 gap-2"
+                    onClick={handleDownload}
+                    disabled={isGenerating}
+                  >
+                    {isGenerating ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        Generating...
+                      </>
+                    ) : (
+                      <>
+                        <Download className="w-4 h-4" />
+                        Download PDF
+                      </>
+                    )}
+                  </Button>
+                </DialogClose>
               </DialogFooter>
             </DialogContent>
           </Dialog>
@@ -511,4 +487,3 @@ identifiers. All calculations were done on your device.
     </AppShell>
   );
 }
-

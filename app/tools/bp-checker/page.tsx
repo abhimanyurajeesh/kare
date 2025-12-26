@@ -30,7 +30,7 @@ const BP_CATEGORIES = [
     color: "emerald",
     status: "normal" as const,
     description: "Your blood pressure is within the healthy range. Keep up the healthy lifestyle!",
-    tips: ["Maintain a balanced diet", "Stay physically active", "Continue regular check-ups"]
+    tips: ["Maintain a balanced diet", "Stay physically active", "Continue regular check-ups", "If on treatment continue medication as prescribed"]
   },
   { 
     id: "elevated",
@@ -323,9 +323,8 @@ export default function BPCheckerPage() {
             <Info className="h-4 w-4 text-slate-600" />
             <AlertTitle className="text-slate-800">Tips for accurate readings</AlertTitle>
             <AlertDescription className="text-slate-600">
-              For the most accurate reading: rest for 5 minutes before measuring, 
-              sit with feet flat on the floor, avoid caffeine and exercise 30 minutes 
-              before, and take multiple readings at different times.
+            Ensure the person has not exercised, had tea/coffee, or used tobacco in the last 30 minutes
+            Person should rest comfortably and quietly for 5 minutes before the reading.
             </AlertDescription>
           </Alert>
 
@@ -364,4 +363,6 @@ export default function BPCheckerPage() {
     </div>
   );
 }
+
+
 
