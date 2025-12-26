@@ -3,19 +3,36 @@
 import { useState, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { AppShell } from "@/components/app-shell";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { Separator } from "@/components/ui/separator";
 import { StatusBadge, getStatusType } from "@/components/status-badge";
-import { 
-  ChevronLeft, 
-  ChevronRight, 
-  Info, 
+import {
+  ChevronLeft,
+  ChevronRight,
+  Info,
   AlertCircle,
   AlertTriangle,
   Scale,
@@ -23,15 +40,15 @@ import {
   HeartPulse,
   Droplet,
   CheckCircle2,
-  X
+  X,
 } from "lucide-react";
-import { 
-  useAssessment, 
+import {
+  useAssessment,
   SugarType,
   isBPElevated,
   isSugarElevated,
   getBPStatus,
-  getSugarStatus
+  getSugarStatus,
 } from "@/lib/assessment-context";
 import Link from "next/link";
 
@@ -42,11 +59,17 @@ export default function Step2Page() {
   // Form state
   const [height, setHeight] = useState<string>(data.height?.toString() || "");
   const [weight, setWeight] = useState<string>(data.weight?.toString() || "");
-  const [systolic, setSystolic] = useState<string>(data.systolic?.toString() || "");
-  const [diastolic, setDiastolic] = useState<string>(data.diastolic?.toString() || "");
+  const [systolic, setSystolic] = useState<string>(
+    data.systolic?.toString() || ""
+  );
+  const [diastolic, setDiastolic] = useState<string>(
+    data.diastolic?.toString() || ""
+  );
   const [sugarType, setSugarType] = useState<SugarType | null>(data.sugarType);
-  const [sugarValue, setSugarValue] = useState<string>(data.sugarValue?.toString() || "");
-  
+  const [sugarValue, setSugarValue] = useState<string>(
+    data.sugarValue?.toString() || ""
+  );
+
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [bpSkipped, setBpSkipped] = useState(false);
   const [sugarSkipped, setSugarSkipped] = useState(false);
@@ -82,10 +105,10 @@ export default function Step2Page() {
     const sys = parseFloat(systolic);
     const dia = parseFloat(diastolic);
     const sugar = parseFloat(sugarValue);
-    
+
     const bpHigh = isBPElevated(sys || null, dia || null);
     const sugarHigh = isSugarElevated(sugarType, sugar || null);
-    
+
     return bpHigh || sugarHigh;
   }, [systolic, diastolic, sugarType, sugarValue]);
 
@@ -176,7 +199,9 @@ export default function Step2Page() {
     <AppShell currentStep={2} totalSteps={4}>
       <div className="space-y-6">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-slate-900">Body measurements & vitals</h1>
+          <h1 className="text-2xl font-bold tracking-tight text-slate-900">
+            Body measurements & vitals
+          </h1>
           <p className="text-sm text-slate-600 mt-1">
             We&apos;ll calculate your BMI and check your readings.
           </p>
@@ -193,7 +218,9 @@ export default function Step2Page() {
           <CardContent className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="height">Height (cm) <span className="text-rose-500">*</span></Label>
+                <Label htmlFor="height">
+                  Height (cm) <span className="text-rose-500">*</span>
+                </Label>
                 <Input
                   id="height"
                   type="number"
@@ -208,7 +235,9 @@ export default function Step2Page() {
                 )}
               </div>
               <div className="space-y-2">
-                <Label htmlFor="weight">Weight (kg) <span className="text-rose-500">*</span></Label>
+                <Label htmlFor="weight">
+                  Weight (kg) <span className="text-rose-500">*</span>
+                </Label>
                 <Input
                   id="weight"
                   type="number"
@@ -229,12 +258,14 @@ export default function Step2Page() {
               <div className="rounded-lg border border-slate-200 bg-slate-50 p-4 space-y-2">
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-slate-600">Your BMI</span>
-                  <StatusBadge 
-                    status={getStatusType(bmiCategory.color)} 
-                    label={bmiCategory.label} 
+                  <StatusBadge
+                    status={getStatusType(bmiCategory.color)}
+                    label={bmiCategory.label}
                   />
                 </div>
-                <p className="text-3xl font-semibold tabular-nums text-slate-900">{bmi}</p>
+                <p className="text-3xl font-semibold tabular-nums text-slate-900">
+                  {bmi}
+                </p>
                 <p className="text-xs text-slate-500">
                   BMI is a screening measure and doesn&apos;t diagnose illness.
                 </p>
@@ -251,9 +282,13 @@ export default function Step2Page() {
                 <HeartPulse className={`w-5 h-5 ${bpSkipped ? "text-slate-400" : "text-emerald-600"}`} />
                 Blood pressure
               </CardTitle>
-              <span className="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">Optional</span>
+              <span className="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">
+                Optional
+              </span>
             </div>
-            <CardDescription>If you know your recent BP reading</CardDescription>
+            <CardDescription>
+              If you know your recent BP reading
+            </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             {bpSkipped ? (
@@ -311,17 +346,19 @@ export default function Step2Page() {
 
                 {bpStatus && (
                   <div className="flex items-center justify-between rounded-lg border border-slate-200 p-3">
-                    <span className="text-sm text-slate-700">Your BP reading</span>
-                    <StatusBadge 
-                      status={getStatusType(bpStatus.color)} 
-                      label={bpStatus.label} 
+                    <span className="text-sm text-slate-700">
+                      Your BP reading
+                    </span>
+                    <StatusBadge
+                      status={getStatusType(bpStatus.color)}
+                      label={bpStatus.label}
                     />
                   </div>
                 )}
 
-                <Button 
-                  variant="outline" 
-                  size="sm" 
+                <Button
+                  variant="outline"
+                  size="sm"
                   onClick={clearBP}
                   className="text-slate-600 border-slate-300"
                 >
@@ -340,9 +377,13 @@ export default function Step2Page() {
                 <Droplet className={`w-5 h-5 ${sugarSkipped ? "text-slate-400" : "text-emerald-600"}`} />
                 Blood sugar
               </CardTitle>
-              <span className="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">Optional</span>
+              <span className="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">
+                Optional
+              </span>
             </div>
-            <CardDescription>If you know your recent blood sugar reading</CardDescription>
+            <CardDescription>
+              If you know your recent blood sugar reading
+            </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             {sugarSkipped ? (
@@ -350,11 +391,13 @@ export default function Step2Page() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-5 h-5 text-slate-500" />
-                    <span className="text-sm text-slate-600">Skipped — will continue without blood sugar</span>
+                    <span className="text-sm text-slate-600">
+                      Skipped — will continue without blood sugar
+                    </span>
                   </div>
-                  <Button 
-                    variant="ghost" 
-                    size="sm" 
+                  <Button
+                    variant="ghost"
+                    size="sm"
                     onClick={enableSugar}
                     className="text-emerald-600 hover:text-emerald-700 gap-1"
                   >
@@ -367,14 +410,23 @@ export default function Step2Page() {
               <>
                 <div className="space-y-2">
                   <Label>Test type</Label>
-                  <Select value={sugarType || ""} onValueChange={(v) => setSugarType(v as SugarType)}>
+                  <Select
+                    value={sugarType || ""}
+                    onValueChange={(v) => setSugarType(v as SugarType)}
+                  >
                     <SelectTrigger>
                       <SelectValue placeholder="Select test type" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="rbs">Random Blood Sugar (RBS)</SelectItem>
-                      <SelectItem value="fbs">Fasting Blood Sugar (FBS)</SelectItem>
-                      <SelectItem value="ppbs">Post-Prandial Blood Sugar (PPBS)</SelectItem>
+                      <SelectItem value="rbs">
+                        Random Blood Sugar (RBS)
+                      </SelectItem>
+                      <SelectItem value="fbs">
+                        Fasting Blood Sugar (FBS)
+                      </SelectItem>
+                      <SelectItem value="ppbs">
+                        Post-Prandial Blood Sugar (PPBS)
+                      </SelectItem>
                       <SelectItem value="hba1c">HbA1c</SelectItem>
                     </SelectContent>
                   </Select>
@@ -389,30 +441,36 @@ export default function Step2Page() {
                       id="sugarValue"
                       type="number"
                       inputMode="decimal"
-                      placeholder={sugarType === "hba1c" ? "e.g., 5.7" : "e.g., 100"}
+                      placeholder={
+                        sugarType === "hba1c" ? "e.g., 5.7" : "e.g., 100"
+                      }
                       value={sugarValue}
                       onChange={(e) => setSugarValue(e.target.value)}
                       className={errors.sugarValue ? "border-rose-500" : ""}
                     />
                     {errors.sugarValue && (
-                      <p className="text-xs text-rose-600">{errors.sugarValue}</p>
+                      <p className="text-xs text-rose-600">
+                        {errors.sugarValue}
+                      </p>
                     )}
                   </div>
                 )}
 
                 {sugarStatus && (
                   <div className="flex items-center justify-between rounded-lg border border-slate-200 p-3">
-                    <span className="text-sm text-slate-700">Your blood sugar</span>
-                    <StatusBadge 
-                      status={getStatusType(sugarStatus.color)} 
-                      label={sugarStatus.label} 
+                    <span className="text-sm text-slate-700">
+                      Your blood sugar
+                    </span>
+                    <StatusBadge
+                      status={getStatusType(sugarStatus.color)}
+                      label={sugarStatus.label}
                     />
                   </div>
                 )}
 
-                <Button 
-                  variant="outline" 
-                  size="sm" 
+                <Button
+                  variant="outline"
+                  size="sm"
                   onClick={clearSugar}
                   className="text-slate-600 border-slate-300"
                 >
@@ -427,10 +485,12 @@ export default function Step2Page() {
         {shouldBlock && (
           <Alert className="bg-rose-50 border-rose-200">
             <AlertTriangle className="h-4 w-4 text-rose-600" />
-            <AlertTitle className="text-rose-900 font-semibold">Elevated reading detected</AlertTitle>
+            <AlertTitle className="text-rose-900 font-semibold">
+              Elevated reading detected
+            </AlertTitle>
             <AlertDescription className="text-rose-800">
-              Your blood pressure or blood sugar is higher than normal. 
-              On the next screen, we&apos;ll provide guidance on next steps.
+              Your blood pressure or blood sugar is higher than normal. On the
+              next screen, we&apos;ll provide guidance on next steps.
             </AlertDescription>
           </Alert>
         )}
@@ -456,4 +516,3 @@ export default function Step2Page() {
     </AppShell>
   );
 }
-

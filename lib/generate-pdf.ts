@@ -1,5 +1,9 @@
 import { jsPDF } from "jspdf";
-import { AssessmentData, getBPStatus, getSugarStatus } from "./assessment-context";
+import {
+  AssessmentData,
+  getBPStatus,
+  getSugarStatus,
+} from "./assessment-context";
 
 interface PDFData {
   data: AssessmentData;
@@ -57,7 +61,7 @@ export function generateHealthPDF({
     doc.setFontSize(18);
     doc.setFont("helvetica", "bold");
     doc.text("Healthy Life Campaign", margin + 22, 15);
-    
+
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
     doc.text("Health Risk Assessment Summary", margin + 22, 23);
@@ -114,7 +118,7 @@ export function generateHealthPDF({
     const badgeX = pageWidth - margin - 35;
     let badgeColor: number[];
     let textColor: number[];
-    
+
     switch (statusColor) {
       case "emerald":
         badgeColor = [209, 250, 229]; // emerald-100
@@ -148,7 +152,7 @@ export function generateHealthPDF({
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
     doc.setTextColor(slate600[0], slate600[1], slate600[2]);
-    
+
     items.forEach((item) => {
       if (y > 270) {
         doc.addPage();
@@ -166,11 +170,16 @@ export function generateHealthPDF({
 
   // Measurements Section
   addSectionTitle("Your Measurements", "📊");
-  
+
   if (bmi && bmiCategory) {
-    addMetricRow("Body Mass Index (BMI)", bmi.toString(), bmiCategory.label, bmiCategory.color);
+    addMetricRow(
+      "Body Mass Index (BMI)",
+      bmi.toString(),
+      bmiCategory.label,
+      bmiCategory.color
+    );
   }
-  
+
   if (data.bpEntered) {
     addMetricRow(
       "Blood Pressure",
@@ -198,7 +207,7 @@ export function generateHealthPDF({
 
   // Risk Scores Section
   addSectionTitle("Risk Assessment", "📋");
-  
+
   const cbacRisk = cbacScore > 4 ? "Higher risk" : "Lower risk";
   const cbacColor = cbacScore > 4 ? "amber" : "emerald";
   addMetricRow("CBAC Score", cbacScore.toString(), cbacRisk, cbacColor);
@@ -243,16 +252,17 @@ export function generateHealthPDF({
   doc.roundedRect(margin, y, contentWidth, 28, 3, 3, "F");
   doc.setDrawColor(251, 191, 36); // amber-400
   doc.roundedRect(margin, y, contentWidth, 28, 3, 3, "S");
-  
+
   doc.setFont("helvetica", "bold");
   doc.setFontSize(9);
   doc.setTextColor(146, 64, 14); // amber-800
   doc.text("⚠  Important Disclaimer", margin + 4, y + 7);
-  
+
   doc.setFont("helvetica", "normal");
   doc.setFontSize(8);
   doc.setTextColor(120, 53, 15); // amber-900
-  const disclaimer = "This tool provides general health risk information and is NOT a medical diagnosis. It does NOT provide treatment advice. If you have symptoms or concerns, please consult a doctor or visit your nearest health facility for proper evaluation.";
+  const disclaimer =
+    "This tool provides general health risk information and is NOT a medical diagnosis. It does NOT provide treatment advice. If you have symptoms or concerns, please consult a doctor or visit your nearest health facility for proper evaluation.";
   const disclaimerLines = doc.splitTextToSize(disclaimer, contentWidth - 8);
   doc.text(disclaimerLines, margin + 4, y + 14);
 
@@ -261,12 +271,12 @@ export function generateHealthPDF({
   // Privacy note
   doc.setFillColor(209, 250, 229); // emerald-100
   doc.roundedRect(margin, y, contentWidth, 16, 3, 3, "F");
-  
+
   doc.setFont("helvetica", "bold");
   doc.setFontSize(8);
   doc.setTextColor(6, 95, 70); // emerald-800
   doc.text("🔒  Privacy", margin + 4, y + 6);
-  
+
   doc.setFont("helvetica", "normal");
   doc.setFontSize(7);
   doc.text(
@@ -279,7 +289,7 @@ export function generateHealthPDF({
   const footerY = doc.internal.pageSize.getHeight() - 15;
   doc.setDrawColor(slate400[0], slate400[1], slate400[2]);
   doc.line(margin, footerY - 5, pageWidth - margin, footerY - 5);
-  
+
   doc.setFont("helvetica", "normal");
   doc.setFontSize(8);
   doc.setTextColor(slate400[0], slate400[1], slate400[2]);
@@ -297,9 +307,6 @@ export function generateHealthPDF({
   // Save PDF
   const filename = `health-assessment-${new Date().toISOString().split("T")[0]}.pdf`;
   doc.save(filename);
-  
+
   return filename;
 }
-
-
-

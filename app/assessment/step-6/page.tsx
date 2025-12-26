@@ -11,7 +11,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import {
   Accordion,
@@ -48,30 +47,26 @@ import {
   Stethoscope,
   FileText,
   Loader2,
-  Cigarette,
-  Wine,
-  Lightbulb,
-  ChevronLeft,
 } from "lucide-react";
-import { 
-  useAssessment, 
-  getBPStatus, 
+import {
+  useAssessment,
+  getBPStatus,
   getSugarStatus,
 } from "@/lib/assessment-context";
 import { generateHealthPDF } from "@/lib/generate-pdf";
 import { toast } from "sonner";
-import Link from "next/link";
 
-export default function Step4Page() {
+export default function Step6Page() {
   const router = useRouter();
   const [isGenerating, setIsGenerating] = useState(false);
-  const { 
-    data, 
-    resetAssessment, 
-    calculateBMI, 
+  const {
+    data,
+    resetAssessment,
+    calculateBMI,
     getBMICategory,
     calculateCBACScore,
-    needsLifestyleGuidance
+    hasAnyCancerSymptom,
+    needsLifestyleGuidance,
   } = useAssessment();
 
   const bmi = calculateBMI();
@@ -79,34 +74,48 @@ export default function Step4Page() {
   const bpStatus = getBPStatus(data.systolic, data.diastolic);
   const sugarStatus = getSugarStatus(data.sugarType, data.sugarValue);
   const cbacScore = calculateCBACScore();
+  const hasCancerSymptoms = hasAnyCancerSymptom();
   const guidance = needsLifestyleGuidance();
 
   const isHighCBACRisk = cbacScore > 4;
-  const needsConsultation = isHighCBACRisk;
-  const hasAnyLifestyleTrigger = guidance.tobacco || guidance.alcohol || guidance.activity;
+  const needsConsultation = isHighCBACRisk || hasCancerSymptoms;
 
   // Generate advice based on data
   const keyAdvice = useMemo(() => {
     const advice: string[] = [];
 
     if (isHighCBACRisk) {
-      advice.push("Please visit the nearest Janakeeya Arogya Kendram for NCD risk evaluation.");
+      advice.push(
+        "Please visit the nearest Janakeeya Arogya Kendram for NCD risk evaluation."
+      );
+    }
+
+    if (hasCancerSymptoms) {
+      advice.push(
+        "Please consult a doctor for evaluation of reported symptoms."
+      );
     }
 
     if (guidance.tobacco) {
-      advice.push("Consider seeking tobacco cessation support; reducing tobacco lowers risk over time.");
+      advice.push(
+        "Consider seeking tobacco cessation support; reducing tobacco lowers risk over time."
+      );
     }
 
     if (guidance.alcohol) {
-      advice.push("Reducing daily alcohol can improve long-term health; consider support services if needed.");
+      advice.push(
+        "Reducing daily alcohol can improve long-term health; consider support services if needed."
+      );
     }
 
     if (guidance.activity) {
-      advice.push("Aim for at least 150 minutes/week of moderate activity, starting gradually.");
+      advice.push(
+        "Aim for at least 150 minutes/week of moderate activity, starting gradually."
+      );
     }
 
     return advice;
-  }, [isHighCBACRisk, guidance]);
+  }, [isHighCBACRisk, hasCancerSymptoms, guidance]);
 
   // Diet tips based on BMI
   const dietTips = useMemo(() => {
@@ -117,7 +126,7 @@ export default function Step4Page() {
         return [
           "Add nutrient-dense meals and snacks",
           "Include protein sources daily (eggs, dal, milk, fish)",
-          "Eat small, frequent meals"
+          "Eat small, frequent meals",
         ];
       case "Overweight":
       case "Obese":
@@ -125,13 +134,13 @@ export default function Step4Page() {
           "Reduce sugary drinks and processed foods",
           "Fill half your plate with vegetables",
           "Practice portion control",
-          "Choose whole grains over refined"
+          "Choose whole grains over refined",
         ];
       default:
         return [
           "Maintain balanced meals with variety",
           "Include fruits and vegetables daily",
-          "Stay hydrated with water"
+          "Stay hydrated with water",
         ];
     }
   }, [bmiCategory]);
@@ -143,7 +152,7 @@ export default function Step4Page() {
         "Choose whole grains over refined carbs",
         "Limit sweets and sugary drinks",
         "Don't skip meals; prefer steady meal timing",
-        "Consult a doctor for proper testing"
+        "Consult a doctor for proper testing",
       ];
     }
     return [];
@@ -156,19 +165,19 @@ export default function Step4Page() {
         return [
           "Start with 10 minutes/day walking",
           "Take short breaks from sitting every hour",
-          "Use stairs when possible"
+          "Use stairs when possible",
         ];
       case "moderate":
         return [
           "Add 1-2 longer walks per week",
           "Try to reach 150 minutes/week",
-          "Include variety (walking, cycling, swimming)"
+          "Include variety (walking, cycling, swimming)",
         ];
       case "adequate":
         return [
           "Maintain your current routine",
           "Add strength exercises twice weekly",
-          "Try new activities to stay motivated"
+          "Try new activities to stay motivated",
         ];
       default:
         return [];
@@ -184,25 +193,26 @@ export default function Step4Page() {
     setIsGenerating(true);
     try {
       // Small delay for UX
-      await new Promise(resolve => setTimeout(resolve, 500));
-      
+      await new Promise((resolve) => setTimeout(resolve, 500));
+
       generateHealthPDF({
         data,
         bmi,
         bmiCategory,
         cbacScore,
+        hasCancerSymptoms,
         keyAdvice,
         dietTips,
         sugarTips,
         activityTips,
       });
-      
+
       toast.success("PDF downloaded successfully!", {
-        description: "Check your downloads folder"
+        description: "Check your downloads folder",
       });
-    } catch {
+    } catch (error) {
       toast.error("Failed to generate PDF", {
-        description: "Please try again"
+        description: "Please try again",
       });
     } finally {
       setIsGenerating(false);
@@ -210,7 +220,7 @@ export default function Step4Page() {
   };
 
   return (
-    <AppShell currentStep={4} totalSteps={4}>
+    <AppShell currentStep={6} totalSteps={6}>
       <div className="space-y-6">
         {/* Header Card */}
         <Card className="bg-white border border-slate-200 shadow-sm">
@@ -221,7 +231,7 @@ export default function Step4Page() {
               </div>
               <div>
                 <CardTitle className="text-xl font-bold">
-                  Your Summary & Guidance
+                  Your Summary
                 </CardTitle>
                 <CardDescription>
                   Assessment completed on {new Date().toLocaleDateString()}
@@ -239,10 +249,14 @@ export default function Step4Page() {
               We recommend consulting a doctor
             </AlertTitle>
             <AlertDescription className="text-amber-800">
-              <div>Based on your assessment, please visit the nearest <strong>Janakeeya Arogya Kendram</strong> for further evaluation, or contact your ASHA for assistance.</div>
+              <div>
+                Based on your assessment, please visit the nearest{" "}
+                <strong>Janakeeya Arogya Kendram</strong> for further
+                evaluation. or contact your ASHA for further assistance.
+              </div>
               <Button className="mt-3 bg-emerald-600 hover:bg-emerald-700 gap-2 w-full">
                 <Building2 className="w-4 h-4" />
-                Find nearby JAK
+                <div>Find nearby JAK</div>
               </Button>
             </AlertDescription>
           </Alert>
@@ -258,11 +272,7 @@ export default function Step4Page() {
           </CardHeader>
           <CardContent className="space-y-3">
             {bmi && bmiCategory && (
-              <InterpretationRow
-                label="BMI"
-                value={bmi}
-                status={bmiCategory}
-              />
+              <InterpretationRow label="BMI" value={bmi} status={bmiCategory} />
             )}
 
             <div className="flex items-center justify-between rounded-lg border border-slate-200 bg-white p-3">
@@ -272,8 +282,13 @@ export default function Step4Page() {
               </div>
               {data.bpEntered ? (
                 <div className="flex items-center gap-2">
-                  <span className="text-sm font-medium">{data.systolic}/{data.diastolic} mmHg</span>
-                  <StatusBadge status={getStatusType(bpStatus.color)} label={bpStatus.label} />
+                  <span className="text-sm font-medium">
+                    {data.systolic}/{data.diastolic} mmHg
+                  </span>
+                  <StatusBadge
+                    status={getStatusType(bpStatus.color)}
+                    label={bpStatus.label}
+                  />
                 </div>
               ) : (
                 <StatusBadge status="muted" label="Not entered" />
@@ -288,9 +303,13 @@ export default function Step4Page() {
               {data.sugarEntered ? (
                 <div className="flex items-center gap-2">
                   <span className="text-sm font-medium">
-                    {data.sugarValue} {data.sugarType === "hba1c" ? "%" : "mg/dL"}
+                    {data.sugarValue}{" "}
+                    {data.sugarType === "hba1c" ? "%" : "mg/dL"}
                   </span>
-                  <StatusBadge status={getStatusType(sugarStatus.color)} label={sugarStatus.label} />
+                  <StatusBadge
+                    status={getStatusType(sugarStatus.color)}
+                    label={sugarStatus.label}
+                  />
                 </div>
               ) : (
                 <StatusBadge status="muted" label="Not entered" />
@@ -299,12 +318,12 @@ export default function Step4Page() {
           </CardContent>
         </Card>
 
-        {/* Risk Score Section */}
+        {/* Risk Scores Section */}
         <Card className="bg-white border border-slate-200">
           <CardHeader className="pb-3">
             <CardTitle className="text-base font-semibold flex items-center gap-2">
               <ClipboardList className="w-5 h-5 text-emerald-600" />
-              Risk Score
+              Risk Scores
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
@@ -318,6 +337,16 @@ export default function Step4Page() {
               <StatusBadge
                 status={isHighCBACRisk ? "elevated" : "normal"}
                 label={isHighCBACRisk ? "Higher risk" : "Lower risk"}
+              />
+            </div>
+
+            <div className="flex items-center justify-between rounded-lg border border-slate-200 p-3">
+              <span className="text-sm text-slate-600">
+                Cancer symptoms reported
+              </span>
+              <StatusBadge
+                status={hasCancerSymptoms ? "high" : "normal"}
+                label={hasCancerSymptoms ? "Yes" : "No"}
               />
             </div>
           </CardContent>
@@ -335,7 +364,10 @@ export default function Step4Page() {
             <CardContent>
               <ul className="space-y-2">
                 {keyAdvice.map((advice, index) => (
-                  <li key={index} className="flex items-start gap-2 text-sm text-slate-700">
+                  <li
+                    key={index}
+                    className="flex items-start gap-2 text-sm text-slate-700"
+                  >
                     <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
                     {advice}
                   </li>
@@ -345,196 +377,19 @@ export default function Step4Page() {
           </Card>
         )}
 
-        {/* Lifestyle Guidance Section */}
-        {hasAnyLifestyleTrigger && (
-          <Card className="bg-white border border-slate-200">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-base font-semibold">Your Focus Areas</CardTitle>
-              <CardDescription>
-                Based on your answers, here are areas where small changes can help
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {/* Focus Area Badges */}
-              <div className="flex flex-wrap gap-2">
-                {guidance.tobacco && (
-                  <Badge className="bg-amber-50 text-amber-800 border border-amber-200">
-                    <Cigarette className="w-3 h-3 mr-1" />
-                    Tobacco
-                  </Badge>
-                )}
-                {guidance.alcohol && (
-                  <Badge className="bg-amber-50 text-amber-800 border border-amber-200">
-                    <Wine className="w-3 h-3 mr-1" />
-                    Alcohol
-                  </Badge>
-                )}
-                {guidance.activity && (
-                  <Badge className="bg-amber-50 text-amber-800 border border-amber-200">
-                    <Activity className="w-3 h-3 mr-1" />
-                    Activity
-                  </Badge>
-                )}
-              </div>
-
-              <Accordion type="multiple" className="space-y-2">
-                {/* Tobacco Guidance */}
-                {guidance.tobacco && (
-                  <AccordionItem value="tobacco" className="border border-slate-200 rounded-lg px-4">
-                    <AccordionTrigger className="py-3 hover:no-underline">
-                      <div className="flex items-center gap-2">
-                        <Cigarette className="w-4 h-4 text-amber-600" />
-                        <span className="text-sm font-medium">Tobacco Cessation Support</span>
-                      </div>
-                    </AccordionTrigger>
-                    <AccordionContent className="pb-4">
-                      <ul className="space-y-2 text-sm text-slate-700">
-                        <li className="flex items-start gap-2">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                          Set a quit date and tell someone you trust
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                          Reduce triggers (after meals, stress moments)
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                          Keep your hands busy with healthy alternatives
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                          Ask at your nearest JAK about quit programs
-                        </li>
-                      </ul>
-                    </AccordionContent>
-                  </AccordionItem>
-                )}
-
-                {/* Alcohol Guidance */}
-                {guidance.alcohol && (
-                  <AccordionItem value="alcohol" className="border border-slate-200 rounded-lg px-4">
-                    <AccordionTrigger className="py-3 hover:no-underline">
-                      <div className="flex items-center gap-2">
-                        <Wine className="w-4 h-4 text-amber-600" />
-                        <span className="text-sm font-medium">Alcohol Reduction Support</span>
-                      </div>
-                    </AccordionTrigger>
-                    <AccordionContent className="pb-4">
-                      <ul className="space-y-2 text-sm text-slate-700">
-                        <li className="flex items-start gap-2">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                          Track how often you drink each week
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                          Plan alcohol-free days and stick to them
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                          Choose smaller portions when you do drink
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                          Seek de-addiction support if cutting down is difficult
-                        </li>
-                      </ul>
-                      <Alert className="bg-sky-50 border-sky-200 mt-3">
-                        <Lightbulb className="h-4 w-4 text-sky-600" />
-                        <AlertDescription className="text-sky-800 text-sm">
-                          Professional support is available if you find it difficult to reduce on your own.
-                        </AlertDescription>
-                      </Alert>
-                    </AccordionContent>
-                  </AccordionItem>
-                )}
-
-                {/* Activity Guidance */}
-                {guidance.activity && (
-                  <AccordionItem
-                    value="activity"
-                    className="border border-slate-200 rounded-lg px-4"
-                  >
-                    <AccordionTrigger className="py-3 hover:no-underline">
-                      <div className="flex items-center gap-2">
-                        <Activity className="w-4 h-4 text-emerald-600" />
-                        <span className="text-sm font-medium">
-                          Activity Plan
-                        </span>
-                      </div>
-                    </AccordionTrigger>
-                    <AccordionContent className="pb-4">
-                      <div className="space-y-3">
-                        <p className="text-sm font-medium text-slate-900">
-                          Starter plan:
-                        </p>
-                        <div className="space-y-2 text-sm text-slate-700">
-                          <div className="flex items-start gap-3 p-3 bg-slate-50 rounded-lg">
-                            <Badge variant="outline" className="text-xs">
-                              Week 1
-                            </Badge>
-                            <span>
-                              10 minutes walking per day, 5 days/week
-                            </span>
-                          </div>
-                          <div className="flex items-start gap-3 p-3 bg-slate-50 rounded-lg">
-                            <Badge variant="outline" className="text-xs">
-                              Week 2
-                            </Badge>
-                            <span>
-                              15 minutes walking per day, 5 days/week
-                            </span>
-                          </div>
-                          <div className="flex items-start gap-3 p-3 bg-slate-50 rounded-lg">
-                            <Badge variant="outline" className="text-xs">
-                              Week 3+
-                            </Badge>
-                            <span>Build toward 150 minutes/week total</span>
-                          </div>
-                        </div>
-                        <div className="p-3 bg-emerald-50 rounded-lg">
-                          <p className="text-sm text-emerald-800">
-                            <strong>Add strength:</strong> Try simple bodyweight
-                            exercises (squats, wall push-ups) 2 days/week for
-                            added benefit.
-                          </p>
-                        </div>
-                      </div>
-                    </AccordionContent>
-                  </AccordionItem>
-                )}
-              </Accordion>
-            </CardContent>
-          </Card>
-        )}
-
-        {/* Healthy habits message when no triggers */}
-        {!hasAnyLifestyleTrigger && (
-          <Card className="bg-emerald-50 border border-emerald-200">
-            <CardContent className="pt-6">
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
-                  <Heart className="w-5 h-5 text-emerald-700" />
-                </div>
-                <div>
-                  <p className="font-semibold text-emerald-900">You&apos;re on a good track!</p>
-                  <p className="text-sm text-emerald-800 mt-1">
-                    Keep up your healthy habits with regular physical activity, balanced diet, 
-                    regular check-ups, and stress management.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        )}
-
-        {/* Diet & Activity Tips */}
+        {/* Diet & Exercise Guidance */}
         <Card className="bg-white border border-slate-200">
           <CardHeader className="pb-3">
-            <CardTitle className="text-base font-semibold">Personalised Tips</CardTitle>
+            <CardTitle className="text-base font-semibold">
+              Personalised Guidance
+            </CardTitle>
           </CardHeader>
           <CardContent className="space-y-2">
             <Accordion type="multiple" className="space-y-2">
-              <AccordionItem value="diet" className="border border-slate-200 rounded-lg px-4">
+              <AccordionItem
+                value="diet"
+                className="border border-slate-200 rounded-lg px-4"
+              >
                 <AccordionTrigger className="py-3 hover:no-underline">
                   <div className="flex items-center gap-2">
                     <Utensils className="w-4 h-4 text-emerald-600" />
@@ -552,7 +407,9 @@ export default function Step4Page() {
                   </ul>
                   {sugarTips.length > 0 && (
                     <>
-                      <p className="text-sm font-medium text-slate-700 mt-4 mb-2">For blood sugar:</p>
+                      <p className="text-sm font-medium text-slate-700 mt-4 mb-2">
+                        For blood sugar:
+                      </p>
                       <ul className="space-y-2 text-sm text-slate-700">
                         {sugarTips.map((tip, index) => (
                           <li key={index} className="flex items-start gap-2">
@@ -566,7 +423,10 @@ export default function Step4Page() {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="exercise" className="border border-slate-200 rounded-lg px-4">
+              <AccordionItem
+                value="exercise"
+                className="border border-slate-200 rounded-lg px-4"
+              >
                 <AccordionTrigger className="py-3 hover:no-underline">
                   <div className="flex items-center gap-2">
                     <Activity className="w-4 h-4 text-emerald-600" />
@@ -594,7 +454,7 @@ export default function Step4Page() {
         <div className="space-y-3 pt-4">
           <Dialog>
             <DialogTrigger asChild>
-              <Button 
+              <Button
                 size="lg"
                 className="w-full bg-emerald-600 hover:bg-emerald-700 gap-2"
               >
@@ -609,12 +469,15 @@ export default function Step4Page() {
                   Download your summary
                 </DialogTitle>
                 <DialogDescription>
-                  Generate a beautifully formatted PDF with all your assessment results.
+                  Generate a beautifully formatted PDF with all your assessment
+                  results.
                 </DialogDescription>
               </DialogHeader>
               <div className="py-4 space-y-4">
                 <div className="bg-slate-50 rounded-lg p-4 space-y-2">
-                  <p className="text-sm font-medium text-slate-900">Your PDF will include:</p>
+                  <p className="text-sm font-medium text-slate-900">
+                    Your PDF will include:
+                  </p>
                   <ul className="text-sm text-slate-600 space-y-1">
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-emerald-600" />
@@ -637,7 +500,8 @@ export default function Step4Page() {
                 <Alert className="bg-emerald-50 border-emerald-200">
                   <CheckCircle2 className="h-4 w-4 text-emerald-600" />
                   <AlertDescription className="text-emerald-800">
-                    The PDF will be saved on your device only. We don&apos;t store or see it.
+                    The PDF will be saved on your device only. We don&apos;t
+                    store or see it.
                   </AlertDescription>
                 </Alert>
               </div>
@@ -646,7 +510,7 @@ export default function Step4Page() {
                   <Button variant="outline">Cancel</Button>
                 </DialogClose>
                 <DialogClose asChild>
-                  <Button 
+                  <Button
                     className="bg-emerald-600 hover:bg-emerald-700 gap-2"
                     onClick={handleDownload}
                     disabled={isGenerating}
@@ -668,23 +532,15 @@ export default function Step4Page() {
             </DialogContent>
           </Dialog>
 
-          <div className="flex gap-3">
-            <Link href="/assessment/step-3" className="flex-1">
-              <Button variant="outline" size="lg" className="w-full gap-2">
-                <ChevronLeft className="w-4 h-4" />
-                Back
-              </Button>
-            </Link>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="flex-1 gap-2"
-              onClick={handleRestart}
-            >
-              <RotateCcw className="w-4 h-4" />
-              Start Over
-            </Button>
-          </div>
+          <Button
+            variant="outline"
+            size="lg"
+            className="w-full gap-2"
+            onClick={handleRestart}
+          >
+            <RotateCcw className="w-5 h-5" />
+            Start New Assessment
+          </Button>
         </div>
       </div>
     </AppShell>
