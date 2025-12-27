@@ -116,12 +116,15 @@ export const WAIST_THRESHOLDS = {
 export function AssessmentProvider({ children }: { children: ReactNode }) {
   // Load from sessionStorage on mount
   const [data, setData] = useState<AssessmentData>(() => {
-    const stored = sessionStorage.getItem("assessmentData");
-    if (stored) {
-      try {
-        return JSON.parse(stored);
-      } catch {
-        // Invalid data, use initial
+    // Check if we're in the browser before accessing sessionStorage
+    if (typeof window !== "undefined") {
+      const stored = sessionStorage.getItem("assessmentData");
+      if (stored) {
+        try {
+          return JSON.parse(stored);
+        } catch {
+          // Invalid data, use initial
+        }
       }
     }
     return initialData;
@@ -129,7 +132,9 @@ export function AssessmentProvider({ children }: { children: ReactNode }) {
 
   // Save to sessionStorage on change
   useEffect(() => {
-    sessionStorage.setItem("assessmentData", JSON.stringify(data));
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem("assessmentData", JSON.stringify(data));
+    }
   }, [data]);
 
   const updateData = (updates: Partial<AssessmentData>) => {
@@ -138,7 +143,9 @@ export function AssessmentProvider({ children }: { children: ReactNode }) {
 
   const resetAssessment = () => {
     setData(initialData);
-    sessionStorage.removeItem("assessmentData");
+    if (typeof window !== "undefined") {
+      sessionStorage.removeItem("assessmentData");
+    }
   };
 
   const calculateBMI = (): number | null => {
