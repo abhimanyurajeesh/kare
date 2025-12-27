@@ -90,27 +90,21 @@ const AssessmentContext = createContext<AssessmentContextType | undefined>(
 );
 
 // BMI Categories
-export const BMI_CATEGORIES = {
-  underweight: { max: 18.5, label: "Underweight", color: "sky" },
-  normal: { max: 25, label: "Normal", color: "emerald" },
-  overweight: { max: 30, label: "Overweight", color: "amber" },
-  obese: { max: Infinity, label: "Obese", color: "rose" },
-};
+const BMI_CATEGORIES = [
+  { max: 18.5, label: "Underweight", color: "sky" },
+  { max: 25, label: "Normal range", color: "emerald" },
+  { max: 30, label: "Overweight", color: "amber" },
+  { max: 35, label: "Obese class I", color: "orange" },
+  { max: 40, label: "Obese class II", color: "rose" },
+  { max: Infinity, label: "Obese class III", color: "red" },
+];
 
-// BP Thresholds (configurable)
-export const BP_THRESHOLDS = {
-  systolicNormal: 120,
-  systolicElevated: 140,
-  diastolicNormal: 80,
-  diastolicElevated: 90,
-};
-
-// Sugar Thresholds (configurable by type)
-export const SUGAR_THRESHOLDS = {
-  rbs: { normal: 140, elevated: 200 },
-  fbs: { normal: 100, elevated: 126 },
-  ppbs: { normal: 140, elevated: 200 },
-  hba1c: { normal: 5.7, elevated: 6.5 },
+// Sugar Thresholds
+const SUGAR_THRESHOLDS = {
+  fbs: { hypoglycaemia: 70, normal: 99, prediabetes: 126 },
+  rbs: { hypoglycaemia: 70, normal: 140, diabetes: 200 },
+  ppbs: { hypoglycaemia: 70, normal: 139, prediabetes: 200 },
+  hba1c: { normal: 5.7, prediabetes: 6.5 },
 };
 
 // Waist thresholds
@@ -120,19 +114,18 @@ export const WAIST_THRESHOLDS = {
 };
 
 export function AssessmentProvider({ children }: { children: ReactNode }) {
-  const [data, setData] = useState<AssessmentData>(initialData);
-
   // Load from sessionStorage on mount
-  useEffect(() => {
+  const [data, setData] = useState<AssessmentData>(() => {
     const stored = sessionStorage.getItem("assessmentData");
     if (stored) {
       try {
-        setData(JSON.parse(stored));
+        return JSON.parse(stored);
       } catch {
         // Invalid data, use initial
       }
     }
-  }, []);
+    return initialData;
+  });
 
   // Save to sessionStorage on change
   useEffect(() => {
@@ -155,10 +148,10 @@ export function AssessmentProvider({ children }: { children: ReactNode }) {
   };
 
   const getBMICategory = (bmi: number) => {
-    if (bmi < BMI_CATEGORIES.underweight.max) return BMI_CATEGORIES.underweight;
-    if (bmi < BMI_CATEGORIES.normal.max) return BMI_CATEGORIES.normal;
-    if (bmi < BMI_CATEGORIES.overweight.max) return BMI_CATEGORIES.overweight;
-    return BMI_CATEGORIES.obese;
+    return (
+      BMI_CATEGORIES.find((c) => bmi < c.max) ||
+      BMI_CATEGORIES[BMI_CATEGORIES.length - 1]
+    );
   };
 
   const calculateCBACScore = (): number => {
@@ -241,10 +234,12 @@ export function isBPElevated(
   diastolic: number | null
 ): boolean {
   if (!systolic || !diastolic) return false;
-  return (
-    systolic >= BP_THRESHOLDS.systolicElevated ||
-    diastolic >= BP_THRESHOLDS.diastolicElevated
-  );
+  if (systolic >= 180 || diastolic >= 120) return true;
+  if (systolic >= 160 || diastolic >= 100) return true;
+  if ((systolic >= 140 && systolic <= 159) || (diastolic >= 90 && diastolic <= 99))
+    return true;
+  if (systolic < 90 || diastolic < 60) return true;
+  return false;
 }
 
 // Helper to check if sugar is elevated
@@ -253,8 +248,13 @@ export function isSugarElevated(
   value: number | null
 ): boolean {
   if (!type || !value) return false;
-  const threshold = SUGAR_THRESHOLDS[type];
-  return value >= threshold.elevated;
+  const thresholds = SUGAR_THRESHOLDS[type];
+  
+  if ("diabetes" in thresholds && value >= thresholds.diabetes) return true;
+  if ("prediabetes" in thresholds && value >= thresholds.prediabetes) return true;
+  if ("hypoglycaemia" in thresholds && value < thresholds.hypoglycaemia) return true;
+  
+  return false;
 }
 
 // Helper to get BP status
@@ -263,18 +263,18 @@ export function getBPStatus(
   diastolic: number | null
 ): { label: string; color: string } {
   if (!systolic || !diastolic) return { label: "Not entered", color: "slate" };
-  if (
-    systolic >= BP_THRESHOLDS.systolicElevated ||
-    diastolic >= BP_THRESHOLDS.diastolicElevated
-  ) {
-    return { label: "Higher than normal", color: "rose" };
-  }
-  if (
-    systolic >= BP_THRESHOLDS.systolicNormal ||
-    diastolic >= BP_THRESHOLDS.diastolicNormal
-  ) {
-    return { label: "Elevated", color: "amber" };
-  }
+
+  if (systolic >= 180 || diastolic >= 120) 
+    return { label: "Hypertensive Crisis", color: "rose" };
+  if (systolic >= 160 || diastolic >= 100)
+    return { label: "Stage 2 Hypertension", color: "rose" };
+  if ((systolic >= 140 && systolic <= 159) || (diastolic >= 90 && diastolic <= 99))
+    return { label: "Stage 1 Hypertension", color: "amber" };
+  if (systolic < 140 && diastolic < 90 && systolic >= 90 && diastolic >= 60)
+    return { label: "Normal", color: "emerald" };
+  if (systolic < 90 || diastolic < 60)
+    return { label: "Hypotension", color: "amber" };
+
   return { label: "Normal", color: "emerald" };
 }
 
@@ -284,12 +284,32 @@ export function getSugarStatus(
   value: number | null
 ): { label: string; color: string } {
   if (!type || !value) return { label: "Not entered", color: "slate" };
-  const threshold = SUGAR_THRESHOLDS[type];
-  if (value >= threshold.elevated) {
-    return { label: "Higher than normal", color: "rose" };
+  const thresholds = SUGAR_THRESHOLDS[type];
+
+  // Hypoglycaemia check (not for HbA1c)
+  if (
+    type !== "hba1c" &&
+    "hypoglycaemia" in thresholds &&
+    value < thresholds.hypoglycaemia
+  ) {
+    return { label: "Hypoglycaemia", color: "sky" };
   }
-  if (value >= threshold.normal) {
-    return { label: "Elevated", color: "amber" };
+
+  if (value <= thresholds.normal) {
+    return { label: "Normal", color: "emerald" };
   }
-  return { label: "Normal", color: "emerald" };
+
+  // RBS special case (no pre-diabetes)
+  if (type === "rbs" && "diabetes" in thresholds) {
+    if (value < thresholds.diabetes) {
+      return { label: "Elevated", color: "amber" };
+    }
+    return { label: "Diabetes Mellitus", color: "rose" };
+  }
+
+  // Pre-diabetes range (FBS, PPBS, HbA1c)
+  if ("prediabetes" in thresholds && value < thresholds.prediabetes) {
+    return { label: "Pre-diabetes", color: "amber" };
+  }
+  return { label: "Diabetes Mellitus", color: "rose" };
 }

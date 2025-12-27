@@ -17,6 +17,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { StatusBadge } from "@/components/status-badge";
 import { Footer } from "@/components/footer";
+import { cn } from "@/lib/utils";
 import {
   HeartPulse,
   Heart,
@@ -291,13 +292,12 @@ export default function BPCheckerPage() {
           {/* Result */}
           {showResult && result && (
             <Card
-              className={`border-2 ${
-                result.color === "emerald"
-                  ? "border-emerald-200 bg-emerald-50"
-                  : result.color === "amber"
-                    ? "border-amber-200 bg-amber-50"
-                    : "border-rose-200 bg-rose-50"
-              }`}
+              className={cn(
+                "border-2",
+                result.color === "emerald" && "border-emerald-200 bg-emerald-50",
+                result.color === "amber" && "border-amber-200 bg-amber-50",
+                result.color === "rose" && "border-rose-200 bg-rose-50"
+              )}
             >
               <CardContent className="pt-6">
                 <div className="text-center space-y-4">
@@ -344,13 +344,12 @@ export default function BPCheckerPage() {
                           className="flex items-start gap-2 text-sm text-slate-600"
                         >
                           <CheckCircle2
-                            className={`w-4 h-4 mt-0.5 flex-shrink-0 ${
-                              result.color === "emerald"
-                                ? "text-emerald-600"
-                                : result.color === "amber"
-                                  ? "text-amber-600"
-                                  : "text-rose-600"
-                            }`}
+                            className={cn(
+                              "size-4 mt-0.5 shrink-0",
+                              result.color === "emerald" && "text-emerald-600",
+                              result.color === "amber" && "text-amber-600",
+                              result.color === "rose" && "text-rose-600"
+                            )}
                           />
                           {tip}
                         </li>
@@ -387,7 +386,12 @@ export default function BPCheckerPage() {
                   >
                     <div className="flex items-center gap-2">
                       <div
-                        className={`size-2.5 rounded-full bg-${cat.color}-500 shrink-0`}
+                        className={cn(
+                          "size-2.5 rounded-full shrink-0",
+                          cat.color === "emerald" && "bg-emerald-500",
+                          cat.color === "amber" && "bg-amber-500",
+                          cat.color === "rose" && "bg-rose-500"
+                        )}
                       />
                       <span className="text-slate-700">{cat.label}</span>
                     </div>

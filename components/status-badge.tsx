@@ -65,10 +65,16 @@ export function getStatusType(color: string): StatusType {
       return "normal";
     case "amber":
       return "elevated";
+    case "orange":
+      return "elevated";
     case "rose":
+      return "high";
+    case "red":
       return "high";
     case "sky":
       return "info";
+    case "blue":
+      return "low";
     default:
       return "muted";
   }

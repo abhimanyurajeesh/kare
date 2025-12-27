@@ -27,6 +27,7 @@ import {
   ArrowRight,
   RefreshCw,
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const BMI_CATEGORIES = [
   {
@@ -223,7 +224,16 @@ export default function BMICalculatorPage() {
           {/* Result */}
           {showResult && bmi && category && (
             <Card
-              className={`border-2 border-${category.color}-200 bg-${category.color}-50`}
+              className={cn(
+                "border-2",
+                category.color === "sky" && "border-sky-200 bg-sky-50",
+                category.color === "emerald" &&
+                  "border-emerald-200 bg-emerald-50",
+                category.color === "amber" && "border-amber-200 bg-amber-50",
+                category.color === "orange" && "border-orange-200 bg-orange-50",
+                category.color === "rose" && "border-rose-200 bg-rose-50",
+                category.color === "red" && "border-red-200 bg-red-50"
+              )}
             >
               <CardContent className="pt-6">
                 <div className="text-center space-y-4">
@@ -266,7 +276,15 @@ export default function BMICalculatorPage() {
                   >
                     <div className="flex items-center gap-2">
                       <div
-                        className={`size-3 rounded-full shrink-0 bg-${cat.color}-500`}
+                        className={cn(
+                          "size-3 rounded-full shrink-0",
+                          cat.color === "sky" && "bg-sky-500",
+                          cat.color === "emerald" && "bg-emerald-500",
+                          cat.color === "amber" && "bg-amber-500",
+                          cat.color === "orange" && "bg-orange-500",
+                          cat.color === "rose" && "bg-rose-500",
+                          cat.color === "red" && "bg-red-500"
+                        )}
                       />
                       <span className="text-sm text-slate-700">
                         {cat.label}
