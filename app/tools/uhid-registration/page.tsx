@@ -7,6 +7,9 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Footer } from "@/components/footer";
+import { LanguageSwitcher } from "@/components/language-switcher";
+import { useI18n } from "@/lib/i18n-context";
 import { 
   Heart,
   ChevronLeft,
@@ -23,6 +26,8 @@ import {
 } from "lucide-react";
 
 export default function UHIDRegistrationPage() {
+  const { t } = useI18n();
+  
   const handleRedirect = () => {
     window.open("https://ehealth.kerala.gov.in/portal/", "_blank", "noopener,noreferrer");
   };
@@ -38,13 +43,16 @@ export default function UHIDRegistrationPage() {
                 <Heart className="w-4 h-4 text-white" />
               </div>
               <span className="text-lg font-bold tracking-tight text-slate-900">
-                Healthy Life
+                {t("app_name")}
               </span>
             </Link>
-            <Badge variant="secondary" className="bg-sky-100 text-sky-700 border-sky-200">
-              <IdCard className="w-3 h-3 mr-1" />
-              UHID Tool
-            </Badge>
+            <div className="flex items-center gap-2">
+              <Badge variant="secondary" className="bg-sky-100 text-sky-700 border-sky-200">
+                <IdCard className="w-3 h-3 mr-1" />
+                {t("tool_uhid_badge")}
+              </Badge>
+              <LanguageSwitcher variant="minimal" />
+            </div>
           </div>
         </div>
       </header>
@@ -52,7 +60,7 @@ export default function UHIDRegistrationPage() {
       <main className="max-w-xl mx-auto px-4 py-8">
         <Link href="/" className="inline-flex items-center text-sm text-slate-600 hover:text-slate-900 mb-6">
           <ChevronLeft className="w-4 h-4 mr-1" />
-          Back to Home
+          {t("common_back_to_home")}
         </Link>
 
         <div className="space-y-6">
@@ -62,10 +70,10 @@ export default function UHIDRegistrationPage() {
               <IdCard className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-2xl font-bold tracking-tight text-slate-900 mb-2">
-              Generate Your UHID
+              {t("tool_uhid_title")}
             </h1>
             <p className="text-slate-600">
-              Your Unique Health Identifier for Kerala&apos;s digital health ecosystem
+              {t("tool_uhid_subtitle")}
             </p>
           </div>
 
@@ -74,18 +82,15 @@ export default function UHIDRegistrationPage() {
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
                 <Info className="w-5 h-5 text-sky-600" />
-                What is UHID?
+                {t("tool_uhid_what_is_title")}
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-sm text-slate-700 leading-relaxed">
-                <strong>UHID (Unique Health Identifier)</strong> is a unique identification number 
-                assigned to every citizen under Kerala&apos;s State Digital Health Mission. It serves 
-                as your digital health identity across all government healthcare facilities in Kerala.
+                {t("tool_uhid_what_is_description_1")}
               </p>
               <p className="text-sm text-slate-700 leading-relaxed">
-                With UHID, all your health records from government hospitals, PHCs, and health centers 
-                are linked together, making healthcare delivery smoother and more efficient.
+                {t("tool_uhid_what_is_description_2")}
               </p>
             </CardContent>
           </Card>
@@ -93,16 +98,16 @@ export default function UHIDRegistrationPage() {
           {/* Benefits */}
           <Card className="bg-white border-slate-200 shadow-lg">
             <CardHeader className="pb-3">
-              <CardTitle className="text-base font-semibold">Benefits of UHID</CardTitle>
+              <CardTitle className="text-base font-semibold">{t("tool_uhid_benefits_title")}</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-3">
                 {[
-                  { icon: FileText, text: "Access all your medical records in one place" },
-                  { icon: Building2, text: "Seamless care across Kerala's government hospitals" },
-                  { icon: Shield, text: "Secure and private health data storage" },
-                  { icon: Smartphone, text: "Easy access through mobile and web portal" },
-                  { icon: CheckCircle2, text: "Faster registration at healthcare facilities" },
+                  { icon: FileText, text: t("tool_uhid_benefit_1") },
+                  { icon: Building2, text: t("tool_uhid_benefit_2") },
+                  { icon: Shield, text: t("tool_uhid_benefit_3") },
+                  { icon: Smartphone, text: t("tool_uhid_benefit_4") },
+                  { icon: CheckCircle2, text: t("tool_uhid_benefit_5") },
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <div className="w-8 h-8 rounded-lg bg-sky-100 flex items-center justify-center flex-shrink-0">
@@ -120,20 +125,20 @@ export default function UHIDRegistrationPage() {
             <CardHeader className="pb-3">
               <CardTitle className="text-base font-semibold flex items-center gap-2">
                 <Fingerprint className="w-5 h-5 text-sky-600" />
-                How to Register
+                {t("tool_uhid_how_to_title")}
               </CardTitle>
               <CardDescription>
-                You&apos;ll need your Aadhaar number linked with a mobile number
+                {t("tool_uhid_how_to_description")}
               </CardDescription>
             </CardHeader>
             <CardContent>
               <ol className="space-y-4">
                 {[
-                  "Click the button below to visit the eHealth Kerala portal",
-                  "Select 'Create UHID / Link Mobile Number with UHID'",
-                  "Enter your Aadhaar number",
-                  "Verify using OTP sent to your Aadhaar-linked mobile",
-                  "Confirm your details and your UHID will be generated",
+                  t("tool_uhid_step_1"),
+                  t("tool_uhid_step_2"),
+                  t("tool_uhid_step_3"),
+                  t("tool_uhid_step_4"),
+                  t("tool_uhid_step_5"),
                 ].map((step, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <div className="w-6 h-6 rounded-full bg-sky-600 text-white flex items-center justify-center text-xs font-semibold flex-shrink-0">
@@ -152,17 +157,16 @@ export default function UHIDRegistrationPage() {
             size="lg"
             className="w-full bg-sky-600 hover:bg-sky-700 text-white shadow-lg shadow-sky-500/30 gap-2"
           >
-            Go to eHealth Kerala Portal
+            {t("tool_uhid_go_to_portal")}
             <ExternalLink className="w-5 h-5" />
           </Button>
 
           {/* Already have UHID */}
           <Alert className="bg-emerald-50 border-emerald-200">
             <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-            <AlertTitle className="text-emerald-800 font-semibold">Already have a UHID?</AlertTitle>
+            <AlertTitle className="text-emerald-800 font-semibold">{t("tool_uhid_already_have_title")}</AlertTitle>
             <AlertDescription className="text-emerald-700">
-              You can use the same portal to log in, view your health records, 
-              and manage your profile.
+              {t("tool_uhid_already_have_description")}
             </AlertDescription>
           </Alert>
 
@@ -170,32 +174,26 @@ export default function UHIDRegistrationPage() {
           <Accordion type="single" collapsible className="bg-white border border-slate-200 rounded-lg shadow-lg">
             <AccordionItem value="faq-1" className="border-b border-slate-200">
               <AccordionTrigger className="px-4 py-3 text-sm font-medium hover:no-underline">
-                What if my mobile isn&apos;t linked with Aadhaar?
+                {t("tool_uhid_faq_1_question")}
               </AccordionTrigger>
               <AccordionContent className="px-4 pb-4 text-sm text-slate-600">
-                If your mobile number is not linked with Aadhaar, you can visit the nearest 
-                government hospital reception desk to create your UHID with assistance from 
-                healthcare staff.
+                {t("tool_uhid_faq_1_answer")}
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="faq-2" className="border-b border-slate-200">
               <AccordionTrigger className="px-4 py-3 text-sm font-medium hover:no-underline">
-                Is my health data secure?
+                {t("tool_uhid_faq_2_question")}
               </AccordionTrigger>
               <AccordionContent className="px-4 pb-4 text-sm text-slate-600">
-                Yes. The State Digital Health Mission follows strict data protection guidelines. 
-                Your health records are encrypted and can only be accessed by authorized healthcare 
-                providers when you visit a facility.
+                {t("tool_uhid_faq_2_answer")}
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="faq-3" className="border-0">
               <AccordionTrigger className="px-4 py-3 text-sm font-medium hover:no-underline">
-                Can I use UHID at private hospitals?
+                {t("tool_uhid_faq_3_question")}
               </AccordionTrigger>
               <AccordionContent className="px-4 pb-4 text-sm text-slate-600">
-                Currently, UHID is primarily used in government healthcare facilities. 
-                However, integration with private hospitals is being expanded under the 
-                State Digital Health Mission.
+                {t("tool_uhid_faq_3_answer")}
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -206,13 +204,13 @@ export default function UHIDRegistrationPage() {
           <Card className="bg-gradient-to-br from-emerald-500 to-teal-600 border-0 text-white">
             <CardContent className="pt-6">
               <div className="text-center space-y-4">
-                <h3 className="text-xl font-semibold">Want a health check?</h3>
+                <h3 className="text-xl font-semibold">{t("tool_uhid_cta_title")}</h3>
                 <p className="text-emerald-100 text-sm">
-                  Take our quick assessment for personalized risk scores and guidance.
+                  {t("tool_uhid_cta_description")}
                 </p>
                 <Link href="/assessment/step-1">
                   <Button variant="secondary" className="bg-white text-emerald-700 hover:bg-emerald-50 gap-2">
-                    Take Health Assessment
+                    {t("tool_uhid_cta_button")}
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 </Link>
@@ -223,16 +221,7 @@ export default function UHIDRegistrationPage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-200 bg-white mt-12">
-        <div className="max-w-xl mx-auto px-4 py-4">
-          <p className="text-xs text-slate-500 text-center">
-            UHID is managed by the State Digital Health Mission, Kerala.
-            <br />
-            © {new Date().getFullYear()} Healthy Life Campaign
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
-

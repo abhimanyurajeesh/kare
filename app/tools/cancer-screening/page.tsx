@@ -10,6 +10,9 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { Footer } from "@/components/footer";
+import { LanguageSwitcher } from "@/components/language-switcher";
+import { useI18n } from "@/lib/i18n-context";
 import { 
   Heart,
   ChevronLeft,
@@ -45,6 +48,7 @@ export default function CancerScreeningPage() {
   const [generalSymptoms, setGeneralSymptoms] = useState<Record<string, boolean>>({});
   const [womenSymptoms, setWomenSymptoms] = useState<Record<string, boolean>>({});
   const [showResult, setShowResult] = useState(false);
+  const { t } = useI18n();
 
   const showWomenSection = gender === "female";
 
@@ -92,13 +96,16 @@ export default function CancerScreeningPage() {
                 <Heart className="w-4 h-4 text-white" />
               </div>
               <span className="text-lg font-bold tracking-tight text-slate-900">
-                Healthy Life
+                {t("app_name")}
               </span>
             </Link>
-            <Badge variant="secondary" className="bg-purple-100 text-purple-700 border-purple-200">
-              <Ribbon className="w-3 h-3 mr-1" />
-              Screening Tool
-            </Badge>
+            <div className="flex items-center gap-2">
+              <Badge variant="secondary" className="bg-purple-100 text-purple-700 border-purple-200">
+                <Ribbon className="w-3 h-3 mr-1" />
+                {t("tool_cancer_badge")}
+              </Badge>
+              <LanguageSwitcher variant="minimal" />
+            </div>
           </div>
         </div>
       </header>
@@ -106,7 +113,7 @@ export default function CancerScreeningPage() {
       <main className="max-w-xl mx-auto px-4 py-8">
         <Link href="/" className="inline-flex items-center text-sm text-slate-600 hover:text-slate-900 mb-6">
           <ChevronLeft className="w-4 h-4 mr-1" />
-          Back to Home
+          {t("common_back_to_home")}
         </Link>
 
         <div className="space-y-6">
@@ -116,19 +123,19 @@ export default function CancerScreeningPage() {
               <Ribbon className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-2xl font-bold tracking-tight text-slate-900 mb-2">
-              Cancer Symptom Checker
+              {t("tool_cancer_title")}
             </h1>
             <p className="text-slate-600">
-              Early detection saves lives. Answer honestly — this is for your awareness.
+              {t("tool_cancer_subtitle")}
             </p>
           </div>
 
           {/* Gender Selection */}
           <Card className="bg-white border-slate-200 shadow-lg">
             <CardHeader>
-              <CardTitle className="text-lg">First, tell us your gender</CardTitle>
+              <CardTitle className="text-lg">{t("tool_cancer_gender_title")}</CardTitle>
               <CardDescription>
-                This helps us ask the right questions
+                {t("tool_cancer_gender_description")}
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -147,7 +154,7 @@ export default function CancerScreeningPage() {
                 >
                   <span className="text-2xl mb-2 block">👨</span>
                   <span className={`font-medium ${gender === "male" ? "text-purple-700" : "text-slate-700"}`}>
-                    Male
+                    {t("step1_gender_male")}
                   </span>
                 </button>
                 <button
@@ -163,7 +170,7 @@ export default function CancerScreeningPage() {
                 >
                   <span className="text-2xl mb-2 block">👩</span>
                   <span className={`font-medium ${gender === "female" ? "text-purple-700" : "text-slate-700"}`}>
-                    Female
+                    {t("step1_gender_female")}
                   </span>
                 </button>
               </div>
@@ -178,10 +185,10 @@ export default function CancerScreeningPage() {
                 <CardHeader className="pb-3">
                   <CardTitle className="text-base font-semibold flex items-center gap-2">
                     <Stethoscope className="w-5 h-5 text-purple-600" />
-                    General symptoms
+                    {t("tool_cancer_general_symptoms")}
                   </CardTitle>
                   <CardDescription>
-                    Have you experienced any of these in the past few months?
+                    {t("tool_cancer_symptoms_description")}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3">
@@ -206,7 +213,7 @@ export default function CancerScreeningPage() {
                           }`}
                         >
                           <RadioGroupItem value="yes" className="sr-only" />
-                          Yes
+                          {t("common_yes")}
                         </label>
                         <label
                           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md border cursor-pointer text-sm transition-colors ${
@@ -216,7 +223,7 @@ export default function CancerScreeningPage() {
                           }`}
                         >
                           <RadioGroupItem value="no" className="sr-only" />
-                          No
+                          {t("common_no")}
                         </label>
                       </RadioGroup>
                     </div>
@@ -230,10 +237,10 @@ export default function CancerScreeningPage() {
                   <CardHeader className="pb-3">
                     <CardTitle className="text-base font-semibold flex items-center gap-2">
                       <Ribbon className="w-5 h-5 text-pink-600" />
-                      Women-specific symptoms
+                      {t("tool_cancer_women_symptoms")}
                     </CardTitle>
                     <CardDescription>
-                      Additional symptoms to check
+                      {t("tool_cancer_women_symptoms_description")}
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-3">
@@ -258,7 +265,7 @@ export default function CancerScreeningPage() {
                             }`}
                           >
                             <RadioGroupItem value="yes" className="sr-only" />
-                            Yes
+                            {t("common_yes")}
                           </label>
                           <label
                             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md border cursor-pointer text-sm transition-colors ${
@@ -268,7 +275,7 @@ export default function CancerScreeningPage() {
                             }`}
                           >
                             <RadioGroupItem value="no" className="sr-only" />
-                            No
+                            {t("common_no")}
                           </label>
                         </RadioGroup>
                       </div>
@@ -285,7 +292,7 @@ export default function CancerScreeningPage() {
                   className="flex-1 bg-purple-600 hover:bg-purple-700"
                   size="lg"
                 >
-                  Check Symptoms
+                  {t("tool_cancer_check_symptoms")}
                 </Button>
                 {showResult && (
                   <Button variant="outline" onClick={handleReset} size="lg">
@@ -302,16 +309,14 @@ export default function CancerScreeningPage() {
               {hasAnySymptom ? (
                 <Alert className="bg-rose-50 border-rose-200">
                   <AlertTriangle className="h-5 w-5 text-rose-600" />
-                  <AlertTitle className="text-rose-900 font-semibold">Please consult a doctor</AlertTitle>
+                  <AlertTitle className="text-rose-900 font-semibold">{t("tool_cancer_consult_title")}</AlertTitle>
                   <AlertDescription className="text-rose-800">
                     <p className="mb-3">
-                      You reported one or more symptoms that need medical evaluation. 
-                      Please consult a doctor at the nearest health facility for further evaluation. 
-                      Early detection can make a significant difference.
+                      {t("tool_cancer_consult_description")}
                     </p>
                     <Button className="bg-rose-600 hover:bg-rose-700 gap-2">
                       <Stethoscope className="w-4 h-4" />
-                      Find nearby health facility
+                      {t("tool_cancer_find_facility")}
                     </Button>
                   </AlertDescription>
                 </Alert>
@@ -321,10 +326,9 @@ export default function CancerScreeningPage() {
                     <div className="flex items-start gap-3">
                       <CheckCircle2 className="w-6 h-6 text-emerald-600 mt-0.5" />
                       <div>
-                        <p className="font-semibold text-emerald-900 text-lg">No symptoms reported</p>
+                        <p className="font-semibold text-emerald-900 text-lg">{t("tool_cancer_no_symptoms_title")}</p>
                         <p className="text-sm text-emerald-800 mt-1">
-                          That&apos;s good news! Consider routine screening once every 5 years. 
-                          If you notice new symptoms later, consult a health facility promptly.
+                          {t("tool_cancer_no_symptoms_description")}
                         </p>
                       </div>
                     </div>
@@ -341,26 +345,25 @@ export default function CancerScreeningPage() {
                 <AccordionTrigger className="px-4 py-3 text-sm font-medium text-slate-900 hover:no-underline">
                   <div className="flex items-center gap-2">
                     <Info className="w-4 h-4 text-pink-600" />
-                    Self-breast examination guide
+                    {t("tool_cancer_breast_exam_title")}
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="px-4 pb-4 text-sm text-slate-700">
                   <div className="space-y-3">
-                    <p className="font-medium">How to perform a self-breast examination:</p>
+                    <p className="font-medium">{t("tool_cancer_breast_exam_subtitle")}</p>
                     <ol className="list-decimal list-inside space-y-2">
-                      <li>Stand in front of a mirror with shoulders straight and arms on hips</li>
-                      <li>Look for any changes in size, shape, or color of breasts</li>
-                      <li>Raise your arms and look for the same changes</li>
-                      <li>While lying down, use your right hand to feel your left breast and vice versa</li>
-                      <li>Use firm, smooth touches with finger pads in circular motions</li>
-                      <li>Cover the entire breast from top to bottom, side to side</li>
-                      <li>Feel your breasts while standing or sitting, such as in the shower</li>
+                      <li>{t("tool_cancer_breast_exam_step1")}</li>
+                      <li>{t("tool_cancer_breast_exam_step2")}</li>
+                      <li>{t("tool_cancer_breast_exam_step3")}</li>
+                      <li>{t("tool_cancer_breast_exam_step4")}</li>
+                      <li>{t("tool_cancer_breast_exam_step5")}</li>
+                      <li>{t("tool_cancer_breast_exam_step6")}</li>
+                      <li>{t("tool_cancer_breast_exam_step7")}</li>
                     </ol>
                     <Alert className="bg-pink-50 border-pink-200 mt-4">
                       <Info className="h-4 w-4 text-pink-600" />
                       <AlertDescription className="text-pink-800 text-sm">
-                        Seek help if you find a new lump, thickening, or any change. 
-                        Monthly self-exams help you know what&apos;s normal for your body.
+                        {t("tool_cancer_breast_exam_note")}
                       </AlertDescription>
                     </Alert>
                   </div>
@@ -372,11 +375,9 @@ export default function CancerScreeningPage() {
           {/* Info Alert */}
           <Alert className="bg-slate-100 border-slate-200">
             <Info className="h-4 w-4 text-slate-600" />
-            <AlertTitle className="text-slate-800">About this screening</AlertTitle>
+            <AlertTitle className="text-slate-800">{t("tool_cancer_about_title")}</AlertTitle>
             <AlertDescription className="text-slate-600">
-              This tool helps identify potential warning signs that may need medical attention. 
-              It is not a diagnosis. Many symptoms can have causes other than cancer. 
-              Only a healthcare professional can provide a proper diagnosis.
+              {t("tool_cancer_about_description")}
             </AlertDescription>
           </Alert>
 
@@ -386,13 +387,13 @@ export default function CancerScreeningPage() {
           <Card className="bg-gradient-to-br from-emerald-500 to-teal-600 border-0 text-white">
             <CardContent className="pt-6">
               <div className="text-center space-y-4">
-                <h3 className="text-xl font-semibold">Want a complete health check?</h3>
+                <h3 className="text-xl font-semibold">{t("tool_cta_title")}</h3>
                 <p className="text-emerald-100 text-sm">
-                  Take our full assessment for personalized NCD risk scores and guidance.
+                  {t("tool_cancer_cta_description")}
                 </p>
                 <Link href="/assessment/step-1">
                   <Button variant="secondary" className="bg-white text-emerald-700 hover:bg-emerald-50 gap-2">
-                    Take Full Assessment
+                    {t("tool_cta_button")}
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 </Link>
@@ -403,16 +404,7 @@ export default function CancerScreeningPage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-200 bg-white mt-12">
-        <div className="max-w-xl mx-auto px-4 py-4">
-          <p className="text-xs text-slate-500 text-center">
-            This tool provides general information and is not a medical diagnosis.
-            <br />
-            © {new Date().getFullYear()} Healthy Life Campaign
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
-

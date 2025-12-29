@@ -48,11 +48,13 @@ import {
   WaistReference,
   WAIST_THRESHOLDS,
 } from "@/lib/assessment-context";
+import { useI18n } from "@/lib/i18n-context";
 import Link from "next/link";
 
 export default function Step3Page() {
   const router = useRouter();
   const { data, updateData } = useAssessment();
+  const { t } = useI18n();
 
   const [tobaccoUse, setTobaccoUse] = useState<TobaccoUse | null>(
     data.tobaccoUse
@@ -146,20 +148,20 @@ export default function Step3Page() {
       <div className="space-y-6">
         <div>
           <h1 className="text-2xl font-bold tracking-tight text-slate-900">
-            NCD Risk Check
+            {t("step3_title")}
           </h1>
           <p className="text-sm text-slate-600 mt-1">
-            This checklist estimates risk. It does not diagnose disease.
+            {t("step3_subtitle")}
           </p>
         </div>
 
         <Card className="bg-white border border-slate-200 shadow-sm">
           <CardHeader>
             <CardTitle className="text-base font-semibold">
-              Risk factors
+              {t("step3_card_title")}
             </CardTitle>
             <CardDescription>
-              Answer these questions to calculate your CBAC score
+              {t("step3_card_description")}
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
@@ -168,7 +170,7 @@ export default function Step3Page() {
               <div className="flex items-center gap-2">
                 <Cigarette className="w-5 h-5 text-slate-600" />
                 <Label className="text-sm font-medium">
-                  Do you use tobacco?
+                  {t("step3_tobacco_label")}
                 </Label>
               </div>
               <RadioGroup
@@ -177,13 +179,13 @@ export default function Step3Page() {
                 className="space-y-2"
               >
                 {[
-                  { value: "never", label: "Never used", score: 0 },
+                  { value: "never", label: t("step3_tobacco_never"), score: 0 },
                   {
                     value: "past",
-                    label: "Used in past / occasionally",
+                    label: t("step3_tobacco_past"),
                     score: 1,
                   },
-                  { value: "daily", label: "Use daily", score: 2 },
+                  { value: "daily", label: t("step3_tobacco_daily"), score: 2 },
                 ].map((option) => (
                   <label
                     key={option.value}
@@ -209,7 +211,7 @@ export default function Step3Page() {
               <div className="flex items-center gap-2">
                 <Wine className="w-5 h-5 text-slate-600" />
                 <Label className="text-sm font-medium">
-                  Do you consume alcohol daily?
+                  {t("step3_alcohol_label")}
                 </Label>
               </div>
               <RadioGroup
@@ -218,8 +220,8 @@ export default function Step3Page() {
                 className="space-y-2"
               >
                 {[
-                  { value: "no", label: "No", score: 0 },
-                  { value: "yes", label: "Yes", score: 1 },
+                  { value: "no", label: t("step3_alcohol_no"), score: 0 },
+                  { value: "yes", label: t("step3_alcohol_yes"), score: 1 },
                 ].map((option) => (
                   <label
                     key={option.value}
@@ -246,7 +248,7 @@ export default function Step3Page() {
                 <div className="flex items-center gap-2">
                   <Ruler className="w-5 h-5 text-slate-600" />
                   <Label className="text-sm font-medium">
-                    Waist circumference
+                    {t("step3_waist_label")}
                   </Label>
                 </div>
                 <Dialog>
@@ -257,40 +259,29 @@ export default function Step3Page() {
                       className="text-emerald-600 gap-1"
                     >
                       <HelpCircle className="w-4 h-4" />
-                      How to measure
+                      {t("step3_waist_how_to_measure")}
                     </Button>
                   </DialogTrigger>
                   <DialogContent>
                     <DialogHeader>
                       <DialogTitle>
-                        How to measure waist circumference
+                        {t("step3_waist_how_to_measure_title")}
                       </DialogTitle>
                     </DialogHeader>
                     <div className="space-y-4 text-sm text-slate-700">
                       <ol className="list-decimal list-inside space-y-2">
-                        <li>Stand upright and breathe normally</li>
-                        <li>
-                          Find the midpoint between the top of your hip bone and
-                          the bottom of your ribs
-                        </li>
-                        <li>Wrap a measuring tape around this point</li>
-                        <li>The tape should be snug but not tight</li>
-                        <li>
-                          Read the measurement after breathing out normally
-                        </li>
+                        <li>{t("step3_waist_instruction_1")}</li>
+                        <li>{t("step3_waist_instruction_2")}</li>
+                        <li>{t("step3_waist_instruction_3")}</li>
+                        <li>{t("step3_waist_instruction_4")}</li>
+                        <li>{t("step3_waist_instruction_5")}</li>
                       </ol>
                       <div className="bg-slate-50 p-3 rounded-lg">
                         <p className="font-medium mb-2">
-                          Reference thresholds:
+                          {t("step3_waist_reference_title")}
                         </p>
-                        <p>
-                          <strong>Female:</strong> Normal ≤80 cm, Elevated 81-90
-                          cm, High &gt;90 cm
-                        </p>
-                        <p>
-                          <strong>Male:</strong> Normal ≤90 cm, Elevated 91-100
-                          cm, High &gt;100 cm
-                        </p>
+                        <p>{t("step3_waist_reference_female")}</p>
+                        <p>{t("step3_waist_reference_male")}</p>
                       </div>
                     </div>
                   </DialogContent>
@@ -300,7 +291,7 @@ export default function Step3Page() {
               {data.gender === "other" && (
                 <div className="space-y-2">
                   <Label className="text-xs text-slate-600">
-                    Choose reference chart for waist scoring
+                    {t("step3_waist_select_reference")}
                   </Label>
                   <Select
                     value={waistReference || ""}
@@ -309,17 +300,17 @@ export default function Step3Page() {
                     }
                   >
                     <SelectTrigger>
-                      <SelectValue placeholder="Select reference" />
+                      <SelectValue placeholder={t("step3_waist_select_placeholder")} />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="female">
-                        Use female thresholds
+                        {t("step3_waist_use_female")}
                       </SelectItem>
-                      <SelectItem value="male">Use male thresholds</SelectItem>
+                      <SelectItem value="male">{t("step3_waist_use_male")}</SelectItem>
                     </SelectContent>
                   </Select>
                   <p className="text-xs text-slate-500">
-                    We ask this only to calculate the checklist score.
+                    {t("step3_waist_select_note")}
                   </p>
                 </div>
               )}
@@ -328,15 +319,13 @@ export default function Step3Page() {
                 <Input
                   type="number"
                   inputMode="decimal"
-                  placeholder="Enter waist circumference in cm"
+                  placeholder={t("step3_waist_placeholder")}
                   value={waistCircumference}
                   onChange={(e) => setWaistCircumference(e.target.value)}
                 />
                 {waistThreshold && (
                   <p className="text-xs text-slate-500">
-                    Thresholds: Normal ≤{waistThreshold.low} cm, Elevated{" "}
-                    {waistThreshold.low + 1}-{waistThreshold.high} cm, High &gt;
-                    {waistThreshold.high} cm
+                    {t("step3_waist_thresholds", { low: waistThreshold.low.toString(), lowPlus: (waistThreshold.low + 1).toString(), high: waistThreshold.high.toString() })}
                   </p>
                 )}
               </div>
@@ -347,7 +336,7 @@ export default function Step3Page() {
               <div className="flex items-center gap-2">
                 <Users className="w-5 h-5 text-slate-600" />
                 <Label className="text-sm font-medium">
-                  Family history of diabetes, hypertension, or heart disease?
+                  {t("step3_family_history_label")}
                 </Label>
               </div>
               <RadioGroup
@@ -358,8 +347,8 @@ export default function Step3Page() {
                 className="space-y-2"
               >
                 {[
-                  { value: "no", label: "No", score: 0 },
-                  { value: "yes", label: "Yes", score: 2 },
+                  { value: "no", label: t("step3_family_history_no"), score: 0 },
+                  { value: "yes", label: t("step3_family_history_yes"), score: 2 },
                 ].map((option) => (
                   <label
                     key={option.value}
@@ -390,20 +379,20 @@ export default function Step3Page() {
           <CardContent className="pt-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-slate-600">Your CBAC Score</p>
+                <p className="text-sm text-slate-600">{t("step3_score_label")}</p>
                 <p className="text-3xl font-semibold tabular-nums text-slate-900">
                   {currentScore}
                 </p>
               </div>
               <StatusBadge
                 status={isHighRisk ? "elevated" : "normal"}
-                label={isHighRisk ? "Higher risk" : "Lower risk"}
+                label={isHighRisk ? t("step3_score_higher_risk") : t("step3_score_lower_risk")}
               />
             </div>
             <p className="text-xs text-slate-500 mt-2">
               {isHighRisk
-                ? "Score > 4 indicates higher NCD risk. Please consult a doctor for evaluation."
-                : "Score ≤ 4 indicates lower risk. Continue with healthy habits."}
+                ? t("step3_score_high_note")
+                : t("step3_score_low_note")}
             </p>
           </CardContent>
         </Card>
@@ -412,15 +401,10 @@ export default function Step3Page() {
           <Alert className="bg-amber-50 border-amber-200">
             <AlertTriangle className="h-4 w-4 text-amber-600" />
             <AlertTitle className="text-amber-900 font-semibold">
-              Higher risk detected
+              {t("step3_high_risk_alert_title")}
             </AlertTitle>
             <AlertDescription className="text-amber-800">
-              <span>
-                Your score suggests higher risk for diabetes or hypertension. We
-                recommend visiting the nearest{" "}
-                <strong>Janakeeya Arogya Kendram</strong> for further
-                evaluation.
-              </span>
+              {t("step3_high_risk_alert_description")}
             </AlertDescription>
           </Alert>
         )}
@@ -432,14 +416,14 @@ export default function Step3Page() {
           <Link href="/assessment/step-2">
             <Button variant="outline" className="gap-1">
               <ChevronLeft className="w-4 h-4" />
-              Back
+              {t("common_back")}
             </Button>
           </Link>
           <Button
             onClick={handleNext}
             className="gap-1 bg-emerald-600 hover:bg-emerald-700"
           >
-            Next
+            {t("common_next")}
             <ChevronRight className="w-4 h-4" />
           </Button>
         </div>

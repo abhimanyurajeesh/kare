@@ -17,7 +17,9 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { StatusBadge } from "@/components/status-badge";
 import { Footer } from "@/components/footer";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import { cn } from "@/lib/utils";
+import { useI18n } from "@/lib/i18n-context";
 import {
   HeartPulse,
   Heart,
@@ -125,6 +127,7 @@ export default function BPCheckerPage() {
   const [systolic, setSystolic] = useState<string>("");
   const [diastolic, setDiastolic] = useState<string>("");
   const [showResult, setShowResult] = useState(false);
+  const { t } = useI18n();
 
   const isInvalidRange = useMemo(() => {
     const sys = parseInt(systolic);
@@ -176,16 +179,19 @@ export default function BPCheckerPage() {
                 <Heart className="w-4 h-4 text-white" />
               </div>
               <span className="text-lg font-bold tracking-tight text-slate-900">
-                Healthy Life
+                {t("app_name")}
               </span>
             </Link>
-            <Badge
-              variant="secondary"
-              className="bg-rose-100 text-rose-700 border-rose-200"
-            >
-              <HeartPulse className="w-3 h-3 mr-1" />
-              BP Tool
-            </Badge>
+            <div className="flex items-center gap-2">
+              <Badge
+                variant="secondary"
+                className="bg-rose-100 text-rose-700 border-rose-200"
+              >
+                <HeartPulse className="w-3 h-3 mr-1" />
+                {t("tool_bp_badge")}
+              </Badge>
+              <LanguageSwitcher variant="minimal" />
+            </div>
           </div>
         </div>
       </header>
@@ -196,7 +202,7 @@ export default function BPCheckerPage() {
           className="inline-flex items-center text-sm text-slate-600 hover:text-slate-900 mb-6"
         >
           <ChevronLeft className="w-4 h-4 mr-1" />
-          Back to Home
+          {t("common_back_to_home")}
         </Link>
 
         <div className="space-y-6">
@@ -206,10 +212,10 @@ export default function BPCheckerPage() {
               <HeartPulse className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-2xl font-bold tracking-tight text-slate-900 mb-2">
-              Blood Pressure Interpreter
+              {t("tool_bp_title")}
             </h1>
             <p className="text-slate-600">
-              Understand what your BP reading means
+              {t("tool_bp_subtitle")}
             </p>
           </div>
 
@@ -218,21 +224,21 @@ export default function BPCheckerPage() {
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
                 <HeartPulse className="w-5 h-5 text-rose-600" />
-                Enter your BP reading
+                {t("tool_bp_enter_reading")}
               </CardTitle>
               <CardDescription>
-                Enter the numbers shown on your BP monitor
+                {t("tool_bp_card_description")}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="systolic">Systolic (top no.)</Label>
+                  <Label htmlFor="systolic">{t("step2_bp_systolic")}</Label>
                   <Input
                     id="systolic"
                     type="number"
                     inputMode="numeric"
-                    placeholder="e.g., 120"
+                    placeholder={t("step2_bp_systolic_placeholder")}
                     value={systolic}
                     onChange={(e) => {
                       setSystolic(e.target.value);
@@ -243,12 +249,12 @@ export default function BPCheckerPage() {
                   <p className="text-xs text-slate-500 text-center">mmHg</p>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="diastolic">Diastolic (bottom no.)</Label>
+                  <Label htmlFor="diastolic">{t("step2_bp_diastolic")}</Label>
                   <Input
                     id="diastolic"
                     type="number"
                     inputMode="numeric"
-                    placeholder="e.g., 80"
+                    placeholder={t("step2_bp_diastolic_placeholder")}
                     value={diastolic}
                     onChange={(e) => {
                       setDiastolic(e.target.value);
@@ -264,10 +270,7 @@ export default function BPCheckerPage() {
                 <Alert className="bg-amber-50 border-amber-300">
                   <AlertTriangle className="size-4 text-amber-600" />
                   <AlertDescription className="text-amber-800">
-                    The values you entered seem unusually high (Systolic &gt;
-                    250 or Diastolic &gt; 150). Please double-check your BP
-                    monitor reading. If the values are correct, seek immediate
-                    medical attention.
+                    {t("tool_bp_invalid_range")}
                   </AlertDescription>
                 </Alert>
               )}
@@ -278,7 +281,7 @@ export default function BPCheckerPage() {
                   disabled={!result || isInvalidRange}
                   className="flex-1 bg-rose-600 hover:bg-rose-700"
                 >
-                  Check Reading
+                  {t("tool_bp_check_reading")}
                 </Button>
                 {showResult && (
                   <Button variant="outline" onClick={handleReset}>
@@ -302,7 +305,7 @@ export default function BPCheckerPage() {
               <CardContent className="pt-6">
                 <div className="text-center space-y-4">
                   <div>
-                    <p className="text-sm text-slate-600 mb-1">Your Reading</p>
+                    <p className="text-sm text-slate-600 mb-1">{t("tool_bp_your_reading")}</p>
                     <p className="text-4xl font-bold tabular-nums text-slate-900">
                       {systolic}/{diastolic}
                       <span className="text-lg font-normal text-slate-500 ml-2">
@@ -323,19 +326,17 @@ export default function BPCheckerPage() {
                     <Alert className="bg-rose-100 border-rose-300 text-left">
                       <AlertTriangle className="h-5 w-5 text-rose-600" />
                       <AlertTitle className="text-rose-900 font-semibold">
-                        Seek Immediate Medical Attention
+                        {t("tool_bp_crisis_title")}
                       </AlertTitle>
                       <AlertDescription className="text-rose-800">
-                        A reading this high requires emergency care. Please go
-                        to the nearest hospital or call emergency services
-                        immediately.
+                        {t("tool_bp_crisis_description")}
                       </AlertDescription>
                     </Alert>
                   )}
 
                   <div className="text-left bg-white/50 rounded-lg p-4">
                     <p className="text-sm font-medium text-slate-700 mb-2">
-                      Recommendations:
+                      {t("tool_bp_recommendations")}
                     </p>
                     <ul className="space-y-1">
                       {result.tips.map((tip, i) => (
@@ -365,15 +366,15 @@ export default function BPCheckerPage() {
           <Card className="bg-white border-slate-200">
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-medium text-slate-700">
-                Blood Pressure Categories
+                {t("tool_bp_categories")}
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-2 text-sm">
                 <div className="grid grid-cols-3 text-xs text-slate-500 pb-2 border-b">
-                  <span>Category</span>
-                  <span className="text-center">Systolic (mmHg)</span>
-                  <span className="text-center">Diastolic (mmHg)</span>
+                  <span>{t("tool_bp_category")}</span>
+                  <span className="text-center">{t("tool_bp_systolic_header")}</span>
+                  <span className="text-center">{t("tool_bp_diastolic_header")}</span>
                 </div>
                 {BP_CATEGORIES.map((cat) => (
                   <div
@@ -411,12 +412,10 @@ export default function BPCheckerPage() {
           <Alert className="bg-slate-100 border-slate-200">
             <Info className="size-4 text-slate-600" />
             <AlertTitle className="text-slate-800">
-              Tips for accurate readings
+              {t("tool_bp_tips_title")}
             </AlertTitle>
             <AlertDescription className="text-slate-600">
-              Ensure the person has not exercised, had tea/coffee, or used
-              tobacco in the last 30 minutes Person should rest comfortably and
-              quietly for 5 minutes before the reading.
+              {t("tool_bp_tips_description")}
             </AlertDescription>
           </Alert>
 
@@ -427,18 +426,17 @@ export default function BPCheckerPage() {
             <CardContent className="pt-6">
               <div className="text-center space-y-4">
                 <h3 className="text-xl font-semibold">
-                  Want a complete health check?
+                  {t("tool_cta_title")}
                 </h3>
                 <p className="text-emerald-100 text-sm">
-                  Take our full assessment for personalized risk scores and
-                  guidance.
+                  {t("tool_cta_description")}
                 </p>
                 <Link href="/assessment/step-1">
                   <Button
                     variant="secondary"
                     className="bg-white text-emerald-700 hover:bg-emerald-50 gap-2"
                   >
-                    Take Full Assessment
+                    {t("tool_cta_button")}
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 </Link>

@@ -29,38 +29,40 @@ import {
   Info,
 } from "lucide-react";
 import { useAssessment } from "@/lib/assessment-context";
+import { useI18n } from "@/lib/i18n-context";
 import Link from "next/link";
-
-const GENERAL_SYMPTOMS = [
-  {
-    id: "non_healing_ulcer",
-    label: "Non-healing ulcer (wound that doesn't heal for more than 2 weeks)",
-  },
-  { id: "lumps", label: "Lumps or swellings anywhere in the body" },
-  { id: "difficulty_swallowing", label: "Difficulty swallowing" },
-  {
-    id: "voice_change",
-    label: "Change in voice (hoarseness lasting more than 2 weeks)",
-  },
-  { id: "weight_loss", label: "Unexplained weight loss" },
-  { id: "blood_sputum", label: "Blood in sputum (coughed-up mucus)" },
-  { id: "persistent_cough", label: "Persistent cough (more than 2 weeks)" },
-];
-
-const WOMEN_SYMPTOMS = [
-  { id: "breast_lump", label: "Lump in the breast" },
-  {
-    id: "nipple_discharge",
-    label: "Nipple discharge (other than breast milk)",
-  },
-  { id: "breast_shape", label: "Change in breast shape or size" },
-  { id: "postmenopausal_bleeding", label: "Bleeding after menopause" },
-  { id: "bleeding_intercourse", label: "Bleeding after intercourse" },
-];
 
 export default function Step5Page() {
   const router = useRouter();
   const { data, updateData } = useAssessment();
+  const { t } = useI18n();
+
+  const GENERAL_SYMPTOMS = [
+    {
+      id: "non_healing_ulcer",
+      label: t("step5_symptom_non_healing_ulcer"),
+    },
+    { id: "lumps", label: t("step5_symptom_lumps") },
+    { id: "difficulty_swallowing", label: t("step5_symptom_difficulty_swallowing") },
+    {
+      id: "voice_change",
+      label: t("step5_symptom_voice_change"),
+    },
+    { id: "weight_loss", label: t("step5_symptom_weight_loss") },
+    { id: "blood_sputum", label: t("step5_symptom_blood_sputum") },
+    { id: "persistent_cough", label: t("step5_symptom_persistent_cough") },
+  ];
+
+  const WOMEN_SYMPTOMS = [
+    { id: "breast_lump", label: t("step5_symptom_breast_lump") },
+    {
+      id: "nipple_discharge",
+      label: t("step5_symptom_nipple_discharge"),
+    },
+    { id: "breast_shape", label: t("step5_symptom_breast_shape") },
+    { id: "postmenopausal_bleeding", label: t("step5_symptom_postmenopausal_bleeding") },
+    { id: "bleeding_intercourse", label: t("step5_symptom_bleeding_intercourse") },
+  ];
 
   const [generalSymptoms, setGeneralSymptoms] = useState<
     Record<string, boolean>
@@ -100,10 +102,10 @@ export default function Step5Page() {
       <div className="space-y-6">
         <div>
           <h1 className="text-2xl font-bold tracking-tight text-slate-900">
-            Cancer symptom check
+            {t("step5_title")}
           </h1>
           <p className="text-sm text-slate-600 mt-1">
-            Early detection helps. Answer honestly — this is for your awareness.
+            {t("step5_subtitle")}
           </p>
         </div>
 
@@ -111,10 +113,10 @@ export default function Step5Page() {
         <Card className="bg-white border border-slate-200 shadow-sm">
           <CardHeader className="pb-3">
             <CardTitle className="text-base font-semibold">
-              General symptoms
+              {t("step5_general_symptoms_title")}
             </CardTitle>
             <CardDescription>
-              Have you experienced any of these in the past few months?
+              {t("step5_general_symptoms_description")}
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
@@ -147,7 +149,7 @@ export default function Step5Page() {
                     }`}
                   >
                     <RadioGroupItem value="yes" className="sr-only" />
-                    Yes
+                    {t("common_yes")}
                   </label>
                   <label
                     className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md border cursor-pointer text-sm transition-colors ${
@@ -157,7 +159,7 @@ export default function Step5Page() {
                     }`}
                   >
                     <RadioGroupItem value="no" className="sr-only" />
-                    No
+                    {t("common_no")}
                   </label>
                 </RadioGroup>
               </div>
@@ -170,9 +172,9 @@ export default function Step5Page() {
           <Card className="bg-white border border-slate-200 shadow-sm">
             <CardHeader className="pb-3">
               <CardTitle className="text-base font-semibold">
-                Women-specific symptoms
+                {t("step5_women_symptoms_title")}
               </CardTitle>
-              <CardDescription>Additional symptoms to check</CardDescription>
+              <CardDescription>{t("step5_women_symptoms_description")}</CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
               {WOMEN_SYMPTOMS.map((symptom) => (
@@ -204,7 +206,7 @@ export default function Step5Page() {
                       }`}
                     >
                       <RadioGroupItem value="yes" className="sr-only" />
-                      Yes
+                      {t("common_yes")}
                     </label>
                     <label
                       className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md border cursor-pointer text-sm transition-colors ${
@@ -214,7 +216,7 @@ export default function Step5Page() {
                       }`}
                     >
                       <RadioGroupItem value="no" className="sr-only" />
-                      No
+                      {t("common_no")}
                     </label>
                   </RadioGroup>
                 </div>
@@ -228,12 +230,10 @@ export default function Step5Page() {
           <Alert className="bg-rose-50 border-rose-200">
             <AlertTriangle className="h-4 w-4 text-rose-600" />
             <AlertTitle className="text-rose-900 font-semibold">
-              Please consult a doctor
+              {t("step5_result_symptoms_title")}
             </AlertTitle>
             <AlertDescription className="text-rose-800">
-              You reported one or more symptoms that need medical evaluation.
-              Please consult a doctor at the nearest health facility for further
-              evaluation. Early detection can make a significant difference.
+              {t("step5_result_symptoms_description")}
             </AlertDescription>
           </Alert>
         ) : (
@@ -243,11 +243,10 @@ export default function Step5Page() {
                 <CheckCircle2 className="w-5 h-5 text-emerald-600 mt-0.5" />
                 <div>
                   <p className="font-semibold text-emerald-900">
-                    No symptoms reported
+                    {t("step5_result_no_symptoms_title")}
                   </p>
                   <p className="text-sm text-emerald-800 mt-1">
-                    Consider routine screening once every 5 years. If you notice
-                    new symptoms later, consult a health facility promptly.
+                    {t("step5_result_no_symptoms_description")}
                   </p>
                 </div>
               </div>
@@ -266,45 +265,27 @@ export default function Step5Page() {
               <AccordionTrigger className="px-4 py-3 text-sm font-medium text-slate-900 hover:no-underline">
                 <div className="flex items-center gap-2">
                   <Info className="w-4 h-4 text-emerald-600" />
-                  Self-breast examination guide
+                  {t("step5_breast_exam_title")}
                 </div>
               </AccordionTrigger>
               <AccordionContent className="px-4 pb-4 text-sm text-slate-700">
                 <div className="space-y-3">
                   <p className="font-medium">
-                    How to perform a self-breast examination:
+                    {t("step5_breast_exam_how_to")}
                   </p>
                   <ol className="list-decimal list-inside space-y-2">
-                    <li>
-                      Stand in front of a mirror with shoulders straight and
-                      arms on hips
-                    </li>
-                    <li>
-                      Look for any changes in size, shape, or color of breasts
-                    </li>
-                    <li>Raise your arms and look for the same changes</li>
-                    <li>
-                      While lying down, use your right hand to feel your left
-                      breast and vice versa
-                    </li>
-                    <li>
-                      Use firm, smooth touches with finger pads in circular
-                      motions
-                    </li>
-                    <li>
-                      Cover the entire breast from top to bottom, side to side
-                    </li>
-                    <li>
-                      Feel your breasts while standing or sitting, such as in
-                      the shower
-                    </li>
+                    <li>{t("step5_breast_exam_step_1")}</li>
+                    <li>{t("step5_breast_exam_step_2")}</li>
+                    <li>{t("step5_breast_exam_step_3")}</li>
+                    <li>{t("step5_breast_exam_step_4")}</li>
+                    <li>{t("step5_breast_exam_step_5")}</li>
+                    <li>{t("step5_breast_exam_step_6")}</li>
+                    <li>{t("step5_breast_exam_step_7")}</li>
                   </ol>
                   <Alert className="bg-sky-50 border-sky-200 mt-4">
                     <Info className="h-4 w-4 text-sky-600" />
                     <AlertDescription className="text-sky-800 text-sm">
-                      Seek help if you find a new lump, thickening, or any
-                      change. Monthly self-exams help you know what&apos;s
-                      normal for your body.
+                      {t("step5_breast_exam_note")}
                     </AlertDescription>
                   </Alert>
                 </div>
@@ -320,14 +301,14 @@ export default function Step5Page() {
           <Link href="/assessment/step-4">
             <Button variant="outline" className="gap-1">
               <ChevronLeft className="w-4 h-4" />
-              Back
+              {t("common_back")}
             </Button>
           </Link>
           <Button
             onClick={handleNext}
             className="gap-1 bg-emerald-600 hover:bg-emerald-700"
           >
-            View Summary
+            {t("common_view_summary")}
             <ChevronRight className="w-4 h-4" />
           </Button>
         </div>

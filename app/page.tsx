@@ -32,9 +32,12 @@ import {
   Github,
 } from "lucide-react";
 import { useAssessment } from "@/lib/assessment-context";
+import { useI18n } from "@/lib/i18n-context";
+import { LanguageSwitcher } from "@/components/language-switcher";
 
 export default function LandingPage() {
   const { resetAssessment } = useAssessment();
+  const { t } = useI18n();
 
   const handleStartAssessment = () => {
     resetAssessment();
@@ -65,20 +68,26 @@ export default function LandingPage() {
                 href="#tools"
                 className="text-sm text-slate-600 hover:text-slate-900 transition-colors"
               >
-                Tools
+                {t("common_tools")}
               </Link>
               <Link
                 href="#assessment"
                 className="text-sm text-slate-600 hover:text-slate-900 transition-colors"
               >
-                Assessment
+                {t("common_assessment")}
               </Link>
+              <LanguageSwitcher />
               <Link href="/assessment/step-1" onClick={handleStartAssessment}>
                 <Button className="bg-emerald-600 hover:bg-emerald-700">
-                  Start Assessment
+                  {t("common_start_assessment")}
                 </Button>
               </Link>
             </nav>
+
+            {/* Mobile language switcher */}
+            <div className="md:hidden">
+              <LanguageSwitcher variant="minimal" />
+            </div>
           </div>
         </div>
       </header>
@@ -90,16 +99,14 @@ export default function LandingPage() {
           <div className="text-center max-w-3xl mx-auto">
             <Badge className="bg-emerald-100 text-emerald-800 border-emerald-200 mb-6">
               <Sparkles className="w-3 h-3 mr-1" />
-              Free Health Tools
+              {t("hero_badge")}
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 mb-6">
-              Your health journey
-              <span className="block text-emerald-600">starts here</span>
+              {t("hero_title")}
+              <span className="block text-emerald-600">{t("hero_title_highlight")}</span>
             </h1>
             <p className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed">
-              Free tools to understand your health better. Calculate your BMI,
-              assess your health risks, and get personalized guidance — all in
-              one place.
+              {t("hero_description")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/assessment/step-1" onClick={handleStartAssessment}>
@@ -107,7 +114,7 @@ export default function LandingPage() {
                   size="lg"
                   className="bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg shadow-emerald-500/30 gap-2 w-full sm:w-auto"
                 >
-                  Take Full Assessment
+                  {t("hero_cta_primary")}
                   <ArrowRight className="w-5 h-5" />
                 </Button>
               </Link>
@@ -118,7 +125,7 @@ export default function LandingPage() {
                   className="gap-2 w-full sm:w-auto"
                 >
                   <Calculator className="w-5 h-5" />
-                  Quick BMI Check
+                  {t("hero_cta_secondary")}
                 </Button>
               </Link>
             </div>
@@ -129,10 +136,10 @@ export default function LandingPage() {
         <div className="max-w-4xl mx-auto px-4 pb-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { icon: Clock, label: "5 min assessment", value: "Quick" },
-              { icon: Shield, label: "100% private", value: "Secure" },
-              { icon: Calculator, label: "Instant results", value: "Free" },
-              { icon: Users, label: "For everyone", value: "Easy" },
+              { icon: Clock, label: t("stats_quick_desc"), value: t("stats_quick") },
+              { icon: Shield, label: t("stats_secure_desc"), value: t("stats_secure") },
+              { icon: Calculator, label: t("stats_free_desc"), value: t("stats_free") },
+              { icon: Users, label: t("stats_easy_desc"), value: t("stats_easy") },
             ].map((stat, i) => (
               <div
                 key={i}
@@ -154,14 +161,13 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
             <Badge className="bg-slate-100 text-slate-700 border-slate-200 mb-4">
-              Health Tools
+              {t("tools_section_title")}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-4">
-              Quick health calculators
+              {t("tools_title")}
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
-              Use our free tools to get instant insights about your health
-              metrics. No sign-up required, and your data stays on your device.
+              {t("tools_description")}
             </p>
           </div>
 
@@ -174,16 +180,15 @@ export default function LandingPage() {
                     <Calculator className="w-7 h-7 text-white" />
                   </div>
                   <CardTitle className="text-xl text-slate-900">
-                    BMI Calculator
+                    {t("tool_bmi_title")}
                   </CardTitle>
                   <CardDescription className="text-slate-600">
-                    Calculate your Body Mass Index and understand what it means
-                    for your health.
+                    {t("tool_bmi_description")}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center text-emerald-700 font-medium group-hover:gap-2 transition-all">
-                    Calculate now <ChevronRight className="w-4 h-4 ml-1" />
+                    {t("tool_bmi_cta")} <ChevronRight className="w-4 h-4 ml-1" />
                   </div>
                 </CardContent>
               </Card>
@@ -197,16 +202,15 @@ export default function LandingPage() {
                     <HeartPulse className="w-7 h-7 text-white" />
                   </div>
                   <CardTitle className="text-xl text-slate-900">
-                    BP Interpreter
+                    {t("tool_bp_title")}
                   </CardTitle>
                   <CardDescription className="text-slate-600">
-                    Enter your blood pressure reading and understand if
-                    it&apos;s within healthy range.
+                    {t("tool_bp_description")}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center text-rose-700 font-medium group-hover:gap-2 transition-all">
-                    Check now <ChevronRight className="w-4 h-4 ml-1" />
+                    {t("tool_bp_cta")} <ChevronRight className="w-4 h-4 ml-1" />
                   </div>
                 </CardContent>
               </Card>
@@ -220,16 +224,15 @@ export default function LandingPage() {
                     <Droplet className="w-7 h-7 text-white" />
                   </div>
                   <CardTitle className="text-xl text-slate-900">
-                    Blood Sugar Check
+                    {t("tool_sugar_title")}
                   </CardTitle>
                   <CardDescription className="text-slate-600">
-                    Interpret your blood sugar readings (FBS, RBS, PPBS, or
-                    HbA1c) instantly.
+                    {t("tool_sugar_description")}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center text-amber-700 font-medium group-hover:gap-2 transition-all">
-                    Check now <ChevronRight className="w-4 h-4 ml-1" />
+                    {t("tool_sugar_cta")} <ChevronRight className="w-4 h-4 ml-1" />
                   </div>
                 </CardContent>
               </Card>
@@ -242,14 +245,14 @@ export default function LandingPage() {
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center mb-4 shadow-lg shadow-purple-500/30 group-hover:scale-110 transition-transform">
                     <Ribbon className="w-7 h-7 text-white" />
                   </div>
-                  <CardTitle className="text-xl text-slate-900">Cancer Symptom Check</CardTitle>
+                  <CardTitle className="text-xl text-slate-900">{t("tool_cancer_title")}</CardTitle>
                   <CardDescription className="text-slate-600">
-                    Screen for early warning signs. Early detection saves lives.
+                    {t("tool_cancer_description")}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center text-purple-700 font-medium group-hover:gap-2 transition-all">
-                    Check now <ChevronRight className="w-4 h-4 ml-1" />
+                    {t("tool_cancer_cta")} <ChevronRight className="w-4 h-4 ml-1" />
                   </div>
                 </CardContent>
               </Card>
@@ -262,14 +265,14 @@ export default function LandingPage() {
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center mb-4 shadow-lg shadow-sky-500/30 group-hover:scale-110 transition-transform">
                     <IdCard className="w-7 h-7 text-white" />
                   </div>
-                  <CardTitle className="text-xl text-slate-900">Generate UHID</CardTitle>
+                  <CardTitle className="text-xl text-slate-900">{t("tool_uhid_title")}</CardTitle>
                   <CardDescription className="text-slate-600">
-                    Get your Unique Health ID for Kerala&apos;s digital health system.
+                    {t("tool_uhid_description")}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center text-sky-700 font-medium group-hover:gap-2 transition-all">
-                    Get started <ChevronRight className="w-4 h-4 ml-1" />
+                    {t("tool_uhid_cta")} <ChevronRight className="w-4 h-4 ml-1" />
                   </div>
                 </CardContent>
               </Card>
@@ -282,14 +285,14 @@ export default function LandingPage() {
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-500 to-emerald-600 flex items-center justify-center mb-4 shadow-lg shadow-teal-500/30 group-hover:scale-110 transition-transform">
                     <Building2 className="w-7 h-7 text-white" />
                   </div>
-                  <CardTitle className="text-xl text-slate-900">Find JAK</CardTitle>
+                  <CardTitle className="text-xl text-slate-900">{t("tool_jak_title")}</CardTitle>
                   <CardDescription className="text-slate-600">
-                    Locate your nearest Janakeeya Arogya Kendram health centre.
+                    {t("tool_jak_description")}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center text-teal-700 font-medium group-hover:gap-2 transition-all">
-                    Find now <ChevronRight className="w-4 h-4 ml-1" />
+                    {t("tool_jak_cta")} <ChevronRight className="w-4 h-4 ml-1" />
                   </div>
                 </CardContent>
               </Card>
@@ -307,28 +310,25 @@ export default function LandingPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <Badge className="bg-emerald-100 text-emerald-800 border-emerald-200 mb-4">
-                Comprehensive Check
+                {t("assessment_badge")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6">
-                Complete Health Risk Assessment
+                {t("assessment_title")}
               </h2>
               <p className="text-slate-600 mb-8 leading-relaxed">
-                Take our 5-minute comprehensive assessment to understand your
-                health risks and get personalized recommendations. Based on the
-                Community-Based Assessment Checklist (CBAC), this tool screens
-                for non-communicable disease risks and early warning signs.
+                {t("assessment_description")}
               </p>
 
               <div className="space-y-4 mb-8">
                 {[
                   {
                     icon: Calculator,
-                    text: "BMI calculation & interpretation",
+                    text: t("assessment_feature_bmi"),
                   },
-                  { icon: HeartPulse, text: "Blood pressure & sugar tracking" },
-                  { icon: ClipboardCheck, text: "NCD risk scoring (CBAC)" },
-                  { icon: Activity, text: "Lifestyle & activity guidance" },
-                  { icon: Utensils, text: "Personalized diet tips" },
+                  { icon: HeartPulse, text: t("assessment_feature_bp") },
+                  { icon: ClipboardCheck, text: t("assessment_feature_ncd") },
+                  { icon: Activity, text: t("assessment_feature_lifestyle") },
+                  { icon: Utensils, text: t("assessment_feature_diet") },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center">
@@ -344,7 +344,7 @@ export default function LandingPage() {
                   size="lg"
                   className="bg-emerald-600 hover:bg-emerald-700 gap-2"
                 >
-                  Start Full Assessment
+                  {t("assessment_cta")}
                   <ArrowRight className="w-5 h-5" />
                 </Button>
               </Link>
@@ -357,30 +357,30 @@ export default function LandingPage() {
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center mx-auto mb-4 shadow-lg">
                     <ClipboardCheck className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle className="text-2xl">Health Assessment</CardTitle>
-                  <CardDescription>4 steps • 5 minutes • Free</CardDescription>
+                  <CardTitle className="text-2xl">{t("assessment_card_title")}</CardTitle>
+                  <CardDescription>{t("assessment_card_subtitle")}</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {[
                     {
                       step: 1,
-                      title: "Basic Information",
-                      desc: "Age, gender, activity",
+                      title: t("assessment_step1_title"),
+                      desc: t("assessment_step1_desc"),
                     },
                     {
                       step: 2,
-                      title: "Body Measurements",
-                      desc: "Height, weight, vitals",
+                      title: t("assessment_step2_title"),
+                      desc: t("assessment_step2_desc"),
                     },
                     {
                       step: 3,
-                      title: "Risk Factors",
-                      desc: "CBAC questionnaire",
+                      title: t("assessment_step3_title"),
+                      desc: t("assessment_step3_desc"),
                     },
                     {
                       step: 4,
-                      title: "Summary & Guidance",
-                      desc: "Results, tips & advice",
+                      title: t("assessment_step4_title"),
+                      desc: t("assessment_step4_desc"),
                     },
                   ].map((item) => (
                     <div
@@ -410,19 +410,17 @@ export default function LandingPage() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <Shield className="w-12 h-12 text-emerald-200 mx-auto mb-6" />
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            Your privacy is our priority
+            {t("privacy_title")}
           </h2>
           <p className="text-emerald-100 max-w-2xl mx-auto mb-8">
-            We don&apos;t ask for your name, phone number, or any personal
-            identifiers. All calculations happen on your device, and your data
-            never leaves your browser.
+            {t("privacy_description")}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              "No sign-up required",
-              "No data stored",
-              "No tracking",
-              "100% anonymous",
+              t("privacy_badge_no_signup"),
+              t("privacy_badge_no_data"),
+              t("privacy_badge_no_tracking"),
+              t("privacy_badge_anonymous"),
             ].map((item, i) => (
               <Badge
                 key={i}
@@ -448,17 +446,15 @@ export default function LandingPage() {
               </span>
             </div>
             <p className="text-sm text-center md:text-right">
-              This tool provides general health information and is not a medical
-              diagnosis.
+              {t("footer_disclaimer")}
               <br />
-              Always consult a healthcare professional for medical advice.
+              {t("footer_consult_advice")}
             </p>
           </div>
           <Separator className="my-8 bg-slate-800" />
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-sm text-center md:text-left">
-              © {new Date().getFullYear()} Healthy Life Campaign. All tools are
-              free to use.
+              {t("footer_copyright", { year: new Date().getFullYear().toString() })}
             </p>
             <div className="flex items-center gap-4">
               <Link

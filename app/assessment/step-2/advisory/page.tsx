@@ -33,9 +33,11 @@ import {
   getBPStatus,
   getSugarStatus,
 } from "@/lib/assessment-context";
+import { useI18n } from "@/lib/i18n-context";
 
 export default function AdvisoryPage() {
   const router = useRouter();
+  const { t } = useI18n();
   const { data, resetAssessment, calculateBMI, getBMICategory } =
     useAssessment();
 
@@ -87,13 +89,10 @@ It does not provide treatment advice.
         <Alert className="bg-rose-50 border-rose-200">
           <AlertTriangle className="h-5 w-5 text-rose-600" />
           <AlertTitle className="text-lg font-semibold text-rose-900">
-            We recommend speaking to a doctor
+            {t("advisory_title")}
           </AlertTitle>
           <AlertDescription className="text-rose-800 mt-2">
-            Your entered blood pressure or blood sugar is higher than normal.
-            This tool can&apos;t interpret risk scores safely when these are
-            high. Please consult a doctor at your nearest Family Health Centre
-            for further evaluation.
+            {t("advisory_description")}
           </AlertDescription>
         </Alert>
 
@@ -101,10 +100,10 @@ It does not provide treatment advice.
         <Card className="bg-white border border-slate-200">
           <CardHeader className="pb-3">
             <CardTitle className="text-base font-semibold">
-              Your measurements
+              {t("advisory_measurements_title")}
             </CardTitle>
             <CardDescription>
-              What you entered in this assessment
+              {t("advisory_measurements_description")}
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
@@ -114,7 +113,7 @@ It does not provide treatment advice.
 
             {data.bpEntered && (
               <InterpretationRow
-                label="Blood Pressure"
+                label={t("step4_measurements_bp")}
                 value={`${data.systolic}/${data.diastolic}`}
                 unit="mmHg"
                 status={bpStatus}
@@ -123,7 +122,7 @@ It does not provide treatment advice.
 
             {data.sugarEntered && (
               <InterpretationRow
-                label={`Blood Sugar (${data.sugarType?.toUpperCase()})`}
+                label={`${t("step4_measurements_sugar")} (${data.sugarType?.toUpperCase()})`}
                 value={data.sugarValue || 0}
                 unit={data.sugarType === "hba1c" ? "%" : "mg/dL"}
                 status={sugarStatus}
@@ -139,7 +138,7 @@ It does not provide treatment advice.
             size="lg"
           >
             <Building2 className="w-5 h-5" />
-            Consult a doctor at your nearest Family Health Centre
+            {t("advisory_consult_doctor")}
           </Button>
 
           <div className="grid grid-cols-2 gap-3">
@@ -149,11 +148,11 @@ It does not provide treatment advice.
               onClick={handleDownload}
             >
               <Download className="w-4 h-4" />
-              Download my measurements
+              {t("advisory_download_measurements")}
             </Button>
             <Button variant="outline" className="gap-2" onClick={handleRestart}>
               <RotateCcw className="w-4 h-4" />
-              Restart assessment
+              {t("advisory_restart")}
             </Button>
           </div>
         </div>
@@ -163,33 +162,18 @@ It does not provide treatment advice.
           <DialogTrigger asChild>
             <Button variant="ghost" className="w-full text-slate-600 gap-2">
               <HelpCircle className="w-4 h-4" />
-              Why am I seeing this?
+              {t("advisory_why_seeing")}
             </Button>
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>Why we&apos;re showing this advisory</DialogTitle>
+              <DialogTitle>{t("advisory_why_seeing")}</DialogTitle>
             </DialogHeader>
             <div className="space-y-4 text-sm text-slate-700">
-              <p>
-                When blood pressure or blood sugar readings are higher than
-                normal, continuing with risk scoring could give misleading
-                results.
-              </p>
-              <p>
-                <strong>For blood pressure:</strong> Readings of 140/90 mmHg or
-                higher suggest you should speak with a healthcare provider about
-                management and lifestyle changes.
-              </p>
-              <p>
-                <strong>For blood sugar:</strong> Elevated readings may indicate
-                pre-diabetes or diabetes, which requires proper medical
-                evaluation and testing.
-              </p>
-              <p>
-                This is why we recommend consulting a doctor before continuing
-                with the general risk assessment.
-              </p>
+              <p>{t("advisory_why_intro")}</p>
+              <p>{t("advisory_why_bp")}</p>
+              <p>{t("advisory_why_sugar")}</p>
+              <p>{t("advisory_why_conclusion")}</p>
             </div>
           </DialogContent>
         </Dialog>

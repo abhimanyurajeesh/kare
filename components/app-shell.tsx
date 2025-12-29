@@ -14,6 +14,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { Heart, Shield, FileWarning } from "lucide-react";
 import { Footer } from "@/components/footer";
+import { LanguageSwitcher } from "@/components/language-switcher";
+import { useI18n } from "@/lib/i18n-context";
 
 interface AppShellProps {
   children: ReactNode;
@@ -28,6 +30,7 @@ export function AppShell({
   totalSteps = 6,
   showStepper = true,
 }: AppShellProps) {
+  const { t } = useI18n();
   const progress = currentStep > 0 ? (currentStep / totalSteps) * 100 : 0;
 
   return (
@@ -45,7 +48,9 @@ export function AppShell({
               </span>
             </Link>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1">
+              <LanguageSwitcher variant="minimal" />
+
               <Dialog>
                 <DialogTrigger asChild>
                   <Button
@@ -54,32 +59,28 @@ export function AppShell({
                     className="text-slate-600 hover:text-slate-900"
                   >
                     <Shield className="w-4 h-4 mr-1" />
-                    <span className="hidden sm:inline">Privacy</span>
+                    <span className="hidden sm:inline">{t("common_privacy")}</span>
                   </Button>
                 </DialogTrigger>
                 <DialogContent>
                   <DialogHeader>
                     <DialogTitle className="flex items-center gap-2">
                       <Shield className="w-5 h-5 text-emerald-600" />
-                      Privacy
+                      {t("privacy_dialog_title")}
                     </DialogTitle>
                   </DialogHeader>
                   <div className="space-y-4 text-sm text-slate-700">
                     <p>
-                      <strong>What we don&apos;t collect:</strong> Your name,
-                      phone number, email, Aadhaar, address, or any other
-                      personal identifiers.
+                      <strong>{t("privacy_dialog_what_we_dont_collect")}</strong>{" "}
+                      {t("privacy_dialog_what_we_dont_collect_desc")}
                     </p>
                     <p>
-                      <strong>What happens to your answers:</strong> All
-                      calculations happen on your device. Your answers are
-                      stored temporarily in your browser and are cleared when
-                      you restart the assessment.
+                      <strong>{t("privacy_dialog_what_happens")}</strong>{" "}
+                      {t("privacy_dialog_what_happens_desc")}
                     </p>
                     <p>
-                      <strong>PDF downloads:</strong> When you download your
-                      summary, it saves directly to your device. We don&apos;t
-                      see or store it.
+                      <strong>{t("privacy_dialog_pdf")}</strong>{" "}
+                      {t("privacy_dialog_pdf_desc")}
                     </p>
                   </div>
                 </DialogContent>
@@ -93,32 +94,20 @@ export function AppShell({
                     className="text-slate-600 hover:text-slate-900"
                   >
                     <FileWarning className="w-4 h-4 mr-1" />
-                    <span className="hidden sm:inline">Disclaimer</span>
+                    <span className="hidden sm:inline">{t("common_disclaimer")}</span>
                   </Button>
                 </DialogTrigger>
                 <DialogContent>
                   <DialogHeader>
                     <DialogTitle className="flex items-center gap-2">
                       <FileWarning className="w-5 h-5 text-amber-600" />
-                      Important Disclaimer
+                      {t("disclaimer_dialog_title")}
                     </DialogTitle>
                   </DialogHeader>
                   <div className="space-y-4 text-sm text-slate-700">
-                    <p>
-                      This tool provides{" "}
-                      <strong>general health risk information</strong> and is{" "}
-                      <strong>not a medical diagnosis</strong>.
-                    </p>
-                    <p>
-                      It <strong>does not provide treatment advice</strong>. The
-                      results are for awareness and educational purposes only.
-                    </p>
-                    <p>
-                      If you have symptoms, health concerns, or receive a
-                      high-risk result, please <strong>consult a doctor</strong>{" "}
-                      or visit your nearest health facility for proper
-                      evaluation.
-                    </p>
+                    <p>{t("disclaimer_dialog_p1")}</p>
+                    <p>{t("disclaimer_dialog_p2")}</p>
+                    <p>{t("disclaimer_dialog_p3")}</p>
                   </div>
                 </DialogContent>
               </Dialog>
@@ -133,7 +122,7 @@ export function AppShell({
                   variant="secondary"
                   className="bg-slate-100 text-slate-700"
                 >
-                  Step {currentStep} of {totalSteps}
+                  {t("common_step_of", { current: currentStep.toString(), total: totalSteps.toString() })}
                 </Badge>
               </div>
               <Progress value={progress} className="h-1.5" />

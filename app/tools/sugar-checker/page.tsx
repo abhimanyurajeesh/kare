@@ -24,7 +24,9 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { StatusBadge } from "@/components/status-badge";
 import { Footer } from "@/components/footer";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import { cn } from "@/lib/utils";
+import { useI18n } from "@/lib/i18n-context";
 import {
   Droplet,
   Heart,
@@ -205,6 +207,7 @@ export default function SugarCheckerPage() {
   const [testType, setTestType] = useState<SugarType | "">("");
   const [value, setValue] = useState<string>("");
   const [showResult, setShowResult] = useState(false);
+  const { t } = useI18n();
 
   const selectedTest = SUGAR_TESTS.find((t) => t.value === testType);
 
@@ -246,16 +249,19 @@ export default function SugarCheckerPage() {
                 <Heart className="w-4 h-4 text-white" />
               </div>
               <span className="text-lg font-bold tracking-tight text-slate-900">
-                Healthy Life
+                {t("app_name")}
               </span>
             </Link>
-            <Badge
-              variant="secondary"
-              className="bg-amber-100 text-amber-700 border-amber-200"
-            >
-              <Droplet className="w-3 h-3 mr-1" />
-              Sugar Tool
-            </Badge>
+            <div className="flex items-center gap-2">
+              <Badge
+                variant="secondary"
+                className="bg-amber-100 text-amber-700 border-amber-200"
+              >
+                <Droplet className="w-3 h-3 mr-1" />
+                {t("tool_sugar_badge")}
+              </Badge>
+              <LanguageSwitcher variant="minimal" />
+            </div>
           </div>
         </div>
       </header>
@@ -266,7 +272,7 @@ export default function SugarCheckerPage() {
           className="inline-flex items-center text-sm text-slate-600 hover:text-slate-900 mb-6"
         >
           <ChevronLeft className="w-4 h-4 mr-1" />
-          Back to Home
+          {t("common_back_to_home")}
         </Link>
 
         <div className="space-y-6">
@@ -276,10 +282,10 @@ export default function SugarCheckerPage() {
               <Droplet className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-2xl font-bold tracking-tight text-slate-900 mb-2">
-              Blood Sugar Interpreter
+              {t("tool_sugar_title")}
             </h1>
             <p className="text-slate-600">
-              Understand what your blood sugar reading means
+              {t("tool_sugar_subtitle")}
             </p>
           </div>
 
@@ -288,15 +294,15 @@ export default function SugarCheckerPage() {
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
                 <Droplet className="w-5 h-5 text-amber-600" />
-                Enter your reading
+                {t("tool_sugar_enter_reading")}
               </CardTitle>
               <CardDescription>
-                Select the test type and enter your value
+                {t("tool_sugar_card_description")}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="space-y-2">
-                <Label>Test Type</Label>
+                <Label>{t("step2_sugar_test_type")}</Label>
                 <Select
                   value={testType}
                   onValueChange={(v) => {
@@ -305,7 +311,7 @@ export default function SugarCheckerPage() {
                   }}
                 >
                   <SelectTrigger>
-                    <SelectValue placeholder="Select test type" />
+                    <SelectValue placeholder={t("step2_sugar_test_placeholder")} />
                   </SelectTrigger>
                   <SelectContent>
                     {SUGAR_TESTS.map((test) => (
@@ -326,13 +332,13 @@ export default function SugarCheckerPage() {
 
               {testType && (
                 <div className="space-y-2">
-                  <Label htmlFor="value">Value ({selectedTest?.unit})</Label>
+                  <Label htmlFor="value">{t("step2_sugar_value")} ({selectedTest?.unit})</Label>
                   <Input
                     id="value"
                     type="number"
                     inputMode="decimal"
                     placeholder={
-                      testType === "hba1c" ? "e.g., 5.6" : "e.g., 100"
+                      testType === "hba1c" ? t("step2_sugar_value_placeholder_hba1c") : t("step2_sugar_value_placeholder")
                     }
                     value={value}
                     onChange={(e) => {
@@ -345,9 +351,7 @@ export default function SugarCheckerPage() {
                     <Alert className="bg-amber-50 border-amber-200">
                       <AlertTriangle className="size-4 text-amber-600" />
                       <AlertDescription className="text-amber-800 text-sm">
-                        This value seems unusually high. Please double-check
-                        your reading or consult a healthcare provider
-                        immediately.
+                        {t("tool_sugar_value_too_high")}
                       </AlertDescription>
                     </Alert>
                   )}
@@ -360,7 +364,7 @@ export default function SugarCheckerPage() {
                   disabled={!result}
                   className="flex-1 bg-amber-600 hover:bg-amber-700"
                 >
-                  Check Reading
+                  {t("tool_sugar_check_reading")}
                 </Button>
                 {showResult && (
                   <Button variant="outline" onClick={handleReset}>
@@ -386,7 +390,7 @@ export default function SugarCheckerPage() {
                 <div className="text-center space-y-4">
                   <div>
                     <p className="text-sm text-slate-600 mb-1">
-                      Your {selectedTest?.label}
+                      {t("tool_sugar_your_reading")} {selectedTest?.label}
                     </p>
                     <p className="text-4xl font-bold tabular-nums text-slate-900">
                       {value}
@@ -406,7 +410,7 @@ export default function SugarCheckerPage() {
 
                   <div className="text-left bg-white/50 rounded-lg p-4">
                     <p className="text-sm font-medium text-slate-700 mb-2">
-                      Recommendations:
+                      {t("tool_bp_recommendations")}
                     </p>
                     <ul className="space-y-1">
                       {result.tips.map((tip, i) => (
@@ -437,7 +441,7 @@ export default function SugarCheckerPage() {
           <Card className="bg-white border-slate-200">
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-medium text-slate-700">
-                Blood Sugar Reference Ranges
+                {t("tool_sugar_reference_title")}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -482,11 +486,9 @@ export default function SugarCheckerPage() {
           {/* Info Alert */}
           <Alert className="bg-slate-100 border-slate-200">
             <Info className="size-4 text-slate-600" />
-            <AlertTitle className="text-slate-800">Important Note</AlertTitle>
+            <AlertTitle className="text-slate-800">{t("tool_sugar_note_title")}</AlertTitle>
             <AlertDescription className="text-slate-600">
-              A single reading isn&apos;t enough for diagnosis. Diabetes is
-              typically confirmed with two separate tests. Always consult a
-              healthcare provider for proper diagnosis and treatment.
+              {t("tool_sugar_note_description")}
             </AlertDescription>
           </Alert>
 
@@ -497,18 +499,17 @@ export default function SugarCheckerPage() {
             <CardContent className="pt-6">
               <div className="text-center space-y-4">
                 <h3 className="text-xl font-semibold">
-                  Want a complete health check?
+                  {t("tool_cta_title")}
                 </h3>
                 <p className="text-emerald-100 text-sm">
-                  Take our full assessment for personalized risk scores and
-                  guidance.
+                  {t("tool_cta_description")}
                 </p>
                 <Link href="/assessment/step-1">
                   <Button
                     variant="secondary"
                     className="bg-white text-emerald-700 hover:bg-emerald-50 gap-2"
                   >
-                    Take Full Assessment
+                    {t("tool_cta_button")}
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 </Link>

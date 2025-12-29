@@ -17,6 +17,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { StatusBadge, getStatusType } from "@/components/status-badge";
 import { Footer } from "@/components/footer";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import {
   Calculator,
   Heart,
@@ -28,6 +29,7 @@ import {
   RefreshCw,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useI18n } from "@/lib/i18n-context";
 
 const BMI_CATEGORIES = [
   {
@@ -78,6 +80,7 @@ export default function BMICalculatorPage() {
   const [height, setHeight] = useState<string>("");
   const [weight, setWeight] = useState<string>("");
   const [showResult, setShowResult] = useState(false);
+  const { t } = useI18n();
 
   const bmi = useMemo(() => {
     const h = parseFloat(height);
@@ -116,16 +119,19 @@ export default function BMICalculatorPage() {
                 <Heart className="w-4 h-4 text-white" />
               </div>
               <span className="text-lg font-bold tracking-tight text-slate-900">
-                Healthy Life
+                {t("app_name")}
               </span>
             </Link>
-            <Badge
-              variant="secondary"
-              className="bg-emerald-100 text-emerald-700 border-emerald-200"
-            >
-              <Calculator className="size-3 mr-1" />
-              BMI Tool
-            </Badge>
+            <div className="flex items-center gap-2">
+              <Badge
+                variant="secondary"
+                className="bg-emerald-100 text-emerald-700 border-emerald-200"
+              >
+                <Calculator className="size-3 mr-1" />
+                {t("bmi_page_badge")}
+              </Badge>
+              <LanguageSwitcher variant="minimal" />
+            </div>
           </div>
         </div>
       </header>
@@ -136,7 +142,7 @@ export default function BMICalculatorPage() {
           className="inline-flex items-center text-sm text-slate-600 hover:text-slate-900 mb-6"
         >
           <ChevronLeft className="w-4 h-4 mr-1" />
-          Back to Home
+          {t("common_back_to_home")}
         </Link>
 
         <div className="space-y-6">
@@ -146,11 +152,9 @@ export default function BMICalculatorPage() {
               <Calculator className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-2xl font-bold tracking-tight text-slate-900 mb-2">
-              BMI Calculator
+              {t("tool_bmi_title")}
             </h1>
-            <p className="text-slate-600">
-              Calculate your Body Mass Index instantly
-            </p>
+            <p className="text-slate-600">{t("bmi_page_subtitle")}</p>
           </div>
 
           {/* Calculator Card */}
@@ -158,10 +162,10 @@ export default function BMICalculatorPage() {
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
                 <Scale className="w-5 h-5 text-emerald-600" />
-                Enter your measurements
+                {t("bmi_page_input_title")}
               </CardTitle>
               <CardDescription>
-                We&apos;ll calculate your BMI and show what it means
+                {t("bmi_page_input_description")}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -169,13 +173,13 @@ export default function BMICalculatorPage() {
                 <div className="space-y-2">
                   <Label htmlFor="height" className="flex items-center gap-2">
                     <Ruler className="w-4 h-4 text-slate-400" />
-                    Height (cm)
+                    {t("step2_height_label")}
                   </Label>
                   <Input
                     id="height"
                     type="number"
                     inputMode="decimal"
-                    placeholder="e.g., 165"
+                    placeholder={t("step2_height_placeholder")}
                     value={height}
                     onChange={(e) => {
                       setHeight(e.target.value);
@@ -187,13 +191,13 @@ export default function BMICalculatorPage() {
                 <div className="space-y-2">
                   <Label htmlFor="weight" className="flex items-center gap-2">
                     <Scale className="w-4 h-4 text-slate-400" />
-                    Weight (kg)
+                    {t("step2_weight_label")}
                   </Label>
                   <Input
                     id="weight"
                     type="number"
                     inputMode="decimal"
-                    placeholder="e.g., 70"
+                    placeholder={t("step2_weight_placeholder")}
                     value={weight}
                     onChange={(e) => {
                       setWeight(e.target.value);
@@ -210,7 +214,7 @@ export default function BMICalculatorPage() {
                   disabled={!bmi}
                   className="flex-1 bg-emerald-600 hover:bg-emerald-700"
                 >
-                  Calculate BMI
+                  {t("bmi_page_calculate")}
                 </Button>
                 {showResult && (
                   <Button variant="outline" onClick={handleReset}>
@@ -238,7 +242,9 @@ export default function BMICalculatorPage() {
               <CardContent className="pt-6">
                 <div className="text-center space-y-4">
                   <div>
-                    <p className="text-sm text-slate-600 mb-1">Your BMI</p>
+                    <p className="text-sm text-slate-600 mb-1">
+                      {t("bmi_page_your_bmi")}
+                    </p>
                     <p className="text-5xl font-bold tabular-nums text-slate-900">
                       {bmi}
                     </p>
@@ -260,7 +266,7 @@ export default function BMICalculatorPage() {
           <Card className="bg-white border-slate-200">
             <CardHeader>
               <CardTitle className="text-sm font-medium text-slate-700">
-                BMI Categories
+                {t("bmi_page_categories_title")}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -306,12 +312,11 @@ export default function BMICalculatorPage() {
           {/* Info Alert */}
           <Alert className="bg-slate-100 border-slate-200">
             <Info className="h-4 w-4 text-slate-600" />
-            <AlertTitle className="text-slate-800">About BMI</AlertTitle>
+            <AlertTitle className="text-slate-800">
+              {t("bmi_page_about_title")}
+            </AlertTitle>
             <AlertDescription className="text-slate-600">
-              BMI is a screening tool, not a diagnostic measure. It doesn&apos;t
-              account for muscle mass, bone density, or overall body
-              composition. For a complete health assessment, consult a
-              healthcare provider.
+              {t("bmi_page_about_description")}
             </AlertDescription>
           </Alert>
 
@@ -322,18 +327,17 @@ export default function BMICalculatorPage() {
             <CardContent className="pt-6">
               <div className="text-center space-y-4">
                 <h3 className="text-xl font-semibold">
-                  Want a complete health check?
+                  {t("bmi_page_cta_title")}
                 </h3>
                 <p className="text-emerald-100 text-sm">
-                  Take our full assessment for personalized risk scores and
-                  guidance.
+                  {t("bmi_page_cta_description")}
                 </p>
                 <Link href="/assessment/step-1">
                   <Button
                     variant="secondary"
                     className="bg-white text-emerald-700 hover:bg-emerald-50 gap-2"
                   >
-                    Take Full Assessment
+                    {t("common_start_assessment")}
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 </Link>

@@ -53,11 +53,12 @@ import {
   Lightbulb,
   ChevronLeft,
 } from "lucide-react";
-import { 
-  useAssessment, 
-  getBPStatus, 
+import {
+  useAssessment,
+  getBPStatus,
   getSugarStatus,
 } from "@/lib/assessment-context";
+import { useI18n } from "@/lib/i18n-context";
 import { generateHealthPDF } from "@/lib/generate-pdf";
 import { toast } from "sonner";
 import Link from "next/link";
@@ -65,13 +66,14 @@ import Link from "next/link";
 export default function Step4Page() {
   const router = useRouter();
   const [isGenerating, setIsGenerating] = useState(false);
-  const { 
-    data, 
-    resetAssessment, 
-    calculateBMI, 
+  const { t } = useI18n();
+  const {
+    data,
+    resetAssessment,
+    calculateBMI,
     getBMICategory,
     calculateCBACScore,
-    needsLifestyleGuidance
+    needsLifestyleGuidance,
   } = useAssessment();
 
   const bmi = calculateBMI();
@@ -83,30 +85,31 @@ export default function Step4Page() {
 
   const isHighCBACRisk = cbacScore > 4;
   const needsConsultation = isHighCBACRisk;
-  const hasAnyLifestyleTrigger = guidance.tobacco || guidance.alcohol || guidance.activity;
+  const hasAnyLifestyleTrigger =
+    guidance.tobacco || guidance.alcohol || guidance.activity;
 
   // Generate advice based on data
   const keyAdvice = useMemo(() => {
     const advice: string[] = [];
 
     if (isHighCBACRisk) {
-      advice.push("Please visit the nearest Janakeeya Arogya Kendram for NCD risk evaluation.");
+      advice.push(t("step4_advice_visit_jak"));
     }
 
     if (guidance.tobacco) {
-      advice.push("Consider seeking tobacco cessation support; reducing tobacco lowers risk over time.");
+      advice.push(t("step4_advice_tobacco"));
     }
 
     if (guidance.alcohol) {
-      advice.push("Reducing daily alcohol can improve long-term health; consider support services if needed.");
+      advice.push(t("step4_advice_alcohol"));
     }
 
     if (guidance.activity) {
-      advice.push("Aim for at least 150 minutes/week of moderate activity, starting gradually.");
+      advice.push(t("step4_advice_activity"));
     }
 
     return advice;
-  }, [isHighCBACRisk, guidance]);
+  }, [isHighCBACRisk, guidance, t]);
 
   // Diet tips based on BMI
   const dietTips = useMemo(() => {
@@ -115,65 +118,65 @@ export default function Step4Page() {
     switch (bmiCategory.label) {
       case "Underweight":
         return [
-          "Add nutrient-dense meals and snacks",
-          "Include protein sources daily (eggs, dal, milk, fish)",
-          "Eat small, frequent meals"
+          t("step4_diet_underweight_1"),
+          t("step4_diet_underweight_2"),
+          t("step4_diet_underweight_3"),
         ];
       case "Overweight":
       case "Obese":
         return [
-          "Reduce sugary drinks and processed foods",
-          "Fill half your plate with vegetables",
-          "Practice portion control",
-          "Choose whole grains over refined"
+          t("step4_diet_overweight_1"),
+          t("step4_diet_overweight_2"),
+          t("step4_diet_overweight_3"),
+          t("step4_diet_overweight_4"),
         ];
       default:
         return [
-          "Maintain balanced meals with variety",
-          "Include fruits and vegetables daily",
-          "Stay hydrated with water"
+          t("step4_diet_normal_1"),
+          t("step4_diet_normal_2"),
+          t("step4_diet_normal_3"),
         ];
     }
-  }, [bmiCategory]);
+  }, [bmiCategory, t]);
 
   // Sugar-specific tips
   const sugarTips = useMemo(() => {
     if (sugarStatus?.color === "amber" || sugarStatus?.color === "rose") {
       return [
-        "Choose whole grains over refined carbs",
-        "Limit sweets and sugary drinks",
-        "Don't skip meals; prefer steady meal timing",
-        "Consult a doctor for proper testing"
+        t("step4_sugar_tip_1"),
+        t("step4_sugar_tip_2"),
+        t("step4_sugar_tip_3"),
+        t("step4_sugar_tip_4"),
       ];
     }
     return [];
-  }, [sugarStatus]);
+  }, [sugarStatus, t]);
 
   // Activity tips based on level
   const activityTips = useMemo(() => {
     switch (data.activityLevel) {
       case "sedentary":
         return [
-          "Start with 10 minutes/day walking",
-          "Take short breaks from sitting every hour",
-          "Use stairs when possible"
+          t("step4_activity_sedentary_1"),
+          t("step4_activity_sedentary_2"),
+          t("step4_activity_sedentary_3"),
         ];
       case "moderate":
         return [
-          "Add 1-2 longer walks per week",
-          "Try to reach 150 minutes/week",
-          "Include variety (walking, cycling, swimming)"
+          t("step4_activity_moderate_1"),
+          t("step4_activity_moderate_2"),
+          t("step4_activity_moderate_3"),
         ];
       case "adequate":
         return [
-          "Maintain your current routine",
-          "Add strength exercises twice weekly",
-          "Try new activities to stay motivated"
+          t("step4_activity_adequate_1"),
+          t("step4_activity_adequate_2"),
+          t("step4_activity_adequate_3"),
         ];
       default:
         return [];
     }
-  }, [data.activityLevel]);
+  }, [data.activityLevel, t]);
 
   const handleRestart = () => {
     resetAssessment();
@@ -184,8 +187,8 @@ export default function Step4Page() {
     setIsGenerating(true);
     try {
       // Small delay for UX
-      await new Promise(resolve => setTimeout(resolve, 500));
-      
+      await new Promise((resolve) => setTimeout(resolve, 500));
+
       generateHealthPDF({
         data,
         bmi,
@@ -196,13 +199,13 @@ export default function Step4Page() {
         sugarTips,
         activityTips,
       });
-      
-      toast.success("PDF downloaded successfully!", {
-        description: "Check your downloads folder"
+
+      toast.success(t("step4_download_success"), {
+        description: t("step4_download_success_desc"),
       });
     } catch {
-      toast.error("Failed to generate PDF", {
-        description: "Please try again"
+      toast.error(t("step4_download_error"), {
+        description: t("step4_download_error_desc"),
       });
     } finally {
       setIsGenerating(false);
@@ -221,10 +224,12 @@ export default function Step4Page() {
               </div>
               <div>
                 <CardTitle className="text-xl font-bold">
-                  Your Summary & Guidance
+                  {t("step4_title")}
                 </CardTitle>
                 <CardDescription>
-                  Assessment completed on {new Date().toLocaleDateString()}
+                  {t("step4_subtitle_date", {
+                    date: new Date().toLocaleDateString(),
+                  })}
                 </CardDescription>
               </div>
             </div>
@@ -236,13 +241,13 @@ export default function Step4Page() {
           <Alert className="bg-amber-50 border-amber-200">
             <AlertTriangle className="h-5 w-5 text-amber-600" />
             <AlertTitle className="text-amber-900 font-semibold">
-              We recommend consulting a doctor
+              {t("step4_consultation_title")}
             </AlertTitle>
             <AlertDescription className="text-amber-800">
-              <div>Based on your assessment, please visit the nearest <strong>Janakeeya Arogya Kendram</strong> for further evaluation, or contact your ASHA for assistance.</div>
+              <div>{t("step4_consultation_description")}</div>
               <Button className="mt-3 bg-emerald-600 hover:bg-emerald-700 gap-2 w-full">
                 <Building2 className="w-4 h-4" />
-                Find nearby JAK
+                {t("step4_consultation_find_jak")}
               </Button>
             </AlertDescription>
           </Alert>
@@ -253,13 +258,13 @@ export default function Step4Page() {
           <CardHeader className="pb-3">
             <CardTitle className="text-base font-semibold flex items-center gap-2">
               <Scale className="w-5 h-5 text-emerald-600" />
-              Measurements
+              {t("step4_measurements_title")}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
             {bmi && bmiCategory && (
               <InterpretationRow
-                label="BMI"
+                label={t("step4_measurements_bmi")}
                 value={bmi}
                 status={bmiCategory}
               />
@@ -268,32 +273,51 @@ export default function Step4Page() {
             <div className="flex items-center justify-between rounded-lg border border-slate-200 bg-white p-3">
               <div className="flex items-center gap-2">
                 <HeartPulse className="w-4 h-4 text-slate-500" />
-                <span className="text-sm text-slate-600">Blood Pressure</span>
+                <span className="text-sm text-slate-600">
+                  {t("step4_measurements_bp")}
+                </span>
               </div>
               {data.bpEntered ? (
                 <div className="flex items-center gap-2">
-                  <span className="text-sm font-medium">{data.systolic}/{data.diastolic} mmHg</span>
-                  <StatusBadge status={getStatusType(bpStatus.color)} label={bpStatus.label} />
+                  <span className="text-sm font-medium">
+                    {data.systolic}/{data.diastolic} mmHg
+                  </span>
+                  <StatusBadge
+                    status={getStatusType(bpStatus.color)}
+                    label={bpStatus.label}
+                  />
                 </div>
               ) : (
-                <StatusBadge status="muted" label="Not entered" />
+                <StatusBadge
+                  status="muted"
+                  label={t("step4_measurements_not_entered")}
+                />
               )}
             </div>
 
             <div className="flex items-center justify-between rounded-lg border border-slate-200 bg-white p-3">
               <div className="flex items-center gap-2">
                 <Droplet className="w-4 h-4 text-slate-500" />
-                <span className="text-sm text-slate-600">Blood Sugar</span>
+                <span className="text-sm text-slate-600">
+                  {t("step4_measurements_sugar")}
+                </span>
               </div>
               {data.sugarEntered ? (
                 <div className="flex items-center gap-2">
                   <span className="text-sm font-medium">
-                    {data.sugarValue} {data.sugarType === "hba1c" ? "%" : "mg/dL"}
+                    {data.sugarValue}{" "}
+                    {data.sugarType === "hba1c" ? "%" : "mg/dL"}
                   </span>
-                  <StatusBadge status={getStatusType(sugarStatus.color)} label={sugarStatus.label} />
+                  <StatusBadge
+                    status={getStatusType(sugarStatus.color)}
+                    label={sugarStatus.label}
+                  />
                 </div>
               ) : (
-                <StatusBadge status="muted" label="Not entered" />
+                <StatusBadge
+                  status="muted"
+                  label={t("step4_measurements_not_entered")}
+                />
               )}
             </div>
           </CardContent>
@@ -304,20 +328,26 @@ export default function Step4Page() {
           <CardHeader className="pb-3">
             <CardTitle className="text-base font-semibold flex items-center gap-2">
               <ClipboardList className="w-5 h-5 text-emerald-600" />
-              Risk Score
+              {t("step4_risk_score_title")}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
             <div className="flex items-center justify-between rounded-lg border border-slate-200 p-3">
               <div>
-                <p className="text-sm text-slate-600">CBAC Score</p>
+                <p className="text-sm text-slate-600">
+                  {t("step4_cbac_score")}
+                </p>
                 <p className="text-2xl font-semibold tabular-nums">
                   {cbacScore}
                 </p>
               </div>
               <StatusBadge
                 status={isHighCBACRisk ? "elevated" : "normal"}
-                label={isHighCBACRisk ? "Higher risk" : "Lower risk"}
+                label={
+                  isHighCBACRisk
+                    ? t("step3_score_higher_risk")
+                    : t("step3_score_lower_risk")
+                }
               />
             </div>
           </CardContent>
@@ -329,13 +359,16 @@ export default function Step4Page() {
             <CardHeader className="pb-3">
               <CardTitle className="text-base font-semibold flex items-center gap-2">
                 <Stethoscope className="w-5 h-5 text-emerald-600" />
-                Key Advice
+                {t("step4_key_advice_title")}
               </CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2">
                 {keyAdvice.map((advice, index) => (
-                  <li key={index} className="flex items-start gap-2 text-sm text-slate-700">
+                  <li
+                    key={index}
+                    className="flex items-start gap-2 text-sm text-slate-700"
+                  >
                     <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
                     {advice}
                   </li>
@@ -349,9 +382,11 @@ export default function Step4Page() {
         {hasAnyLifestyleTrigger && (
           <Card className="bg-white border border-slate-200">
             <CardHeader className="pb-3">
-              <CardTitle className="text-base font-semibold">Your Focus Areas</CardTitle>
+              <CardTitle className="text-base font-semibold">
+                {t("step4_focus_areas_title")}
+              </CardTitle>
               <CardDescription>
-                Based on your answers, here are areas where small changes can help
+                {t("step4_focus_areas_description")}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -360,19 +395,19 @@ export default function Step4Page() {
                 {guidance.tobacco && (
                   <Badge className="bg-amber-50 text-amber-800 border border-amber-200">
                     <Cigarette className="w-3 h-3 mr-1" />
-                    Tobacco
+                    {t("step4_focus_tobacco")}
                   </Badge>
                 )}
                 {guidance.alcohol && (
                   <Badge className="bg-amber-50 text-amber-800 border border-amber-200">
                     <Wine className="w-3 h-3 mr-1" />
-                    Alcohol
+                    {t("step4_focus_alcohol")}
                   </Badge>
                 )}
                 {guidance.activity && (
                   <Badge className="bg-amber-50 text-amber-800 border border-amber-200">
                     <Activity className="w-3 h-3 mr-1" />
-                    Activity
+                    {t("step4_focus_activity")}
                   </Badge>
                 )}
               </div>
@@ -380,30 +415,35 @@ export default function Step4Page() {
               <Accordion type="multiple" className="space-y-2">
                 {/* Tobacco Guidance */}
                 {guidance.tobacco && (
-                  <AccordionItem value="tobacco" className="border border-slate-200 rounded-lg px-4">
+                  <AccordionItem
+                    value="tobacco"
+                    className="border border-slate-200 rounded-lg px-4"
+                  >
                     <AccordionTrigger className="py-3 hover:no-underline">
                       <div className="flex items-center gap-2">
                         <Cigarette className="w-4 h-4 text-amber-600" />
-                        <span className="text-sm font-medium">Tobacco Cessation Support</span>
+                        <span className="text-sm font-medium">
+                          {t("step4_tobacco_guidance_title")}
+                        </span>
                       </div>
                     </AccordionTrigger>
                     <AccordionContent className="pb-4">
                       <ul className="space-y-2 text-sm text-slate-700">
                         <li className="flex items-start gap-2">
                           <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                          Set a quit date and tell someone you trust
+                          {t("step4_tobacco_tip_1")}
                         </li>
                         <li className="flex items-start gap-2">
                           <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                          Reduce triggers (after meals, stress moments)
+                          {t("step4_tobacco_tip_2")}
                         </li>
                         <li className="flex items-start gap-2">
                           <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                          Keep your hands busy with healthy alternatives
+                          {t("step4_tobacco_tip_3")}
                         </li>
                         <li className="flex items-start gap-2">
                           <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                          Ask at your nearest JAK about quit programs
+                          {t("step4_tobacco_tip_4")}
                         </li>
                       </ul>
                     </AccordionContent>
@@ -412,36 +452,41 @@ export default function Step4Page() {
 
                 {/* Alcohol Guidance */}
                 {guidance.alcohol && (
-                  <AccordionItem value="alcohol" className="border border-slate-200 rounded-lg px-4">
+                  <AccordionItem
+                    value="alcohol"
+                    className="border border-slate-200 rounded-lg px-4"
+                  >
                     <AccordionTrigger className="py-3 hover:no-underline">
                       <div className="flex items-center gap-2">
                         <Wine className="w-4 h-4 text-amber-600" />
-                        <span className="text-sm font-medium">Alcohol Reduction Support</span>
+                        <span className="text-sm font-medium">
+                          {t("step4_alcohol_guidance_title")}
+                        </span>
                       </div>
                     </AccordionTrigger>
                     <AccordionContent className="pb-4">
                       <ul className="space-y-2 text-sm text-slate-700">
                         <li className="flex items-start gap-2">
                           <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                          Track how often you drink each week
+                          {t("step4_alcohol_tip_1")}
                         </li>
                         <li className="flex items-start gap-2">
                           <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                          Plan alcohol-free days and stick to them
+                          {t("step4_alcohol_tip_2")}
                         </li>
                         <li className="flex items-start gap-2">
                           <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                          Choose smaller portions when you do drink
+                          {t("step4_alcohol_tip_3")}
                         </li>
                         <li className="flex items-start gap-2">
                           <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                          Seek de-addiction support if cutting down is difficult
+                          {t("step4_alcohol_tip_4")}
                         </li>
                       </ul>
                       <Alert className="bg-sky-50 border-sky-200 mt-3">
                         <Lightbulb className="h-4 w-4 text-sky-600" />
                         <AlertDescription className="text-sky-800 text-sm">
-                          Professional support is available if you find it difficult to reduce on your own.
+                          {t("step4_alcohol_support_note")}
                         </AlertDescription>
                       </Alert>
                     </AccordionContent>
@@ -458,44 +503,38 @@ export default function Step4Page() {
                       <div className="flex items-center gap-2">
                         <Activity className="w-4 h-4 text-emerald-600" />
                         <span className="text-sm font-medium">
-                          Activity Plan
+                          {t("step4_activity_guidance_title")}
                         </span>
                       </div>
                     </AccordionTrigger>
                     <AccordionContent className="pb-4">
                       <div className="space-y-3">
                         <p className="text-sm font-medium text-slate-900">
-                          Starter plan:
+                          {t("step4_activity_starter_plan")}
                         </p>
                         <div className="space-y-2 text-sm text-slate-700">
                           <div className="flex items-start gap-3 p-3 bg-slate-50 rounded-lg">
                             <Badge variant="outline" className="text-xs">
-                              Week 1
+                              {t("step4_activity_week1")}
                             </Badge>
-                            <span>
-                              10 minutes walking per day, 5 days/week
-                            </span>
+                            <span>{t("step4_activity_week1_plan")}</span>
                           </div>
                           <div className="flex items-start gap-3 p-3 bg-slate-50 rounded-lg">
                             <Badge variant="outline" className="text-xs">
-                              Week 2
+                              {t("step4_activity_week2")}
                             </Badge>
-                            <span>
-                              15 minutes walking per day, 5 days/week
-                            </span>
+                            <span>{t("step4_activity_week2_plan")}</span>
                           </div>
                           <div className="flex items-start gap-3 p-3 bg-slate-50 rounded-lg">
                             <Badge variant="outline" className="text-xs">
-                              Week 3+
+                              {t("step4_activity_week3")}
                             </Badge>
-                            <span>Build toward 150 minutes/week total</span>
+                            <span>{t("step4_activity_week3_plan")}</span>
                           </div>
                         </div>
                         <div className="p-3 bg-emerald-50 rounded-lg">
                           <p className="text-sm text-emerald-800">
-                            <strong>Add strength:</strong> Try simple bodyweight
-                            exercises (squats, wall push-ups) 2 days/week for
-                            added benefit.
+                            {t("step4_activity_strength_tip")}
                           </p>
                         </div>
                       </div>
@@ -516,10 +555,11 @@ export default function Step4Page() {
                   <Heart className="w-5 h-5 text-emerald-700" />
                 </div>
                 <div>
-                  <p className="font-semibold text-emerald-900">You&apos;re on a good track!</p>
+                  <p className="font-semibold text-emerald-900">
+                    {t("step4_good_track_title")}
+                  </p>
                   <p className="text-sm text-emerald-800 mt-1">
-                    Keep up your healthy habits with regular physical activity, balanced diet, 
-                    regular check-ups, and stress management.
+                    {t("step4_good_track_description")}
                   </p>
                 </div>
               </div>
@@ -530,15 +570,22 @@ export default function Step4Page() {
         {/* Diet & Activity Tips */}
         <Card className="bg-white border border-slate-200">
           <CardHeader className="pb-3">
-            <CardTitle className="text-base font-semibold">Personalised Tips</CardTitle>
+            <CardTitle className="text-base font-semibold">
+              {t("step4_personalized_tips_title")}
+            </CardTitle>
           </CardHeader>
           <CardContent className="space-y-2">
             <Accordion type="multiple" className="space-y-2">
-              <AccordionItem value="diet" className="border border-slate-200 rounded-lg px-4">
+              <AccordionItem
+                value="diet"
+                className="border border-slate-200 rounded-lg px-4"
+              >
                 <AccordionTrigger className="py-3 hover:no-underline">
                   <div className="flex items-center gap-2">
                     <Utensils className="w-4 h-4 text-emerald-600" />
-                    <span className="text-sm font-medium">Diet Tips</span>
+                    <span className="text-sm font-medium">
+                      {t("step4_diet_tips")}
+                    </span>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="pb-4">
@@ -552,7 +599,9 @@ export default function Step4Page() {
                   </ul>
                   {sugarTips.length > 0 && (
                     <>
-                      <p className="text-sm font-medium text-slate-700 mt-4 mb-2">For blood sugar:</p>
+                      <p className="text-sm font-medium text-slate-700 mt-4 mb-2">
+                        {t("step4_for_blood_sugar")}
+                      </p>
                       <ul className="space-y-2 text-sm text-slate-700">
                         {sugarTips.map((tip, index) => (
                           <li key={index} className="flex items-start gap-2">
@@ -566,11 +615,16 @@ export default function Step4Page() {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="exercise" className="border border-slate-200 rounded-lg px-4">
+              <AccordionItem
+                value="exercise"
+                className="border border-slate-200 rounded-lg px-4"
+              >
                 <AccordionTrigger className="py-3 hover:no-underline">
                   <div className="flex items-center gap-2">
                     <Activity className="w-4 h-4 text-emerald-600" />
-                    <span className="text-sm font-medium">Activity Tips</span>
+                    <span className="text-sm font-medium">
+                      {t("step4_activity_tips")}
+                    </span>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="pb-4">
@@ -594,59 +648,61 @@ export default function Step4Page() {
         <div className="space-y-3 pt-4">
           <Dialog>
             <DialogTrigger asChild>
-              <Button 
+              <Button
                 size="lg"
                 className="w-full bg-emerald-600 hover:bg-emerald-700 gap-2"
               >
                 <Download className="w-5 h-5" />
-                Download Summary (PDF)
+                {t("step4_download_title")}
               </Button>
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
                 <DialogTitle className="flex items-center gap-2">
                   <FileText className="w-5 h-5 text-emerald-600" />
-                  Download your summary
+                  {t("step4_download_dialog_title")}
                 </DialogTitle>
                 <DialogDescription>
-                  Generate a beautifully formatted PDF with all your assessment results.
+                  {t("step4_download_dialog_description")}
                 </DialogDescription>
               </DialogHeader>
               <div className="py-4 space-y-4">
                 <div className="bg-slate-50 rounded-lg p-4 space-y-2">
-                  <p className="text-sm font-medium text-slate-900">Your PDF will include:</p>
+                  <p className="text-sm font-medium text-slate-900">
+                    {t("step4_download_includes")}
+                  </p>
                   <ul className="text-sm text-slate-600 space-y-1">
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                      Body measurements & BMI
+                      {t("step4_download_includes_1")}
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                      Risk scores & interpretations
+                      {t("step4_download_includes_2")}
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                      Personalised recommendations
+                      {t("step4_download_includes_3")}
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                      Diet & activity guidance
+                      {t("step4_download_includes_4")}
                     </li>
                   </ul>
                 </div>
                 <Alert className="bg-emerald-50 border-emerald-200">
                   <CheckCircle2 className="h-4 w-4 text-emerald-600" />
                   <AlertDescription className="text-emerald-800">
-                    The PDF will be saved on your device only. We don&apos;t store or see it.
+                    {t("step4_download_privacy_note")}
                   </AlertDescription>
                 </Alert>
               </div>
               <DialogFooter>
                 <DialogClose asChild>
-                  <Button variant="outline">Cancel</Button>
+                  <Button variant="outline">{t("common_cancel")}</Button>
                 </DialogClose>
                 <DialogClose asChild>
-                  <Button 
+                  <Button
                     className="bg-emerald-600 hover:bg-emerald-700 gap-2"
                     onClick={handleDownload}
                     disabled={isGenerating}
@@ -654,12 +710,12 @@ export default function Step4Page() {
                     {isGenerating ? (
                       <>
                         <Loader2 className="w-4 h-4 animate-spin" />
-                        Generating...
+                        {t("common_generating")}
                       </>
                     ) : (
                       <>
                         <Download className="w-4 h-4" />
-                        Download PDF
+                        {t("common_download_pdf")}
                       </>
                     )}
                   </Button>
@@ -672,17 +728,17 @@ export default function Step4Page() {
             <Link href="/assessment/step-3" className="flex-1">
               <Button variant="outline" size="lg" className="w-full gap-2">
                 <ChevronLeft className="w-4 h-4" />
-                Back
+                {t("common_back")}
               </Button>
             </Link>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="lg"
               className="flex-1 gap-2"
               onClick={handleRestart}
             >
               <RotateCcw className="w-4 h-4" />
-              Start Over
+              {t("common_start_over")}
             </Button>
           </div>
         </div>

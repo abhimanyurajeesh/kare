@@ -1,18 +1,22 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Github } from "lucide-react";
+import { useI18n } from "@/lib/i18n-context";
 
 export function Footer() {
+  const { t } = useI18n();
+
   return (
     <footer className="border-t border-slate-200 bg-white mt-12">
       <div className="max-w-xl mx-auto px-4 py-6">
         <div className="flex flex-col items-center gap-4">
           {/* Disclaimer text */}
           <p className="text-xs text-slate-500 text-center">
-            This is a health awareness tool. It does not diagnose disease or
-            prescribe treatment.
+            {t("footer_awareness")}
             <br />
-            Healthy Life Campaign © {new Date().getFullYear()}
+            {t("footer_copyright", { year: new Date().getFullYear().toString() })}
           </p>
 
           {/* Logo and GitHub link */}

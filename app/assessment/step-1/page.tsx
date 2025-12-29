@@ -24,11 +24,13 @@ import {
 } from "@/components/ui/tooltip";
 import { ChevronLeft, ChevronRight, Info, AlertCircle } from "lucide-react";
 import { useAssessment, Gender, ActivityLevel } from "@/lib/assessment-context";
+import { useI18n } from "@/lib/i18n-context";
 import Link from "next/link";
 
 export default function Step1Page() {
   const router = useRouter();
   const { data, updateData } = useAssessment();
+  const { t } = useI18n();
 
   const [age, setAge] = useState<string>(data.age?.toString() || "");
   const [gender, setGender] = useState<Gender | null>(data.gender);
@@ -47,11 +49,11 @@ export default function Step1Page() {
     const newErrors: { age?: string } = {};
 
     if (!age) {
-      newErrors.age = "Please enter your age";
+      newErrors.age = t("step1_age_error_required");
     } else {
       const ageNum = parseInt(age);
       if (isNaN(ageNum) || ageNum < 1 || ageNum > 120) {
-        newErrors.age = "Please enter a valid age (1-120)";
+        newErrors.age = t("step1_age_error_invalid");
       }
     }
 
@@ -79,20 +81,20 @@ export default function Step1Page() {
       <div className="space-y-6">
         <div>
           <h1 className="text-2xl font-bold tracking-tight text-slate-900">
-            About you
+            {t("step1_title")}
           </h1>
           <p className="text-sm text-slate-600 mt-1">
-            This helps us tailor your risk score and tips.
+            {t("step1_subtitle")}
           </p>
         </div>
 
         <Card className="bg-white border border-slate-200 shadow-sm">
           <CardHeader>
             <CardTitle className="text-base font-semibold">
-              Basic Information
+              {t("step1_card_title")}
             </CardTitle>
             <CardDescription>
-              All fields help us provide better guidance
+              {t("step1_card_description")}
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
@@ -100,7 +102,7 @@ export default function Step1Page() {
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <Label htmlFor="age" className="text-sm font-medium">
-                  Age (completed years) <span className="text-rose-500">*</span>
+                  {t("step1_age_label")} <span className="text-rose-500">*</span>
                 </Label>
                 <TooltipProvider>
                   <Tooltip>
@@ -108,7 +110,7 @@ export default function Step1Page() {
                       <Info className="w-4 h-4 text-slate-400 cursor-help" />
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p>Enter your age in full years</p>
+                      <p>{t("step1_age_tooltip")}</p>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
@@ -117,7 +119,7 @@ export default function Step1Page() {
                 id="age"
                 type="number"
                 inputMode="numeric"
-                placeholder="e.g., 42"
+                placeholder={t("step1_age_placeholder")}
                 value={age}
                 onChange={(e) => setAge(e.target.value)}
                 className={errors.age ? "border-rose-500" : ""}
@@ -131,7 +133,7 @@ export default function Step1Page() {
                 </p>
               )}
               <p className="text-xs text-slate-500">
-                Enter your age in full years.
+                {t("step1_age_helper")}
               </p>
             </div>
 
@@ -139,24 +141,23 @@ export default function Step1Page() {
               <Alert className="bg-sky-50 border-sky-200">
                 <Info className="h-4 w-4 text-sky-600" />
                 <AlertDescription className="text-sm text-sky-800">
-                  This tool is designed for adults. You can continue, but
-                  results may be less relevant.
+                  {t("step1_underage_alert")}
                 </AlertDescription>
               </Alert>
             )}
 
             {/* Gender */}
             <div className="space-y-3">
-              <Label className="text-sm font-medium">Gender</Label>
+              <Label className="text-sm font-medium">{t("step1_gender_label")}</Label>
               <RadioGroup
                 value={gender || ""}
                 onValueChange={(value) => setGender(value as Gender)}
                 className="space-y-2"
               >
                 {[
-                  { value: "male", label: "Male" },
-                  { value: "female", label: "Female" },
-                  { value: "other", label: "Other" },
+                  { value: "male", label: t("step1_gender_male") },
+                  { value: "female", label: t("step1_gender_female") },
+                  { value: "other", label: t("step1_gender_other") },
                 ].map((option) => (
                   <label
                     key={option.value}
@@ -178,7 +179,7 @@ export default function Step1Page() {
             {/* Activity Level */}
             <div className="space-y-3">
               <Label className="text-sm font-medium">
-                Physical activity level
+                {t("step1_activity_label")}
               </Label>
               <RadioGroup
                 value={activityLevel || ""}
@@ -190,18 +191,18 @@ export default function Step1Page() {
                 {[
                   {
                     value: "sedentary",
-                    label: "Sedentary",
-                    description: "Very little activity",
+                    label: t("step1_activity_sedentary"),
+                    description: t("step1_activity_sedentary_desc"),
                   },
                   {
                     value: "moderate",
-                    label: "Moderate",
-                    description: "Some activity, under 150 minutes/week",
+                    label: t("step1_activity_moderate"),
+                    description: t("step1_activity_moderate_desc"),
                   },
                   {
                     value: "adequate",
-                    label: "Adequate",
-                    description: "150 minutes/week or more",
+                    label: t("step1_activity_adequate"),
+                    description: t("step1_activity_adequate_desc"),
                   },
                 ].map((option) => (
                   <label
@@ -234,7 +235,7 @@ export default function Step1Page() {
             <Link href="/">
               <Button variant="outline" className="gap-1">
                 <ChevronLeft className="w-4 h-4" />
-                Back
+                {t("common_back")}
               </Button>
             </Link>
             <Button
@@ -242,7 +243,7 @@ export default function Step1Page() {
               className="gap-1 bg-emerald-600 hover:bg-emerald-700"
               disabled={!age}
             >
-              Next
+              {t("common_next")}
               <ChevronRight className="w-4 h-4" />
             </Button>
           </CardFooter>

@@ -1,19 +1,28 @@
+"use client";
+
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Info, AlertTriangle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useI18n } from "@/lib/i18n-context";
 
 interface DisclaimerAlertProps {
   variant?: "default" | "warning";
   title?: string;
+  description?: string;
   className?: string;
 }
 
 export function DisclaimerAlert({
   variant = "default",
-  title = "Important",
+  title,
+  description,
   className,
 }: DisclaimerAlertProps) {
+  const { t } = useI18n();
   const isWarning = variant === "warning";
+
+  const displayTitle = title ?? t("disclaimer_alert_title");
+  const displayDescription = description ?? t("disclaimer_alert_description");
 
   return (
     <Alert
@@ -29,11 +38,9 @@ export function DisclaimerAlert({
       ) : (
         <Info className="h-4 w-4 text-slate-600" />
       )}
-      <AlertTitle className="font-semibold">{title}</AlertTitle>
+      <AlertTitle className="font-semibold">{displayTitle}</AlertTitle>
       <AlertDescription className="text-sm">
-        This tool provides general risk information and is not a diagnosis. It
-        does not provide treatment advice. If you have symptoms or concerns,
-        consult a doctor or visit your nearest health facility.
+        {displayDescription}
       </AlertDescription>
     </Alert>
   );
