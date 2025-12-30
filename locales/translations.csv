@@ -1,0 +1,671 @@
+key,en,ml
+app_name,Healthy Life,ഹെൽത്തി ലൈഫ്
+app_tagline,Health & Wellness Tools,ആരോഗ്യ-ക്ഷേമ ഉപകരണങ്ങൾ
+common_back_to_home,Back to Home,ഹോമിലേക്ക് മടങ്ങുക
+common_back,Back,പിന്നിലേക്ക്
+common_next,Next,അടുത്തത്
+common_cancel,Cancel,റദ്ദാക്കുക
+common_yes,Yes,അതെ
+common_no,No,അല്ല
+common_optional,Optional,ഓപ്ഷണൽ
+common_search,Search,തിരയുക
+common_loading,Loading...,ലോഡ് ചെയ്യുന്നു...
+common_generating,Generating...,സൃഷ്ടിക്കുന്നു...
+common_view_summary,View Summary,സംഗ്രഹം കാണുക
+common_start_over,Start Over,വീണ്ടും ആരംഭിക്കുക
+common_download_pdf,Download PDF,PDF ഡൗൺലോഡ്
+common_step_of,Step {{current}} of {{total}},ഘട്ടം {{current}} / {{total}}
+common_tools,Tools,ഉപകരണങ്ങൾ
+common_assessment,Assessment,വിലയിരുത്തൽ
+common_privacy,Privacy,സ്വകാര്യത
+common_disclaimer,Disclaimer,നിരാകരണം
+common_start_assessment,Start Assessment,വിലയിരുത്തൽ ആരംഭിക്കുക
+hero_badge,Eat well · Act well · Sleep well,നന്നായി കഴിക്കുക · സജീവമായിരിക്കുക · നന്നായി ഉറങ്ങുക
+hero_title,Care well,നന്നായി പരിപാലിക്കുക
+hero_title_highlight,starts here,ഇവിടെ ആരംഭിക്കുന്നു
+hero_description,"Free tools to understand your health better. Calculate your BMI, assess your health risks, and get personalized guidance — all in one place.","നിങ്ങളുടെ ആരോഗ്യം നന്നായി മനസ്സിലാക്കാൻ സൗജന്യ ഉപകരണങ്ങൾ. BMI കണക്കാക്കുക, ആരോഗ്യ അപകടസാധ്യതകൾ വിലയിരുത്തുക, വ്യക്തിഗത മാർഗ്ഗനിർദ്ദേശം നേടുക."
+hero_cta_primary,Take Full Assessment,പൂർണ്ണ വിലയിരുത്തൽ
+hero_cta_secondary,Explore Tools,ഉപകരണങ്ങൾ കാണുക
+stats_quick,Quick,വേഗത്തിൽ
+stats_quick_desc,5 min assessment,5 മിനിറ്റ് വിലയിരുത്തൽ
+stats_secure,Secure,സുരക്ഷിതം
+stats_secure_desc,100% private,100% സ്വകാര്യം
+stats_free,Free,സൗജന്യം
+stats_free_desc,Instant results,തൽക്ഷണ ഫലങ്ങൾ
+stats_easy,Easy,എളുപ്പം
+stats_easy_desc,For everyone,എല്ലാവർക്കും
+tools_section_title,Health Tools,ആരോഗ്യ ഉപകരണങ്ങൾ
+tools_title,Quick health calculators,വേഗത്തിലുള്ള ആരോഗ്യ കാൽക്കുലേറ്ററുകൾ
+tools_description,"Use our free tools to get instant insights about your health metrics. No sign-up required, and your data stays on your device.",നിങ്ങളുടെ ആരോഗ്യ മെട്രിക്സിനെക്കുറിച്ച് തൽക്ഷണ ഉൾക്കാഴ്ചകൾ നേടാൻ സൗജന്യ ഉപകരണങ്ങൾ ഉപയോഗിക്കുക.
+tool_bmi_title,BMI Calculator,BMI കാൽക്കുലേറ്റർ
+tool_bmi_description,Calculate your Body Mass Index and understand what it means for your health.,"നിങ്ങളുടെ ബോഡി മാസ് ഇൻഡക്സ് കണക്കാക്കുക, അതിന്റെ അർത്ഥം മനസ്സിലാക്കുക."
+tool_bmi_cta,Calculate now,ഇപ്പോൾ കണക്കാക്കുക
+tool_bp_title,BP Interpreter,BP വ്യാഖ്യാതാവ്
+tool_bp_description,Enter your blood pressure reading and understand if it's within healthy range.,നിങ്ങളുടെ രക്തസമ്മർദ്ദ റീഡിംഗ് നൽകി അത് ആരോഗ്യകരമായ പരിധിക്കുള്ളിലാണോ മനസ്സിലാക്കുക.
+tool_bp_cta,Check now,ഇപ്പോൾ പരിശോധിക്കുക
+tool_bp_badge,BP Tool,BP ടൂൾ
+tool_bp_subtitle,Understand what your BP reading means,നിങ്ങളുടെ BP റീഡിംഗ് എന്താണ് അർത്ഥമാക്കുന്നതെന്ന് മനസ്സിലാക്കുക
+tool_bp_enter_reading,Enter your BP reading,നിങ്ങളുടെ BP റീഡിംഗ് നൽകുക
+tool_bp_card_description,Enter the numbers shown on your BP monitor,BP മോണിറ്ററിൽ കാണിക്കുന്ന നമ്പറുകൾ നൽകുക
+tool_bp_your_reading,Your Reading,നിങ്ങളുടെ റീഡിംഗ്
+tool_bp_crisis_title,Seek Immediate Medical Attention,ഉടനടി വൈദ്യസഹായം തേടുക
+tool_bp_crisis_description,A reading this high requires emergency care. Please go to the nearest hospital or call emergency services immediately.,ഇത്രയും ഉയർന്ന റീഡിംഗിന് അടിയന്തര പരിചരണം ആവശ്യമാണ്. ദയവായി അടുത്തുള്ള ആശുപത്രിയിലേക്ക് പോകുക അല്ലെങ്കിൽ എമർജൻസി സേവനങ്ങളെ വിളിക്കുക.
+tool_bp_recommendations,Recommendations:,ശുപാർശകൾ:
+tool_bp_invalid_range,The values you entered seem unusually high. Please double-check your reading.,നൽകിയ മൂല്യങ്ങൾ അസാധാരണമായി ഉയർന്നതായി തോന്നുന്നു. ദയവായി റീഡിംഗ് വീണ്ടും പരിശോധിക്കുക.
+tool_bp_check_reading,Check Reading,റീഡിംഗ് പരിശോധിക്കുക
+tool_bp_categories,Blood Pressure Categories,രക്തസമ്മർദ്ദ വിഭാഗങ്ങൾ
+tool_bp_category,Category,വിഭാഗം
+tool_bp_systolic_header,Systolic,സിസ്റ്റോളിക്
+tool_bp_diastolic_header,Diastolic,ഡയസ്റ്റോളിക്
+tool_bp_tips_title,Tips for accurate readings,കൃത്യമായ റീഡിംഗുകൾക്കുള്ള നുറുങ്ങുകൾ
+tool_bp_tips_description,"Ensure the person has not exercised, had tea/coffee, or used tobacco in the last 30 minutes. Rest comfortably and quietly for 5 minutes before the reading.","കഴിഞ്ഞ 30 മിനിറ്റിൽ വ്യായാമം, ചായ/കാപ്പി, പുകയില ഉപയോഗം ഇല്ലെന്ന് ഉറപ്പാക്കുക. റീഡിംഗിന് മുമ്പ് 5 മിനിറ്റ് വിശ്രമിക്കുക."
+tool_sugar_title,Blood Sugar Check,രക്തത്തിലെ പഞ്ചസാര പരിശോധന
+tool_sugar_description,"Interpret your blood sugar readings (FBS, RBS, PPBS, or HbA1c) instantly.",നിങ്ങളുടെ രക്തത്തിലെ പഞ്ചസാര റീഡിംഗുകൾ തൽക്ഷണം വ്യാഖ്യാനിക്കുക.
+tool_sugar_cta,Check now,ഇപ്പോൾ പരിശോധിക്കുക
+tool_sugar_badge,Sugar Tool,ഷുഗർ ടൂൾ
+tool_sugar_subtitle,Understand what your blood sugar reading means,നിങ്ങളുടെ രക്തത്തിലെ പഞ്ചസാര റീഡിംഗ് എന്താണ് അർത്ഥമാക്കുന്നതെന്ന് മനസ്സിലാക്കുക
+tool_sugar_enter_reading,Enter your reading,നിങ്ങളുടെ റീഡിംഗ് നൽകുക
+tool_sugar_card_description,Select the test type and enter your value,ടെസ്റ്റ് തരം തിരഞ്ഞെടുത്ത് മൂല്യം നൽകുക
+tool_sugar_your_reading,Your,നിങ്ങളുടെ
+tool_sugar_value_too_high,This value seems unusually high. Please double-check your reading or consult a healthcare provider immediately.,ഈ മൂല്യം അസാധാരണമായി ഉയർന്നതായി തോന്നുന്നു. റീഡിംഗ് പരിശോധിക്കുക അല്ലെങ്കിൽ ഉടൻ ഡോക്ടറെ സമീപിക്കുക.
+tool_sugar_check_reading,Check Reading,റീഡിംഗ് പരിശോധിക്കുക
+tool_sugar_reference_title,Blood Sugar Reference Ranges,രക്തത്തിലെ പഞ്ചസാര റഫറൻസ് ശ്രേണികൾ
+tool_sugar_note_title,Important Note,പ്രധാന കുറിപ്പ്
+tool_sugar_note_description,A single reading isn't enough for diagnosis. Diabetes is typically confirmed with two separate tests. Always consult a healthcare provider for proper diagnosis and treatment.,ഒരു റീഡിംഗ് മാത്രം രോഗനിർണയത്തിന് പര്യാപ്തമല്ല. പ്രമേഹം സാധാരണയായി രണ്ട് പ്രത്യേക ടെസ്റ്റുകൾ ഉപയോഗിച്ച് സ്ഥിരീകരിക്കുന്നു. ശരിയായ രോഗനിർണയത്തിനും ചികിത്സയ്ക്കും എല്ലായ്പ്പോഴും ഒരു ആരോഗ്യ ദാതാവിനെ സമീപിക്കുക.
+tool_cta_title,Want a complete health check?,സമ്പൂർണ്ണ ആരോഗ്യ പരിശോധന വേണോ?
+tool_cta_description,Take our full assessment for personalized risk scores and guidance.,വ്യക്തിഗത റിസ്ക് സ്കോറുകൾക്കും മാർഗ്ഗനിർദ്ദേശത്തിനും പൂർണ്ണ വിലയിരുത്തൽ എടുക്കുക.
+tool_cta_button,Start Assessment,വിലയിരുത്തൽ ആരംഭിക്കുക
+tool_cancer_title,Cancer Symptom Check,കാൻസർ ലക്ഷണ പരിശോധന
+tool_cancer_description,Screen for early warning signs. Early detection saves lives.,നേരത്തെയുള്ള രോഗലക്ഷണങ്ങൾ തിരിച്ചറിയാൻ പരിശോധിക്കുക. നേരത്തെ കണ്ടെത്തുന്നത് ജീവൻ രക്ഷിക്കാൻ സഹായിക്കും.
+tool_cancer_cta,Check now,ഇപ്പോൾ പരിശോധിക്കുക
+tool_cancer_badge,Screening Tool,സ്ക്രീനിംഗ് ടൂൾ
+tool_cancer_subtitle,Early detection saves lives. Answer honestly — this is for your awareness.,നേരത്തെ കണ്ടെത്തുന്നത് ജീവൻ രക്ഷിക്കാൻ സഹായിക്കും. സത്യസന്ധമായി ഉത്തരം നൽകുക — ഇത് നിങ്ങളുടെ അറിവിലേക്കാണ്.
+tool_cancer_gender_title,"First, tell us your gender","ആദ്യം, നിങ്ങളുടെ ലിംഗം പറയുക"
+tool_cancer_gender_description,This helps us ask the right questions,ശരിയായ ചോദ്യങ്ങൾ ചോദിക്കാൻ ഇത് സഹായിക്കുന്നു
+tool_cancer_general_symptoms,General symptoms,പൊതു ലക്ഷണങ്ങൾ
+tool_cancer_symptoms_description,Have you experienced any of these in the past few months?,കഴിഞ്ഞ കുറച്ച് മാസങ്ങളിൽ ഇവയിലേതെങ്കിലും അനുഭവിച്ചിട്ടുണ്ടോ?
+tool_cancer_women_symptoms,Women-specific symptoms,സ്ത്രീകൾക്ക് പ്രത്യേകമായ ലക്ഷണങ്ങൾ
+tool_cancer_women_symptoms_description,Additional symptoms to check,പരിശോധിക്കേണ്ട അധിക ലക്ഷണങ്ങൾ
+tool_cancer_check_symptoms,Check Symptoms,ലക്ഷണങ്ങൾ പരിശോധിക്കുക
+tool_cancer_consult_title,Please consult a doctor,ഡോക്ടറെ സമീപിക്കുക
+tool_cancer_consult_description,You reported one or more symptoms that need medical evaluation. Please consult a doctor at the nearest health facility for further evaluation. Early detection can make a significant difference.,വൈദ്യപരിശോധന ആവശ്യമായ ഒന്നോ അതിലധികമോ ലക്ഷണങ്ങൾ നിങ്ങൾ റിപ്പോർട്ട് ചെയ്തിട്ടുണ്ട്. കൂടുതൽ പരിശോധനയ്ക്കായി അടുത്തുള്ള ആരോഗ്യ കേന്ദ്രത്തിലെ ഡോക്ടറെ കാണുക. നേരത്തെ കണ്ടെത്തുന്നത് വലിയ വ്യത്യാസം ഉണ്ടാക്കും.
+tool_cancer_find_facility,Find nearby health facility,അടുത്തുള്ള ആരോഗ്യ കേന്ദ്രം കണ്ടെത്തുക
+tool_cancer_no_symptoms_title,No symptoms reported,ലക്ഷണങ്ങൾ റിപ്പോർട്ട് ചെയ്തിട്ടില്ല
+tool_cancer_no_symptoms_description,"Consider routine screening once every 5 years. If you notice new symptoms later, consult a health facility promptly.","5 വർഷത്തിലൊരിക്കൽ പതിവ് പരിശോധന നടത്തുക. പിന്നീട് പുതിയ ലക്ഷണങ്ങൾ ശ്രദ്ധയിൽപ്പെട്ടാൽ, ഉടൻ ആരോഗ്യ കേന്ദ്രം സന്ദർശിക്കുക."
+tool_cancer_breast_exam_title,Self-breast examination guide,സ്വയം മാറിട പരിശോധന ഗൈഡ്
+tool_cancer_breast_exam_subtitle,How to perform a self-breast examination:,സ്വയം മാറിട പരിശോധന എങ്ങനെ നടത്താം:
+tool_cancer_breast_exam_step1,Stand in front of a mirror with shoulders straight and arms on hips,തോളുകൾ നേരെയും കൈകൾ ഇടുപ്പിലും വച്ച് കണ്ണാടിക്ക് മുന്നിൽ നിൽക്കുക
+tool_cancer_breast_exam_step2,"Look for any changes in size, shape, or color of breasts","മാറിടങ്ങളുടെ വലുപ്പം, ആകൃതി, നിറം എന്നിവയിൽ മാറ്റങ്ങൾ നോക്കുക"
+tool_cancer_breast_exam_step3,Raise your arms and look for the same changes,കൈകൾ ഉയർത്തി അതേ മാറ്റങ്ങൾ നോക്കുക
+tool_cancer_breast_exam_step4,"While lying down, use your right hand to feel your left breast and vice versa","കിടക്കുമ്പോൾ, ഇടത് മാറിടം അനുഭവിക്കാൻ വലത് കൈ ഉപയോഗിക്കുക, തിരിച്ചും"
+tool_cancer_breast_exam_step5,"Use firm, smooth touches with finger pads in circular motions","വിരൽത്തുമ്പുകൾ ഉപയോഗിച്ച് വൃത്താകൃതിയിൽ ഉറച്ച, മിനുസമായ സ്പർശനങ്ങൾ ഉപയോഗിക്കുക"
+tool_cancer_breast_exam_step6,"Cover the entire breast from top to bottom, side to side","മുകളിൽ നിന്ന് താഴേക്ക്, വശത്തുനിന്ന് വശത്തേക്ക് മുഴുവൻ മാറിടവും മൂടുക"
+tool_cancer_breast_exam_step7,"Feel your breasts while standing or sitting, such as in the shower",ഷവറിൽ എന്നപോലെ നിൽക്കുമ്പോഴോ ഇരിക്കുമ്പോഴോ മാറിടങ്ങൾ അനുഭവിക്കുക
+tool_cancer_breast_exam_note,"Seek help if you find a new lump, thickening, or any change. Monthly self-exams help you know what's normal for your body.","പുതിയ മുഴ, കട്ടിയാകൽ, അല്ലെങ്കിൽ ഏതെങ്കിലും മാറ്റം കണ്ടെത്തിയാൽ സഹായം തേടുക. പ്രതിമാസ സ്വയം പരിശോധനകൾ നിങ്ങളുടെ ശരീരത്തിന് എന്താണ് സാധാരണ എന്ന് അറിയാൻ സഹായിക്കുന്നു."
+tool_cancer_about_title,About this screening,ഈ സ്ക്രീനിംഗിനെക്കുറിച്ച്
+tool_cancer_about_description,This tool helps identify potential warning signs that may need medical attention. It is not a diagnosis. Many symptoms can have causes other than cancer. Only a healthcare professional can provide a proper diagnosis.,വൈദ്യസഹായം ആവശ്യമായേക്കാവുന്ന ലക്ഷണങ്ങൾ തിരിച്ചറിയാൻ ഈ ഉപകരണം സഹായിക്കുന്നു. ഇത് രോഗനിർണയമല്ല. പല ലക്ഷണങ്ങൾക്കും കാൻസർ അല്ലാത്ത കാരണങ്ങളുണ്ടാകാം. ഒരു ആരോഗ്യ വിദഗ്ദ്ധന് മാത്രമേ കൃത്യമായ രോഗനിർണയം നടത്താൻ കഴിയൂ.
+tool_cancer_cta_description,Take our full assessment for personalized risk scores and guidance.,വ്യക്തിഗത റിസ്ക് സ്കോറുകൾക്കും മാർഗ്ഗനിർദ്ദേശത്തിനും പൂർണ്ണ വിലയിരുത്തൽ എടുക്കുക.
+tool_uhid_title,Generate UHID,UHID സൃഷ്ടിക്കുക
+tool_uhid_description,Get your Unique Health ID for Kerala's digital health system.,കേരളത്തിന്റെ ഡിജിറ്റൽ ആരോഗ്യ സംവിധാനത്തിനായി യുണീക് ഹെൽത്ത് ID നേടുക.
+tool_uhid_cta,Get started,ആരംഭിക്കുക
+tool_uhid_badge,UHID Tool,UHID ടൂൾ
+tool_uhid_subtitle,Your Unique Health Identifier for Kerala's digital health ecosystem,കേരളത്തിന്റെ ഡിജിറ്റൽ ആരോഗ്യ ആവാസവ്യവസ്ഥയ്ക്കായി യുണീക് ഹെൽത്ത് ഐഡന്റിഫയർ
+tool_uhid_what_is_title,What is UHID?,UHID എന്താണ്?
+tool_uhid_what_is_description_1,UHID (Unique Health Identifier) is a unique identification number assigned to every citizen under Kerala's State Digital Health Mission. It serves as your digital health identity across all government healthcare facilities in Kerala.,UHID (യുണീക് ഹെൽത്ത് ഐഡന്റിഫയർ) കേരളത്തിന്റെ സ്റ്റേറ്റ് ഡിജിറ്റൽ ഹെൽത്ത് മിഷന്റെ കീഴിൽ ഓരോ പൗരനും നൽകുന്ന ഒരു അദ്വിതീയ തിരിച്ചറിയൽ നമ്പറാണ്. കേരളത്തിലെ എല്ലാ സർക്കാർ ആരോഗ്യ കേന്ദ്രങ്ങളിലും നിങ്ങളുടെ ഡിജിറ്റൽ ആരോഗ്യ ഐഡന്റിറ്റിയായി ഇത് പ്രവർത്തിക്കുന്നു.
+tool_uhid_what_is_description_2,"With UHID, all your health records from government hospitals, PHCs, and health centers are linked together, making healthcare delivery smoother and more efficient.","UHID ഉപയോഗിച്ച്, സർക്കാർ ആശുപത്രികൾ, PHC-കൾ, ആരോഗ്യ കേന്ദ്രങ്ങൾ എന്നിവയിൽ നിന്നുള്ള നിങ്ങളുടെ എല്ലാ ആരോഗ്യ രേഖകളും ഒരുമിച്ച് ലിങ്ക് ചെയ്യപ്പെടുന്നു, ആരോഗ്യ സേവന വിതരണം സുഗമവും കാര്യക്ഷമവുമാക്കുന്നു."
+tool_uhid_benefits_title,Benefits of UHID,UHID-ന്റെ ആനുകൂല്യങ്ങൾ
+tool_uhid_benefit_1,Access all your medical records in one place,എല്ലാ മെഡിക്കൽ രേഖകളും ഒരിടത്ത് ആക്സസ് ചെയ്യുക
+tool_uhid_benefit_2,Seamless care across Kerala's government hospitals,കേരളത്തിലെ സർക്കാർ ആശുപത്രികളിലുടനീളം സുഗമമായ പരിചരണം
+tool_uhid_benefit_3,Secure and private health data storage,സുരക്ഷിതവും സ്വകാര്യവുമായ ആരോഗ്യ ഡാറ്റ സംഭരണം
+tool_uhid_benefit_4,Easy access through mobile and web portal,"മൊബൈൽ, വെബ് പോർട്ടൽ വഴി എളുപ്പത്തിൽ ആക്സസ്"
+tool_uhid_benefit_5,Faster registration at healthcare facilities,ആരോഗ്യ കേന്ദ്രങ്ങളിൽ വേഗത്തിലുള്ള രജിസ്ട്രേഷൻ
+tool_uhid_how_to_title,How to Register,എങ്ങനെ രജിസ്റ്റർ ചെയ്യാം
+tool_uhid_how_to_description,You'll need your Aadhaar number linked with a mobile number,മൊബൈൽ നമ്പറുമായി ലിങ്ക് ചെയ്ത നിങ്ങളുടെ ആധാർ നമ്പർ ആവശ്യമാണ്
+tool_uhid_step_1,Click the button below to visit the eHealth Kerala portal,eHealth Kerala പോർട്ടൽ സന്ദർശിക്കാൻ താഴെയുള്ള ബട്ടൺ ക്ലിക്ക് ചെയ്യുക
+tool_uhid_step_2,Select 'Create UHID / Link Mobile Number with UHID','UHID സൃഷ്ടിക്കുക / മൊബൈൽ നമ്പർ ലിങ്ക് ചെയ്യുക' തിരഞ്ഞെടുക്കുക
+tool_uhid_step_3,Enter your Aadhaar number,നിങ്ങളുടെ ആധാർ നമ്പർ നൽകുക
+tool_uhid_step_4,Verify using OTP sent to your Aadhaar-linked mobile,ആധാർ ലിങ്ക് ചെയ്ത മൊബൈലിലേക്ക് അയച്ച OTP ഉപയോഗിച്ച് സ്ഥിരീകരിക്കുക
+tool_uhid_step_5,Confirm your details and your UHID will be generated,"നിങ്ങളുടെ വിശദാംശങ്ങൾ സ്ഥിരീകരിക്കുക, UHID സൃഷ്ടിക്കപ്പെടും"
+tool_uhid_go_to_portal,Go to eHealth Kerala Portal,eHealth Kerala പോർട്ടലിലേക്ക് പോകുക
+tool_uhid_already_have_title,Already have a UHID?,ഇതിനകം UHID ഉണ്ടോ?
+tool_uhid_already_have_description,"You can use the same portal to log in, view your health records, and manage your profile.",ലോഗിൻ ചെയ്യാനും ആരോഗ്യ രേഖകൾ കാണാനും പ്രൊഫൈൽ നിയന്ത്രിക്കാനും അതേ പോർട്ടൽ ഉപയോഗിക്കാം.
+tool_uhid_faq_1_question,What if my mobile isn't linked with Aadhaar?,എന്റെ മൊബൈൽ ആധാറുമായി ലിങ്ക് ചെയ്തിട്ടില്ലെങ്കിൽ എന്തുചെയ്യും?
+tool_uhid_faq_1_answer,"If your mobile number is not linked with Aadhaar, you can visit the nearest government hospital reception desk to create your UHID with assistance from healthcare staff.","നിങ്ങളുടെ മൊബൈൽ നമ്പർ ആധാറുമായി ലിങ്ക് ചെയ്തിട്ടില്ലെങ്കിൽ, അടുത്തുള്ള സർക്കാർ ആശുപത്രി റിസപ്ഷൻ ഡെസ്കിൽ ആരോഗ്യ ജീവനക്കാരുടെ സഹായത്തോടെ UHID സൃഷ്ടിക്കാം."
+tool_uhid_faq_2_question,Is my health data secure?,എന്റെ ആരോഗ്യ ഡാറ്റ സുരക്ഷിതമാണോ?
+tool_uhid_faq_2_answer,Yes. The State Digital Health Mission follows strict data protection guidelines. Your health records are encrypted and can only be accessed by authorized healthcare providers when you visit a facility.,"അതെ. സ്റ്റേറ്റ് ഡിജിറ്റൽ ഹെൽത്ത് മിഷൻ കർശനമായ ഡാറ്റ സംരക്ഷണ മാർഗ്ഗനിർദ്ദേശങ്ങൾ പാലിക്കുന്നു. നിങ്ങളുടെ ആരോഗ്യ രേഖകൾ എൻക്രിപ്റ്റ് ചെയ്തിരിക്കുന്നു, നിങ്ങൾ ഒരു കേന്ദ്രം സന്ദർശിക്കുമ്പോൾ അംഗീകൃത ആരോഗ്യ ദാതാക്കൾക്ക് മാത്രമേ ആക്സസ് ചെയ്യാൻ കഴിയൂ."
+tool_uhid_faq_3_question,Can I use UHID at private hospitals?,സ്വകാര്യ ആശുപത്രികളിൽ UHID ഉപയോഗിക്കാമോ?
+tool_uhid_faq_3_answer,"Currently, UHID is primarily used in government healthcare facilities. However, integration with private hospitals is being expanded under the State Digital Health Mission.","നിലവിൽ, UHID പ്രധാനമായും സർക്കാർ ആരോഗ്യ കേന്ദ്രങ്ങളിൽ ഉപയോഗിക്കുന്നു. എന്നിരുന്നാലും, സ്റ്റേറ്റ് ഡിജിറ്റൽ ഹെൽത്ത് മിഷന്റെ കീഴിൽ സ്വകാര്യ ആശുപത്രികളുമായുള്ള സംയോജനം വിപുലീകരിക്കുന്നു."
+tool_uhid_cta_title,Want a health check?,ആരോഗ്യ പരിശോധന വേണോ?
+tool_uhid_cta_description,Take our quick assessment for personalized risk scores and guidance.,വ്യക്തിഗത റിസ്ക് സ്കോറുകൾക്കും മാർഗ്ഗനിർദ്ദേശത്തിനും ഞങ്ങളുടെ വേഗത്തിലുള്ള വിലയിരുത്തൽ എടുക്കുക.
+tool_uhid_cta_button,Take Health Assessment,ആരോഗ്യ വിലയിരുത്തൽ എടുക്കുക
+tool_jak_title,Find JAK,JAK കണ്ടെത്തുക
+tool_jak_description,Locate your nearest Janakeeya Arogya Kendram health centre.,നിങ്ങളുടെ അടുത്തുള്ള ജനകീയ ആരോഗ്യ കേന്ദ്രം കണ്ടെത്തുക.
+tool_jak_cta,Find now,ഇപ്പോൾ കണ്ടെത്തുക
+tool_jak_badge,Find JAK,Find JAK
+tool_jak_subtitle,Locate the nearest primary health centre in your area,നിങ്ങളുടെ പ്രദേശത്തെ അടുത്തുള്ള പ്രാഥമിക ആരോഗ്യ കേന്ദ്രം കണ്ടെത്തുക
+tool_jak_what_is_title,What is Janakeeya Arogya Kendram?,ജനകീയ ആരോഗ്യ കേന്ദ്രം എന്താണ്?
+tool_jak_what_is_description_1,"Janakeeya Arogya Kendram (JAK) is Kerala's network of family health centres that provide comprehensive primary healthcare services to communities. These centres are the first point of contact for preventive, promotive, and curative healthcare.","ജനകീയ ആരോഗ്യ കേന്ദ്രം (JAK) കേരളത്തിലെ ഫാമിലി ഹെൽത്ത് സെന്ററുകളുടെ ശൃംഖലയാണ്, സമഗ്രമായ പ്രാഥമിക ആരോഗ്യ സേവനങ്ങൾ സമൂഹങ്ങൾക്ക് നൽകുന്നു. പ്രതിരോധ, പ്രോത്സാഹന, ചികിത്സാ ആരോഗ്യ സംരക്ഷണത്തിനുള്ള ആദ്യ സമ്പർക്ക കേന്ദ്രമാണ് ഇവ."
+tool_jak_what_is_description_2,"JAKs operate under the National Health Mission and offer free consultations, essential medicines, diagnostic services, and referral support.","JAK-കൾ നാഷണൽ ഹെൽത്ത് മിഷന്റെ കീഴിൽ പ്രവർത്തിക്കുന്നു, സൗജന്യ കൺസൾട്ടേഷനുകൾ, അവശ്യ മരുന്നുകൾ, ഡയഗ്നോസ്റ്റിക് സേവനങ്ങൾ, റഫറൽ പിന്തുണ എന്നിവ നൽകുന്നു."
+tool_jak_services_title,Services Available at JAK,JAK-ൽ ലഭ്യമായ സേവനങ്ങൾ
+tool_jak_service_opd,General OPD,ജനറൽ OPD
+tool_jak_service_ncd,NCD Screening,NCD സ്ക്രീനിംഗ്
+tool_jak_service_medicines,Free Medicines,സൗജന്യ മരുന്നുകൾ
+tool_jak_service_family,Family Health,ഫാമിലി ഹെൽത്ത്
+tool_jak_service_lab,Lab Services,ലാബ് സേവനങ്ങൾ
+tool_jak_service_teleconsult,Teleconsultation,ടെലികൺസൾട്ടേഷൻ
+tool_jak_search_title,Search for JAK,JAK-നായി തിരയുക
+tool_jak_search_description,Find a Janakeeya Arogya Kendram near you,നിങ്ങളുടെ അടുത്തുള്ള ജനകീയ ആരോഗ്യ കേന്ദ്രം കണ്ടെത്തുക
+tool_jak_select_district,Select District,ജില്ല തിരഞ്ഞെടുക്കുക
+tool_jak_choose_district,Choose your district,നിങ്ങളുടെ ജില്ല തിരഞ്ഞെടുക്കുക
+tool_jak_search_by_name,Search by name or location,പേരോ സ്ഥലമോ ഉപയോഗിച്ച് തിരയുക
+tool_jak_search_placeholder,"e.g., Panchayat name, area...","ഉദാ: പഞ്ചായത്ത് പേര്, പ്രദേശം..."
+tool_jak_use_location,Use My Location,എന്റെ ലൊക്കേഷൻ ഉപയോഗിക്കുക
+tool_jak_finding_location,Finding your location...,നിങ്ങളുടെ സ്ഥാനം കണ്ടെത്തുന്നു...
+tool_jak_location_error,Unable to get your location,നിങ്ങളുടെ സ്ഥാനം ലഭിക്കാൻ കഴിയുന്നില്ല
+tool_jak_location_error_desc,Please enable location access or search manually,ദയവായി ലൊക്കേഷൻ ആക്സസ് പ്രവർത്തനക്ഷമമാക്കുക അല്ലെങ്കിൽ സ്വമേധയാ തിരയുക
+tool_jak_nearby_results,Nearby JAKs,അടുത്തുള്ള JAK-കൾ
+tool_jak_search_mode_district,Search by District,ജില്ലയിൽ തിരയുക
+tool_jak_search_mode_location,Find Nearby,അടുത്തുള്ളവ കണ്ടെത്തുക
+tool_jak_search_radius,Search Radius,തിരയൽ ദൂരം
+tool_jak_adjust_radius,Adjust search distance,തിരയൽ ദൂരം ക്രമീകരിക്കുക
+tool_jak_within_radius,within {{radius}}km of you,നിങ്ങളിൽ നിന്ന് {{radius}}km ഉള്ളിൽ
+tool_jak_distance_away,{{distance}} away,{{distance}} അകലെ
+tool_jak_results_title,Search Results,തിരയൽ ഫലങ്ങൾ
+tool_jak_results_found,found,കണ്ടെത്തി
+tool_jak_results_none,No JAKs found matching your search criteria.,നിങ്ങളുടെ തിരയലുമായി പൊരുത്തപ്പെടുന്ന JAK-കൾ കണ്ടെത്തിയില്ല.
+tool_jak_results_none_hint,Try selecting a different district or adjusting your search.,മറ്റൊരു ജില്ല തിരഞ്ഞെടുക്കുക അല്ലെങ്കിൽ നിങ്ങളുടെ തിരയൽ മാറ്റുക.
+tool_jak_results_limit,Showing first 100 results. Narrow your search to see more specific results.,ആദ്യ 100 ഫലങ്ങൾ കാണിക്കുന്നു. കൂടുതൽ നിർദ്ദിഷ്ട ഫലങ്ങൾക്കായി നിങ്ങളുടെ തിരയൽ ചുരുക്കുക.
+tool_jak_clear,Clear,മായ്ക്കുക
+tool_jak_get_directions,Get Directions,ദിശകൾ നേടുക
+tool_jak_coming_soon_title,Coming Soon,ഉടൻ വരുന്നു
+tool_jak_coming_soon_description,"We're working on adding the complete directory of Janakeeya Arogya Kendrams. In the meantime, please contact your local ASHA worker or visit the nearest government health facility for assistance.","ജനകീയ ആരോഗ്യ കേന്ദ്രങ്ങളുടെ പൂർണ്ണ ഡയറക്ടറി ചേർക്കാൻ ഞങ്ങൾ പ്രവർത്തിക്കുന്നു. ഇതിനിടയിൽ, നിങ്ങളുടെ പ്രാദേശിക ASHA വർക്കറുമായി ബന്ധപ്പെടുക അല്ലെങ്കിൽ അടുത്തുള്ള സർക്കാർ ആരോഗ്യ കേന്ദ്രം സന്ദർശിക്കുക."
+tool_jak_other_ways_title,Other Ways to Find Help,സഹായം കണ്ടെത്താനുള്ള മറ്റ് വഴികൾ
+tool_jak_helpline_title,Health Helpline,ഹെൽത്ത് ഹെൽപ്പ്‌ലൈൻ
+tool_jak_helpline_description,Call 104 for health information,ആരോഗ്യ വിവരങ്ങൾക്ക് 104 വിളിക്കുക
+tool_jak_asha_title,Contact ASHA Worker,ASHA വർക്കറുമായി ബന്ധപ്പെടുക
+tool_jak_asha_description,Your local ASHA can guide you to the nearest facility,നിങ്ങളുടെ പ്രാദേശിക ASHA അടുത്തുള്ള കേന്ദ്രത്തിലേക്ക് മാർഗ്ഗനിർദ്ദേശം നൽകും
+tool_jak_phc_title,Visit PHC/CHC,PHC/CHC സന്ദർശിക്കുക
+tool_jak_phc_description,Go to your nearest Primary Health Centre,നിങ്ങളുടെ അടുത്തുള്ള പ്രാഥമിക ആരോഗ്യ കേന്ദ്രത്തിലേക്ക് പോകുക
+tool_jak_hours_title,Typical Operating Hours,സാധാരണ പ്രവർത്തന സമയം
+tool_jak_hours_weekday,Monday - Saturday,തിങ്കൾ - ശനി
+tool_jak_hours_weekday_time,8:00 AM - 4:00 PM,8:00 AM - 4:00 PM
+tool_jak_hours_emergency,Emergency Services,എമർജൻസി സേവനങ്ങൾ
+tool_jak_hours_emergency_time,24/7 (at select centres),24/7 (തിരഞ്ഞെടുത്ത കേന്ദ്രങ്ങളിൽ)
+tool_jak_hours_sunday,Sunday & Holidays,ഞായർ & അവധി ദിനങ്ങൾ
+tool_jak_hours_sunday_time,Emergency only,എമർജൻസി മാത്രം
+tool_jak_hours_note,* Hours may vary by location. Please call ahead to confirm.,* സമയം സ്ഥലം അനുസരിച്ച് വ്യത്യാസപ്പെടാം. സ്ഥിരീകരിക്കാൻ മുൻകൂട്ടി വിളിക്കുക.
+tool_jak_bring_title,What to Bring,എന്ത് കൊണ്ടുവരണം
+tool_jak_bring_1,Aadhaar card or any government ID,ആധാർ കാർഡ് അല്ലെങ്കിൽ ഏതെങ്കിലും സർക്കാർ ID
+tool_jak_bring_2,UHID card (if you have one),UHID കാർഡ് (ഉണ്ടെങ്കിൽ)
+tool_jak_bring_3,Previous medical records (if any),മുമ്പത്തെ മെഡിക്കൽ രേഖകൾ (ഉണ്ടെങ്കിൽ)
+tool_jak_bring_4,List of current medications,നിലവിലെ മരുന്നുകളുടെ ലിസ്റ്റ്
+tool_jak_cta_title,Check your health first,ആദ്യം നിങ്ങളുടെ ആരോഗ്യം പരിശോധിക്കുക
+tool_jak_cta_description,Take our quick assessment before your visit to understand your risk factors.,നിങ്ങളുടെ അപകടസാധ്യത ഘടകങ്ങൾ മനസ്സിലാക്കാൻ സന്ദർശനത്തിന് മുമ്പ് ഞങ്ങളുടെ വേഗത്തിലുള്ള വിലയിരുത്തൽ എടുക്കുക.
+tool_jak_cta_button,Take Health Assessment,ആരോഗ്യ വിലയിരുത്തൽ എടുക്കുക
+assessment_badge,Comprehensive Check,സമഗ്ര പരിശോധന
+assessment_title,Complete Health Risk Assessment,സമ്പൂർണ്ണ ആരോഗ്യ അപകടസാധ്യത വിലയിരുത്തൽ
+assessment_description,"Take our 5-minute comprehensive assessment to understand your health risks and get personalized recommendations. Based on the Community-Based Assessment Checklist (CBAC), this tool screens for non-communicable disease risks and early warning signs.","നിങ്ങളുടെ ആരോഗ്യ അപകടസാധ്യതകൾ മനസ്സിലാക്കാൻ 5 മിനിറ്റ് എടുത്ത് ഈ സമഗ്രമായ പരിശോധന പൂർത്തിയാക്കുക. കമ്മ്യൂണിറ്റി അധിഷ്ഠിത ചെക്ക്‌ലിസ്റ്റ് (CBAC) അടിസ്ഥാനമാക്കിയുള്ള ഈ ഉപകരണം, ജീവിതശൈലീ രോഗങ്ങളുടെ അപകടസാധ്യതയും ലക്ഷണങ്ങളും പരിശോധിക്കുന്നു."
+assessment_feature_bmi,BMI calculation & interpretation,BMI കണക്കാക്കലും വിശകലനവും
+assessment_feature_bp,Blood pressure & sugar tracking,രക്തസമ്മർദ്ദവും പഞ്ചസാരയും ട്രാക്കിംഗ്
+assessment_feature_ncd,NCD risk scoring (CBAC),ജീവിതശൈലീ രോഗ സ്കോറിംഗ് (CBAC)
+assessment_feature_lifestyle,Lifestyle & activity guidance,ജീവിതശൈലി മാർഗ്ഗനിർദ്ദേശം
+assessment_feature_diet,Personalized diet tips,വ്യക്തിഗത ഭക്ഷണക്രമ നുറുങ്ങുകൾ
+assessment_cta,Start Full Assessment,പൂർണ്ണ വിലയിരുത്തൽ ആരംഭിക്കുക
+assessment_card_title,Health Assessment,ആരോഗ്യ വിലയിരുത്തൽ
+assessment_card_subtitle,4 steps • 5 minutes • Free,4 ഘട്ടങ്ങൾ • 5 മിനിറ്റ് • സൗജന്യം
+assessment_step1_title,Basic Information,അടിസ്ഥാന വിവരങ്ങൾ
+assessment_step1_desc,"Age, gender, activity","പ്രായം, ലിംഗം, പ്രവർത്തനം"
+assessment_step2_title,Body Measurements,ശരീര അളവുകൾ
+assessment_step2_desc,"Height, weight, vitals","ഉയരം, ഭാരം, വൈറ്റലുകൾ"
+assessment_step3_title,Risk Factors,അപകടസാധ്യത ഘടകങ്ങൾ
+assessment_step3_desc,CBAC questionnaire,CBAC ചോദ്യാവലി
+assessment_step4_title,Summary & Guidance,സംഗ്രഹവും മാർഗ്ഗനിർദ്ദേശവും
+assessment_step4_desc,"Results, tips & advice","ഫലങ്ങൾ, നുറുങ്ങുകൾ, ഉപദേശം"
+privacy_title,Your privacy is our priority,നിങ്ങളുടെ സ്വകാര്യത ഞങ്ങളുടെ മുൻഗണനയാണ്
+privacy_description,"We don't ask for your name, phone number, or any personal identifiers. All calculations happen on your device, and your data never leaves your browser.","നിങ്ങളുടെ പേര്, ഫോൺ നമ്പർ, അല്ലെങ്കിൽ മറ്റ് വ്യക്തിഗത വിവരങ്ങൾ ഞങ്ങൾ ചോദിക്കുന്നില്ല. എല്ലാ കണക്കുകൂട്ടലുകളും നിങ്ങളുടെ ഫോണിൽ തന്നെ നടക്കുന്നു, ഡാറ്റ പുറത്തുപോകുന്നില്ല."
+privacy_badge_no_signup,No sign-up required,സൈൻ-അപ്പ് ആവശ്യമില്ല
+privacy_badge_no_data,No data stored,ഡാറ്റ സംഭരിക്കുന്നില്ല
+privacy_badge_no_tracking,No tracking,ട്രാക്കിംഗ് ഇല്ല
+privacy_badge_anonymous,100% anonymous,100% അജ്ഞാതം
+privacy_dialog_title,Privacy,സ്വകാര്യത
+privacy_dialog_what_we_dont_collect,What we don't collect:,ശേഖരിക്കാത്ത വിവരങ്ങൾ:
+privacy_dialog_what_we_dont_collect_desc,"Your name, phone number, email, Aadhaar, address, or any other personal identifiers.","നിങ്ങളുടെ പേര്, ഫോൺ നമ്പർ, ഇമെയിൽ, ആധാർ, വിലാസം അല്ലെങ്കിൽ മറ്റ് വ്യക്തിഗത വിവരങ്ങൾ."
+privacy_dialog_what_happens,What happens to your answers:,നിങ്ങളുടെ ഉത്തരങ്ങൾ:
+privacy_dialog_what_happens_desc,All calculations happen on your device. Your answers are stored temporarily in your browser and are cleared when you restart the assessment.,എല്ലാ കണക്കുകൂട്ടലുകളും നിങ്ങളുടെ ഉപകരണത്തിൽ നടക്കുന്നു. വിലയിരുത്തൽ പുനരാരംഭിക്കുമ്പോൾ ഉത്തരങ്ങൾ മായ്ക്കപ്പെടും.
+privacy_dialog_pdf,PDF downloads:,PDF ഡൗൺലോഡുകൾ:
+privacy_dialog_pdf_desc,"When you download your summary, it saves directly to your device. We don't see or store it.","നിങ്ങളുടെ സംഗ്രഹം ഡൗൺലോഡ് ചെയ്യുമ്പോൾ, അത് നേരിട്ട് നിങ്ങളുടെ ഉപകരണത്തിൽ സേവ് ചെയ്യുന്നു. ഞങ്ങൾ അത് കാണുകയോ സൂക്ഷിക്കുകയോ ചെയ്യുന്നില്ല."
+disclaimer_dialog_title,Important Disclaimer,പ്രധാന നിരാകരണം
+disclaimer_dialog_p1,This tool provides general health risk information and is not a medical diagnosis.,"ഇത് പൊതുവായ ആരോഗ്യ വിവരങ്ങൾ നൽകുന്നതിനുള്ള ഉപകരണമാണ്, രോഗനിർണയത്തിനല്ല."
+disclaimer_dialog_p2,It does not provide treatment advice. The results are for awareness and educational purposes only.,ചികിത്സാ ഉപദേശം നൽകുന്നില്ല. ഫലങ്ങൾ അവബോധത്തിനും വിദ്യാഭ്യാസ ആവശ്യങ്ങൾക്കും മാത്രം.
+disclaimer_dialog_p3,"If you have symptoms, health concerns, or receive a high-risk result, please consult a doctor or visit your nearest health facility for proper evaluation.","ലക്ഷണങ്ങൾ, ആരോഗ്യ ആശങ്കകൾ, അല്ലെങ്കിൽ ഉയർന്ന റിസ്ക് ഫലം ലഭിച്ചാൽ ഡോക്ടറെ സമീപിക്കുക."
+footer_disclaimer,This tool provides general health information and is not a medical diagnosis.,"ഈ ഉപകരണം പൊതുവായ ആരോഗ്യ വിവരങ്ങൾ നൽകുന്നു, മെഡിക്കൽ രോഗനിർണയമല്ല."
+footer_consult_advice,Always consult a healthcare professional for medical advice.,മെഡിക്കൽ ഉപദേശത്തിന് ആരോഗ്യ പ്രൊഫഷണലുമായി ബന്ധപ്പെടുക.
+footer_developed_by,Developed and Maintained by the People of Kerala,കേരളത്തിലെ ജനങ്ങൾ വികസിപ്പിച്ചതും പരിപാലിക്കുന്നതും
+footer_text,Kerala Care is developed for the community by Govt. of Kerala in collaboration with the <a href='https://contributors.ohc.network/people' target='_blank' rel='noopener noreferrer' class='underline underline-offset-2'>Open Healthcare Network</a>,ഓപ്പൺ ഹെൽത്ത്‌കെയർ നെറ്റ്‌വർക്കുമായി സഹകരിച്ച് കേരള സർക്കാർ വികസിപ്പിച്ചതാണ് കേരള കെയർ
+footer_copyright,© {{year}} Healthy Life Campaign. All tools are free to use.,© {{year}} ഹെൽത്തി ലൈഫ് കാമ്പയിൻ.
+footer_awareness,This is a health awareness tool. It does not diagnose disease or prescribe treatment.,ഇത് ആരോഗ്യ അവബോധ ഉപകരണമാണ്. രോഗനിർണയം നടത്തുന്നില്ല.
+footer_resource_1,Health and Family Welfare Department,ആരോഗ്യ കുടുംബക്ഷേമ വകുപ്പ്
+step1_title,About you,നിങ്ങളെക്കുറിച്ച്
+step1_subtitle,This helps us tailor your risk score and tips.,നിങ്ങളുടെ സ്കോറും നിർദ്ദേശങ്ങളും ക്രമീകരിക്കാൻ ഇത് സഹായിക്കും.
+step1_card_title,Basic Information,അടിസ്ഥാന വിവരങ്ങൾ
+step1_card_description,All fields help us provide better guidance,മികച്ച മാർഗ്ഗനിർദ്ദേശം നൽകാൻ എല്ലാ ഫീൽഡുകളും സഹായിക്കുന്നു
+step1_age_label,Age (completed years),പ്രായം (പൂർത്തിയായ വർഷങ്ങൾ)
+step1_age_placeholder,"e.g., 42",ഉദാ: 42
+step1_age_tooltip,Enter your age in full years,നിങ്ങളുടെ പ്രായം പൂർണ്ണ വർഷങ്ങളിൽ നൽകുക
+step1_age_helper,Enter your age in full years.,നിങ്ങളുടെ പ്രായം പൂർണ്ണ വർഷങ്ങളിൽ നൽകുക.
+step1_age_error_required,Please enter your age,ദയവായി നിങ്ങളുടെ പ്രായം നൽകുക
+step1_age_error_invalid,Please enter a valid age (1-120),ദയവായി സാധുവായ ഒരു പ്രായം നൽകുക (1-120)
+step1_underage_alert,"This tool is designed for adults. You can continue, but results may be less relevant.","ഇത് മുതിർന്നവർക്കായി രൂപകൽപ്പന ചെയ്തിരിക്കുന്നു. നിങ്ങൾക്ക് തുടരാം, പക്ഷേ ഫലങ്ങൾ കൃത്യമായിരിക്കില്ല."
+step1_gender_label,Gender,ലിംഗം
+step1_gender_male,Male,പുരുഷൻ
+step1_gender_female,Female,സ്ത്രീ
+step1_gender_other,Other,മറ്റുള്ളവ
+step1_activity_label,Physical activity level,ശാരീരിക പ്രവർത്തന നില
+step1_activity_sedentary,Sedentary,വ്യായാമരഹിത
+step1_activity_sedentary_desc,Very little activity,വളരെ കുറഞ്ഞ ശാരീരിക അധ്വാനം
+step1_activity_moderate,Moderate,മിതമായ
+step1_activity_moderate_desc,"Some activity, under 150 minutes/week","ചെറിയ പ്രവർത്തനം, ആഴ്ചയിൽ 150 മിനിറ്റിൽ താഴെ"
+step1_activity_adequate,Adequate,മതിയായ
+step1_activity_adequate_desc,150 minutes/week or more,ആഴ്ചയിൽ 150 മിനിറ്റ് അല്ലെങ്കിൽ കൂടുതൽ
+step2_title,Body measurements & vitals,ശരീര അളവുകളും വൈറ്റലുകളും
+step2_subtitle,We'll calculate your BMI and check your readings.,നിങ്ങളുടെ BMI കണക്കാക്കി പരിശോധനാ ഫലങ്ങൾ വിലയിരുത്താം.
+step2_body_title,Body measurements,ശരീര അളവുകൾ
+step2_height_label,Height (cm),ഉയരം (cm)
+step2_height_placeholder,"e.g., 165",ഉദാ: 165
+step2_height_error,Please enter your height,ദയവായി നിങ്ങളുടെ ഉയരം നൽകുക
+step2_height_error_invalid,Please enter a valid height (50-300 cm),ദയവായി സാധുവായ ഉയരം നൽകുക (50-300 cm)
+step2_weight_label,Weight (kg),ഭാരം (kg)
+step2_weight_placeholder,"e.g., 70",ഉദാ: 70
+step2_weight_error,Please enter your weight,ദയവായി നിങ്ങളുടെ ഭാരം നൽകുക
+step2_weight_error_invalid,Please enter a valid weight (10-500 kg),ദയവായി സാധുവായ ഭാരം നൽകുക (10-500 kg)
+step2_bmi_label,Your BMI,നിങ്ങളുടെ BMI
+step2_bmi_disclaimer,BMI is a screening measure and doesn't diagnose illness.,"BMI പ്രാഥമിക പരിശോധന മാത്രമാണ്, രോഗനിർണയമല്ല."
+step2_bp_title,Blood pressure,രക്തസമ്മർദ്ദം
+step2_bp_description,If you know your recent BP reading,നിങ്ങളുടെ സമീപകാല BP റീഡിംഗ് അറിയാമെങ്കിൽ
+step2_bp_systolic,Systolic (mmHg),സിസ്റ്റോളിക് (mmHg)
+step2_bp_systolic_placeholder,"e.g., 120",ഉദാ: 120
+step2_bp_diastolic,Diastolic (mmHg),ഡയസ്റ്റോളിക് (mmHg)
+step2_bp_diastolic_placeholder,"e.g., 80",ഉദാ: 80
+step2_bp_result,Your BP reading,നിങ്ങളുടെ രക്തസമ്മർദ്ദം
+step2_bp_skip,I don't know my BP,എനിക്ക് രക്തസമ്മർദ്ദം അറിയില്ല
+step2_bp_skipped,Skipped — will continue without BP,ഒഴിവാക്കി — BP ഇല്ലാതെ തുടരും
+step2_bp_enter,Enter BP,രക്തസമ്മർദ്ദം നൽകുക
+step2_bp_systolic_error,Please enter systolic pressure,ദയവായി സിസ്റ്റോളിക് അളവ് നൽകുക
+step2_bp_diastolic_error,Please enter diastolic pressure,ദയവായി ഡയസ്റ്റോളിക് അളവ് നൽകുക
+step2_sugar_title,Blood sugar,രക്തത്തിലെ പഞ്ചസാര
+step2_sugar_description,If you know your recent blood sugar reading,നിങ്ങളുടെ സമീപകാല രക്തത്തിലെ പഞ്ചസാര റീഡിംഗ് അറിയാമെങ്കിൽ
+step2_sugar_test_type,Test type,ടെസ്റ്റ് തരം
+step2_sugar_test_placeholder,Select test type,ടെസ്റ്റ് തരം തിരഞ്ഞെടുക്കുക
+step2_sugar_rbs,Random Blood Sugar (RBS),റാൻഡം ബ്ലഡ് ഷുഗർ (RBS)
+step2_sugar_fbs,Fasting Blood Sugar (FBS),ഫാസ്റ്റിംഗ് ബ്ലഡ് ഷുഗർ (FBS)
+step2_sugar_ppbs,Post-Prandial Blood Sugar (PPBS),പോസ്റ്റ്-പ്രാൻഡിയൽ ബ്ലഡ് ഷുഗർ (PPBS)
+step2_sugar_hba1c,HbA1c,HbA1c
+step2_sugar_value,Value,മൂല്യം
+step2_sugar_value_placeholder,"e.g., 100",ഉദാ: 100
+step2_sugar_value_placeholder_hba1c,"e.g., 5.7",ഉദാ: 5.7
+step2_sugar_result,Your blood sugar,നിങ്ങളുടെ രക്തത്തിലെ പഞ്ചസാര
+step2_sugar_skip,I don't know my blood sugar,എനിക്ക് എന്റെ രക്തത്തിലെ പഞ്ചസാര അറിയില്ല
+step2_sugar_skipped,Skipped — will continue without blood sugar,ഒഴിവാക്കി — രക്തത്തിലെ പഞ്ചസാര ഇല്ലാതെ തുടരും
+step2_sugar_enter,Enter value,മൂല്യം നൽകുക
+step2_sugar_value_error,Please enter blood sugar value,ദയവായി പഞ്ചസാരയുടെ അളവ് നൽകുക
+step2_elevated_warning_title,Elevated reading detected,ഉയർന്ന റീഡിംഗ് കണ്ടെത്തി
+step2_elevated_warning_description,"Your blood pressure or blood sugar is higher than normal. On the next screen, we'll provide guidance on next steps.",നിങ്ങളുടെ രക്തസമ്മർദ്ദമോ പഞ്ചസാരയോ സാധാരണയേക്കാൾ കൂടുതലാണ്. അടുത്ത പേജിൽ കൂടുതൽ വിവരങ്ങൾ നൽകാം.
+advisory_title,We recommend speaking to a doctor,ഡോക്ടറുമായി സംസാരിക്കാൻ ഞങ്ങൾ ശുപാർശ ചെയ്യുന്നു
+advisory_description,Your entered blood pressure or blood sugar is higher than normal. This tool can't interpret risk scores safely when these are high. Please consult a doctor at your nearest Family Health Centre for further evaluation.,നിങ്ങൾ നൽകിയ രക്തസമ്മർദ്ദമോ പഞ്ചസാരയോ സാധാരണയേക്കാൾ കൂടുതലാണ്. ഇത്തരം സാഹചര്യങ്ങളിൽ റിസ്ക് സ്കോറുകൾ കൃത്യമായിരിക്കില്ല. കൂടുതൽ പരിശോധനയ്ക്കായി അടുത്തുള്ള ഫാമിലി ഹെൽത്ത് സെന്ററിലെ ഡോക്ടറെ കാണുക.
+advisory_measurements_title,Your measurements,നിങ്ങളുടെ അളവുകൾ
+advisory_measurements_description,What you entered in this assessment,നിങ്ങൾ നൽകിയ വിവരങ്ങൾ:
+advisory_consult_doctor,Consult a doctor at your nearest Family Health Centre,ഫാമിലി ഹെൽത്ത് സെന്ററിൽ ഡോക്ടറെ സമീപിക്കുക
+advisory_download_measurements,Download my measurements,എന്റെ അളവുകൾ ഡൗൺലോഡ്
+advisory_restart,Restart assessment,വിലയിരുത്തൽ പുനരാരംഭിക്കുക
+advisory_why_seeing,Why am I seeing this?,ഞാൻ ഇത് എന്തുകൊണ്ട് കാണുന്നു?
+advisory_why_intro,"When blood pressure or blood sugar readings are higher than normal, continuing with risk scoring could give misleading results.","രക്തസമ്മർദ്ദമോ പഞ്ചസാരയോ കൂടുതലായിരിക്കുമ്പോൾ, റിസ്ക് സ്കോർ കണക്കാക്കുന്നത് തെറ്റായ ഫലങ്ങൾ നൽകിയേക്കാം."
+advisory_why_bp,For blood pressure: Readings of 140/90 mmHg or higher suggest you should speak with a healthcare provider about management and lifestyle changes.,"രക്തസമ്മർദ്ദം: 140/90 mmHg അല്ലെങ്കിൽ അതിൽ കൂടുതലാണെങ്കിൽ, ജീവിതശൈലി മാറ്റങ്ങളെക്കുറിച്ചും ചികിത്സയെക്കുറിച്ചും ഡോക്ടറോട് സംസാരിക്കേണ്ടതാണ്."
+advisory_why_sugar,"For blood sugar: Elevated readings may indicate pre-diabetes or diabetes, which requires proper medical evaluation and testing.",രക്തത്തിലെ പഞ്ചസാര: ഉയർന്ന അളവ് പ്രീ-ഡയബറ്റിസ് അല്ലെങ്കിൽ പ്രമേഹത്തെ സൂചിപ്പിക്കാം. ഇതിന് കൃത്യമായ വൈദ്യപരിശോധന ആവശ്യമാണ്.
+advisory_why_conclusion,This is why we recommend consulting a doctor before continuing with the general risk assessment.,അതുകൊണ്ടാണ് പൊതുവായ റിസ്ക് വിലയിരുത്തലുമായി തുടരുന്നതിന് മുമ്പ് ഒരു ഡോക്ടറെ സമീപിക്കാൻ ഞങ്ങൾ ശുപാർശ ചെയ്യുന്നത്.
+step3_title,NCD Risk Check,NCD റിസ്ക് പരിശോധന
+step3_subtitle,This checklist estimates risk. It does not diagnose disease.,ഇതൊരു പ്രാഥമിക പരിശോധന മാത്രമാണ്. രോഗനിർണയമല്ല.
+step3_card_title,Risk factors,അപകടസാധ്യത ഘടകങ്ങൾ
+step3_card_description,Answer these questions to calculate your CBAC score,നിങ്ങളുടെ CBAC സ്കോർ കണക്കാക്കാൻ താഴെ പറയുന്നവയ്ക്ക് ഉത്തരം നൽകുക
+step3_tobacco_label,Do you use tobacco?,നിങ്ങൾ പുകയില ഉപയോഗിക്കുന്നുണ്ടോ?
+step3_tobacco_never,Never used,ഒരിക്കലും ഉപയോഗിച്ചിട്ടില്ല
+step3_tobacco_past,Used in past / occasionally,മുമ്പ് ഉപയോഗിച്ചു / ഇടയ്ക്കിടെ
+step3_tobacco_daily,Use daily,ദിവസവും ഉപയോഗിക്കുന്നു
+step3_alcohol_label,Do you consume alcohol daily?,നിങ്ങൾ ദിവസവും മദ്യം കഴിക്കുന്നുണ്ടോ?
+step3_alcohol_no,No,ഇല്ല
+step3_alcohol_yes,Yes,ഉണ്ട്
+step3_waist_label,Waist circumference,അരക്കെട്ടിന്റെ ചുറ്റളവ്
+step3_waist_how_to_measure,How to measure,എങ്ങനെ അളക്കാം
+step3_waist_how_to_measure_title,How to measure waist circumference,അരക്കെട്ടിന്റെ ചുറ്റളവ് എങ്ങനെ അളക്കാം
+step3_waist_instruction_1,Stand upright and breathe normally,"നേരെ നിൽക്കുക, സാധാരണയായി ശ്വസിക്കുക"
+step3_waist_instruction_2,Find the midpoint between the top of your hip bone and the bottom of your ribs,ഇടുപ്പെല്ലിന്റെ മുകളിലും വാരിയെല്ലിന്റെ താഴെയും മധ്യഭാഗം കണ്ടെത്തുക
+step3_waist_instruction_3,Wrap a measuring tape around this point,ഈ ഭാഗത്ത് അളക്കുന്ന ടേപ്പ് ചുറ്റുക
+step3_waist_instruction_4,The tape should be snug but not tight,ടേപ്പ് മുറുകെ പിടിക്കാതെ ചേർത്തുപിടിക്കുക
+step3_waist_instruction_5,Read the measurement after breathing out normally,സാധാരണയായി ശ്വാസം വിട്ടശേഷം അളക്കുക
+step3_waist_reference_title,Reference thresholds:,റഫറൻസ് പരിധികൾ:
+step3_waist_reference_female,"Female: Normal ≤80 cm, Elevated 81-90 cm, High >90 cm","സ്ത്രീ: സാധാരണ ≤80 cm, ഉയർന്നത് 81-90 cm, വളരെ ഉയർന്നത് >90 cm"
+step3_waist_reference_male,"Male: Normal ≤90 cm, Elevated 91-100 cm, High >100 cm","പുരുഷൻ: സാധാരണ ≤90 cm, ഉയർന്നത് 91-100 cm, വളരെ ഉയർന്നത് >100 cm"
+step3_waist_select_reference,Choose reference chart for waist scoring,അരക്കെട്ട് സ്കോറിംഗിനായി റഫറൻസ് ചാർട്ട് തിരഞ്ഞെടുക്കുക
+step3_waist_select_placeholder,Select reference,റഫറൻസ് തിരഞ്ഞെടുക്കുക
+step3_waist_use_female,Use female thresholds,സ്ത്രീകളുടെ പരിധികൾ ഉപയോഗിക്കുക
+step3_waist_use_male,Use male thresholds,പുരുഷന്മാരുടെ പരിധികൾ ഉപയോഗിക്കുക
+step3_waist_select_note,We ask this only to calculate the checklist score.,ചെക്ക്‌ലിസ്റ്റ് സ്കോർ കണക്കാക്കാൻ മാത്രമാണ് ഞങ്ങൾ ഇത് ചോദിക്കുന്നത്.
+step3_waist_placeholder,Enter waist circumference in cm,cm-ൽ അരക്കെട്ടിന്റെ ചുറ്റളവ് നൽകുക
+step3_waist_thresholds,"Thresholds: Normal ≤{{low}} cm, Elevated {{lowPlus}}-{{high}} cm, High >{{high}} cm","പരിധികൾ: സാധാരണ ≤{{low}} cm, ഉയർന്നത് {{lowPlus}}-{{high}} cm, വളരെ ഉയർന്നത് >{{high}} cm"
+step3_family_history_label,"Family history of diabetes, hypertension, or heart disease?","കുടുംബത്തിൽ ആർക്കെങ്കിലും പ്രമേഹം, രക്താതിമർദ്ദം, ഹൃദ്രോഗം എന്നിവ ഉണ്ടോ?"
+step3_family_history_no,No,ഇല്ല
+step3_family_history_yes,Yes,ഉണ്ട്
+step3_score_label,Your CBAC Score,നിങ്ങളുടെ CBAC സ്കോർ
+step3_score_higher_risk,Higher risk,ഉയർന്ന അപകടസാധ്യത
+step3_score_lower_risk,Lower risk,കുറഞ്ഞ അപകടസാധ്യത
+step3_score_high_note,Score > 4 indicates higher NCD risk. Please consult a doctor for evaluation.,സ്കോർ > 4: ജീവിതശൈലീ രോഗങ്ങൾക്ക് സാധ്യതയുണ്ട്. ദയവായി ഡോക്ടറെ കണ്ട് പരിശോധന നടത്തുക.
+step3_score_low_note,Score ≤ 4 indicates lower risk. Continue with healthy habits.,സ്കോർ ≤ 4: സാധ്യത കുറവാണ്. നല്ല ശീലങ്ങൾ തുടരുക.
+step3_high_risk_alert_title,Higher risk detected,ഉയർന്ന അപകടസാധ്യത കണ്ടെത്തി
+step3_high_risk_alert_description,Your score suggests higher risk for diabetes or hypertension. We recommend visiting the nearest Janakeeya Arogya Kendram for further evaluation.,നിങ്ങളുടെ സ്കോർ പ്രമേഹത്തിനോ രക്താതിമർദ്ദത്തിനോ ഉയർന്ന അപകടസാധ്യത സൂചിപ്പിക്കുന്നു. കൂടുതൽ വിലയിരുത്തലിനായി അടുത്തുള്ള ജനകീയ ആരോഗ്യ കേന്ദ്രം സന്ദർശിക്കാൻ ഞങ്ങൾ ശുപാർശ ചെയ്യുന്നു.
+step4_title,Your Summary & Guidance,നിങ്ങളുടെ സംഗ്രഹവും മാർഗ്ഗനിർദ്ദേശവും
+step4_subtitle_date,Assessment completed on {{date}},{{date}}-ന് വിലയിരുത്തൽ പൂർത്തിയായി
+step4_consultation_title,We recommend consulting a doctor,ദയവായി ഒരു ഡോക്ടറെ കാണുക
+step4_consultation_description,"Based on your assessment, please visit the nearest Janakeeya Arogya Kendram for further evaluation, or contact your ASHA for assistance.","നിങ്ങളുടെ വിവരങ്ങളുടെ അടിസ്ഥാനത്തിൽ, കൂടുതൽ പരിശോധനകൾക്കായി അടുത്തുള്ള ജനകീയ ആരോഗ്യ കേന്ദ്രം സന്ദർശിക്കുകയോ ആശാ വർക്കറെ സമീപിക്കുകയോ ചെയ്യുക."
+step4_consultation_find_jak,Find nearby JAK,അടുത്തുള്ള JAK കണ്ടെത്തുക
+step4_measurements_title,Measurements,അളവുകൾ
+step4_measurements_bmi,BMI,BMI
+step4_measurements_bp,Blood Pressure,രക്തസമ്മർദ്ദം
+step4_measurements_sugar,Blood Sugar,രക്തത്തിലെ പഞ്ചസാര
+step4_measurements_not_entered,Not entered,നൽകിയിട്ടില്ല
+step4_risk_score_title,Risk Score,റിസ്ക് സ്കോർ
+step4_cbac_score,CBAC Score,CBAC സ്കോർ
+step4_key_advice_title,Key Advice,പ്രധാന ഉപദേശം
+step4_advice_visit_jak,Please visit the nearest Janakeeya Arogya Kendram for NCD risk evaluation.,ജീവിതശൈലീ രോഗ സാധ്യത പരിശോധിക്കാൻ അടുത്തുള്ള ജനകീയ ആരോഗ്യ കേന്ദ്രം സന്ദർശിക്കുക.
+step4_advice_tobacco,Consider seeking tobacco cessation support; reducing tobacco lowers risk over time.,പുകയില ഉപയോഗം നിർത്താൻ സഹായം തേടുക; പുകയില കുറയ്ക്കുന്നത് ഭാവിയിൽ രോഗസാധ്യത കുറയ്ക്കും.
+step4_advice_alcohol,Reducing daily alcohol can improve long-term health; consider support services if needed.,ദിവസേനയുള്ള മദ്യപാനം കുറയ്ക്കുന്നത് ദീർഘകാല ആരോഗ്യം മെച്ചപ്പെടുത്തും; ആവശ്യമെങ്കിൽ പിന്തുണാ സേവനങ്ങൾ പരിഗണിക്കുക.
+step4_advice_activity,"Aim for at least 150 minutes/week of moderate activity, starting gradually.","ആഴ്ചയിൽ കുറഞ്ഞത് 150 മിനിറ്റ് മിതമായ പ്രവർത്തനം ലക്ഷ്യമിടുക, ക്രമേണ ആരംഭിക്കുക."
+step4_focus_areas_title,Your Focus Areas,നിങ്ങളുടെ ഫോക്കസ് മേഖലകൾ
+step4_focus_areas_description,"Based on your answers, here are areas where small changes can help","നിങ്ങളുടെ ഉത്തരങ്ങളെ അടിസ്ഥാനമാക്കി, ചെറിയ മാറ്റങ്ങൾ സഹായിക്കുന്ന മേഖലകൾ ഇതാ"
+step4_focus_tobacco,Tobacco,പുകയില
+step4_focus_alcohol,Alcohol,മദ്യം
+step4_focus_activity,Activity,പ്രവർത്തനം
+step4_tobacco_guidance_title,Tobacco Cessation Support,പുകയില ഉപേക്ഷ പിന്തുണ
+step4_tobacco_tip_1,Set a quit date and tell someone you trust,ഒരു ക്വിറ്റ് തീയതി നിശ്ചയിച്ച് വിശ്വസനീയമായ ഒരാളോട് പറയുക
+step4_tobacco_tip_2,"Reduce triggers (after meals, stress moments)","പ്രേരകങ്ങളെ ഒഴിവാക്കുക (ഭക്ഷണത്തിന് ശേഷം, സമ്മർദ്ദമുള്ളപ്പോൾ)"
+step4_tobacco_tip_3,Keep your hands busy with healthy alternatives,ആരോഗ്യകരമായ ബദലുകൾ ഉപയോഗിച്ച് കൈകൾ തിരക്കിലാക്കുക
+step4_tobacco_tip_4,Ask at your nearest JAK about quit programs,ലഹരി വിമുക്ത പരിപാടികളെക്കുറിച്ച് അടുത്തുള്ള ആരോഗ്യ കേന്ദ്രത്തിൽ ചോദിക്കുക
+step4_alcohol_guidance_title,Alcohol Reduction Support,മദ്യപാനം കുറയ്ക്കുന്നതിനുള്ള സഹായം
+step4_alcohol_tip_1,Track how often you drink each week,ഓരോ ആഴ്ചയും നിങ്ങൾ എത്ര തവണ കുടിക്കുന്നു എന്ന് ട്രാക്ക് ചെയ്യുക
+step4_alcohol_tip_2,Plan alcohol-free days and stick to them,"മദ്യരഹിത ദിനങ്ങൾ ആസൂത്രണം ചെയ്യുക, അവ പാലിക്കുക"
+step4_alcohol_tip_3,Choose smaller portions when you do drink,കുടിക്കുമ്പോൾ ചെറിയ അളവ് തിരഞ്ഞെടുക്കുക
+step4_alcohol_tip_4,Seek de-addiction support if cutting down is difficult,കുറയ്ക്കാൻ ബുദ്ധിമുട്ടാണെങ്കിൽ ഡി-അഡിക്ഷൻ പിന്തുണ തേടുക
+step4_alcohol_support_note,Professional support is available if you find it difficult to reduce on your own.,സ്വയം കുറയ്ക്കാൻ ബുദ്ധിമുട്ടാണെങ്കിൽ പ്രൊഫഷണൽ പിന്തുണ ലഭ്യമാണ്.
+step4_activity_guidance_title,Activity Plan,പ്രവർത്തന പദ്ധതി
+step4_activity_starter_plan,Starter plan:,തുടക്കക്കാർക്കുള്ള പദ്ധതി:
+step4_activity_week1,Week 1,ആഴ്ച 1
+step4_activity_week1_plan,"10 minutes walking per day, 5 days/week","ദിവസവും 10 മിനിറ്റ് നടത്തം, ആഴ്ചയിൽ 5 ദിവസം"
+step4_activity_week2,Week 2,ആഴ്ച 2
+step4_activity_week2_plan,"15 minutes walking per day, 5 days/week","ദിവസവും 15 മിനിറ്റ് നടത്തം, ആഴ്ചയിൽ 5 ദിവസം"
+step4_activity_week3,Week 3+,ആഴ്ച 3+
+step4_activity_week3_plan,Build toward 150 minutes/week total,ആഴ്ചയിൽ ആകെ 150 മിനിറ്റിലേക്ക് എത്തുക
+step4_activity_strength_tip,"Add strength: Try simple bodyweight exercises (squats, wall push-ups) 2 days/week for added benefit.","ശക്തി വർദ്ധിപ്പിക്കുക: ലളിതമായ വ്യായാമങ്ങൾ (സ്ക്വാറ്റുകൾ, വാൾ പുഷ്-അപ്പുകൾ) ആഴ്ചയിൽ 2 ദിവസം ചെയ്യുക."
+step4_good_track_title,You're on a good track!,നിങ്ങൾ നല്ല വഴിയിലാണ്!
+step4_good_track_description,"Keep up your healthy habits with regular physical activity, balanced diet, regular check-ups, and stress management.","വ്യായാമം, സമീകൃതാഹാരം, പതിവ് പരിശോധനകൾ, മാനസികാരോഗ്യം എന്നിവയിൽ ശ്രദ്ധ നൽകി മുന്നോട്ട് പോകുക."
+step4_personalized_tips_title,Personalised Tips,വ്യക്തിഗത നുറുങ്ങുകൾ
+step4_diet_tips,Diet Tips,ഭക്ഷണക്രമ നുറുങ്ങുകൾ
+step4_activity_tips,Activity Tips,പ്രവർത്തന നുറുങ്ങുകൾ
+step4_for_blood_sugar,For blood sugar:,രക്തത്തിലെ പഞ്ചസാരയ്ക്ക്:
+step4_diet_underweight_1,Add nutrient-dense meals and snacks,പോഷകസമൃദ്ധമായ ഭക്ഷണങ്ങളും ലഘുഭക്ഷണങ്ങളും ചേർക്കുക
+step4_diet_underweight_2,"Include protein sources daily (eggs, dal, milk, fish)","ദിവസവും പ്രോട്ടീൻ അടങ്ങിയ ഭക്ഷണം കഴിക്കുക (മുട്ട, പരിപ്പ്, പാൽ, മത്സ്യം)"
+step4_diet_underweight_3,"Eat small, frequent meals","ചെറിയ, ഇടക്കിടെയുള്ള ഭക്ഷണം കഴിക്കുക"
+step4_diet_overweight_1,Reduce sugary drinks and processed foods,മധുര പാനീയങ്ങളും സംസ്കരിച്ച ഭക്ഷണങ്ങളും കുറയ്ക്കുക
+step4_diet_overweight_2,Fill half your plate with vegetables,പ്ലേറ്റിന്റെ പകുതി പച്ചക്കറികൾ കൊണ്ട് നിറയ്ക്കുക
+step4_diet_overweight_3,Practice portion control,ഭക്ഷണത്തിന്റെ അളവ് ശ്രദ്ധിക്കുക
+step4_diet_overweight_4,Choose whole grains over refined,റിഫൈൻഡ് ധാന്യങ്ങൾക്ക് പകരം തവിടുള്ള ധാന്യങ്ങൾ തിരഞ്ഞെടുക്കുക
+step4_diet_normal_1,Maintain balanced meals with variety,വൈവിധ്യമാർന്ന സമീകൃത ഭക്ഷണം നിലനിർത്തുക
+step4_diet_normal_2,Include fruits and vegetables daily,ദിവസവും പഴങ്ങളും പച്ചക്കറികളും ഉൾപ്പെടുത്തുക
+step4_diet_normal_3,Stay hydrated with water,ധാരാളം വെള്ളം കുടിക്കുക
+step4_sugar_tip_1,Choose whole grains over refined carbs,റിഫൈൻഡ് കാർബോഹൈഡ്രേറ്റുകൾക്ക് പകരം തവിടുള്ള ധാന്യങ്ങൾ തിരഞ്ഞെടുക്കുക
+step4_sugar_tip_2,Limit sweets and sugary drinks,മധുരപലഹാരങ്ങളും മധുര പാനീയങ്ങളും പരിമിതപ്പെടുത്തുക
+step4_sugar_tip_3,Don't skip meals; prefer steady meal timing,ഭക്ഷണം ഒഴിവാക്കരുത്; കൃത്യസമയത്ത് ഭക്ഷണം കഴിക്കുക
+step4_sugar_tip_4,Consult a doctor for proper testing,ശരിയായ പരിശോധനയ്ക്കായി ഡോക്ടറെ സമീപിക്കുക
+step4_activity_sedentary_1,Start with 10 minutes/day walking,ദിവസവും 10 മിനിറ്റ് നടത്തം ആരംഭിക്കുക
+step4_activity_sedentary_2,Take short breaks from sitting every hour,"തുടർച്ചയായി ഇരിക്കുന്നത് ഒഴിവാക്കുക, ഇടയ്ക്ക് എഴുന്നേറ്റ് നടക്കുക"
+step4_activity_sedentary_3,Use stairs when possible,സാധ്യമാകുമ്പോഴെല്ലാം പടികൾ ഉപയോഗിക്കുക
+step4_activity_moderate_1,Add 1-2 longer walks per week,ആഴ്ചയിൽ 1-2 നീണ്ട നടത്തം ചേർക്കുക
+step4_activity_moderate_2,Try to reach 150 minutes/week,ആഴ്ചയിൽ 150 മിനിറ്റ് എത്താൻ ശ്രമിക്കുക
+step4_activity_moderate_3,"Include variety (walking, cycling, swimming)","വൈവിധ്യം ഉൾപ്പെടുത്തുക (നടത്തം, സൈക്ലിംഗ്, നീന്തൽ)"
+step4_activity_adequate_1,Maintain your current routine,നിങ്ങളുടെ നിലവിലെ ദിനചര്യ നിലനിർത്തുക
+step4_activity_adequate_2,Add strength exercises twice weekly,ആഴ്ചയിൽ രണ്ടുതവണ സ്ട്രെങ്ത് വ്യായാമങ്ങൾ ചേർക്കുക
+step4_activity_adequate_3,Try new activities to stay motivated,പ്രചോദനം നിലനിർത്താൻ പുതിയ പ്രവർത്തനങ്ങൾ പരീക്ഷിക്കുക
+step4_download_title,Download Summary (PDF),സംഗ്രഹം ഡൗൺലോഡ് (PDF)
+step4_download_dialog_title,Download your summary,നിങ്ങളുടെ സംഗ്രഹം ഡൗൺലോഡ് ചെയ്യുക
+step4_download_dialog_description,Generate a beautifully formatted PDF with all your assessment results.,നിങ്ങളുടെ എല്ലാ പരിശോധനാ ഫലങ്ങളും അടങ്ങിയ ഒരു PDF ഡൗൺലോഡ് ചെയ്യാം.
+step4_download_includes,Your PDF will include:,നിങ്ങളുടെ PDF-ൽ ഉൾപ്പെടുന്നവ:
+step4_download_includes_1,Body measurements & BMI,ശരീര അളവുകളും BMI-യും
+step4_download_includes_2,Risk scores & interpretations,റിസ്ക് സ്കോറുകളും വ്യാഖ്യാനങ്ങളും
+step4_download_includes_3,Personalised recommendations,വ്യക്തിഗത ശുപാർശകൾ
+step4_download_includes_4,Diet & activity guidance,ഭക്ഷണക്രമവും പ്രവർത്തന മാർഗ്ഗനിർദ്ദേശവും
+step4_download_privacy_note,The PDF will be saved on your device only. We don't store or see it.,PDF നിങ്ങളുടെ ഉപകരണത്തിൽ മാത്രമേ സേവ് ചെയ്യൂ. ഞങ്ങൾ അത് കാണുകയോ സൂക്ഷിക്കുകയോ ചെയ്യുന്നില്ല.
+step4_download_success,PDF downloaded successfully!,PDF വിജയകരമായി ഡൗൺലോഡ് ചെയ്തു!
+step4_download_success_desc,Check your downloads folder,നിങ്ങളുടെ ഡൗൺലോഡ് ഫോൾഡർ പരിശോധിക്കുക
+step4_download_error,Failed to generate PDF,PDF സൃഷ്ടിക്കുന്നതിൽ പരാജയപ്പെട്ടു
+step4_download_error_desc,Please try again,ദയവായി വീണ്ടും ശ്രമിക്കുക
+step5_title,Cancer symptom check,കാൻസർ ലക്ഷണ പരിശോധന
+step5_subtitle,Early detection helps. Answer honestly — this is for your awareness.,നേരത്തെ കണ്ടെത്തൽ സഹായിക്കുന്നു. സത്യസന്ധമായി ഉത്തരം നൽകുക — ഇത് നിങ്ങളുടെ അവബോധത്തിനാണ്.
+step5_general_symptoms_title,General symptoms,പൊതു ലക്ഷണങ്ങൾ
+step5_general_symptoms_description,Have you experienced any of these in the past few months?,കഴിഞ്ഞ കുറച്ച് മാസങ്ങളിൽ ഇവയിലൊന്ന് അനുഭവിച്ചിട്ടുണ്ടോ?
+step5_symptom_non_healing_ulcer,Non-healing ulcer (wound that doesn't heal for more than 2 weeks),ഉണങ്ങാത്ത വ്രണം (2 ആഴ്ചയിൽ കൂടുതൽ)
+step5_symptom_lumps,Lumps or swellings anywhere in the body,ശരീരത്തിൽ എവിടെയെങ്കിലും മുഴകളോ വീക്കമോ
+step5_symptom_difficulty_swallowing,Difficulty swallowing,വിഴുങ്ങാൻ ബുദ്ധിമുട്ട്
+step5_symptom_voice_change,Change in voice (hoarseness lasting more than 2 weeks),ശബ്ദത്തിൽ മാറ്റം (2 ആഴ്ചയിൽ കൂടുതൽ)
+step5_symptom_weight_loss,Unexplained weight loss,വിശദീകരിക്കാനാകാത്ത ശരീരഭാരം കുറയൽ
+step5_symptom_blood_sputum,Blood in sputum (coughed-up mucus),കഫത്തിൽ രക്തം
+step5_symptom_persistent_cough,Persistent cough (more than 2 weeks),തുടർച്ചയായ ചുമ (2 ആഴ്ചയിൽ കൂടുതൽ)
+step5_women_symptoms_title,Women-specific symptoms,സ്ത്രീകൾക്ക് പ്രത്യേകമായ ലക്ഷണങ്ങൾ
+step5_women_symptoms_description,Additional symptoms to check,പരിശോധിക്കേണ്ട അധിക ലക്ഷണങ്ങൾ
+step5_symptom_breast_lump,Lump in the breast,മാറിടത്തിൽ മുഴ
+step5_symptom_nipple_discharge,Nipple discharge (other than breast milk),മുലക്കണ്ണിൽ നിന്ന് സ്രവം (മുലപ്പാൽ അല്ലാതെ)
+step5_symptom_breast_shape,Change in breast shape or size,മാറിടത്തിന്റെ ആകൃതിയിലോ വലുപ്പത്തിലോ മാറ്റം
+step5_symptom_postmenopausal_bleeding,Bleeding after menopause,ആർത്തവവിരാമത്തിന് ശേഷം രക്തസ്രാവം
+step5_symptom_bleeding_intercourse,Bleeding after intercourse,ലൈംഗിക ബന്ധത്തിന് ശേഷം രക്തസ്രാവം
+step5_result_symptoms_title,Please consult a doctor,ഡോക്ടറെ സമീപിക്കുക
+step5_result_symptoms_description,You reported one or more symptoms that need medical evaluation. Please consult a doctor at the nearest health facility for further evaluation. Early detection can make a significant difference.,മെഡിക്കൽ വിലയിരുത്തൽ ആവശ്യമായ ഒന്നോ അതിലധികമോ ലക്ഷണങ്ങൾ നിങ്ങൾ റിപ്പോർട്ട് ചെയ്തു. കൂടുതൽ വിലയിരുത്തലിനായി അടുത്തുള്ള ആരോഗ്യ കേന്ദ്രത്തിലെ ഡോക്ടറെ സമീപിക്കുക. നേരത്തെ കണ്ടെത്തൽ വലിയ വ്യത്യാസം ഉണ്ടാക്കും.
+step5_result_no_symptoms_title,No symptoms reported,ലക്ഷണങ്ങൾ റിപ്പോർട്ട് ചെയ്തിട്ടില്ല
+step5_result_no_symptoms_description,"Consider routine screening once every 5 years. If you notice new symptoms later, consult a health facility promptly.","5 വർഷത്തിലൊരിക്കൽ പതിവ് സ്ക്രീനിംഗ് പരിഗണിക്കുക. പിന്നീട് പുതിയ ലക്ഷണങ്ങൾ ശ്രദ്ധയിൽപ്പെട്ടാൽ, ഉടൻ ആരോഗ്യ കേന്ദ്രം സന്ദർശിക്കുക."
+step5_breast_exam_title,Self-breast examination guide,സ്വയം മാറിട പരിശോധന ഗൈഡ്
+step5_breast_exam_how_to,How to perform a self-breast examination:,സ്വയം മാറിട പരിശോധന എങ്ങനെ നടത്താം:
+step5_breast_exam_step_1,Stand in front of a mirror with shoulders straight and arms on hips,തോളുകൾ നേരെയും കൈകൾ ഇടുപ്പിലും വച്ച് കണ്ണാടിക്ക് മുന്നിൽ നിൽക്കുക
+step5_breast_exam_step_2,"Look for any changes in size, shape, or color of breasts","മാറിടങ്ങളുടെ വലുപ്പം, ആകൃതി, നിറം എന്നിവയിൽ മാറ്റങ്ങൾ നോക്കുക"
+step5_breast_exam_step_3,Raise your arms and look for the same changes,കൈകൾ ഉയർത്തി അതേ മാറ്റങ്ങൾ നോക്കുക
+step5_breast_exam_step_4,"While lying down, use your right hand to feel your left breast and vice versa","കിടക്കുമ്പോൾ, ഇടത് മാറിടം അനുഭവിക്കാൻ വലത് കൈ ഉപയോഗിക്കുക, തിരിച്ചും"
+step5_breast_exam_step_5,"Use firm, smooth touches with finger pads in circular motions","വിരൽ പാഡുകൾ ഉപയോഗിച്ച് വൃത്താകൃതിയിൽ ഉറച്ച, മിനുസമായ സ്പർശനങ്ങൾ ഉപയോഗിക്കുക"
+step5_breast_exam_step_6,"Cover the entire breast from top to bottom, side to side","മുകളിൽ നിന്ന് താഴേക്ക്, വശത്തുനിന്ന് വശത്തേക്ക് മുഴുവൻ മാറിടവും മൂടുക"
+step5_breast_exam_step_7,"Feel your breasts while standing or sitting, such as in the shower",ഷവറിൽ എന്നപോലെ നിൽക്കുമ്പോഴോ ഇരിക്കുമ്പോഴോ മാറിടങ്ങൾ അനുഭവിക്കുക
+step5_breast_exam_note,"Seek help if you find a new lump, thickening, or any change. Monthly self-exams help you know what's normal for your body.","പുതിയ മുഴ, കട്ടിയാകൽ, അല്ലെങ്കിൽ ഏതെങ്കിലും മാറ്റം കണ്ടെത്തിയാൽ സഹായം തേടുക. പ്രതിമാസ സ്വയം പരിശോധനകൾ നിങ്ങളുടെ ശരീരത്തിന് എന്താണ് സാധാരണ എന്ന് അറിയാൻ സഹായിക്കുന്നു."
+bmi_page_badge,BMI Tool,BMI ടൂൾ
+bmi_page_title,BMI Calculator,BMI കാൽക്കുലേറ്റർ
+bmi_page_subtitle,Calculate your Body Mass Index instantly,നിങ്ങളുടെ ബോഡി മാസ് ഇൻഡക്സ് തൽക്ഷണം കണക്കാക്കുക
+bmi_page_input_title,Enter your measurements,നിങ്ങളുടെ അളവുകൾ നൽകുക
+bmi_page_input_description,We'll calculate your BMI and show what it means,ഞങ്ങൾ BMI കണക്കാക്കി അതിന്റെ അർത്ഥം കാണിക്കും
+bmi_page_calculate,Calculate BMI,BMI കണക്കാക്കുക
+bmi_page_your_bmi,Your BMI,നിങ്ങളുടെ BMI
+bmi_page_categories_title,BMI Categories,BMI വിഭാഗങ്ങൾ
+bmi_page_about_title,About BMI,BMI-നെ കുറിച്ച്
+bmi_page_about_description,"BMI is a screening tool, not a diagnostic measure. It doesn't account for muscle mass, bone density, or overall body composition. For a complete health assessment, consult a healthcare provider.","BMI ഒരു സ്ക്രീനിംഗ് ഉപാധി മാത്രമാണ്, രോഗനിർണയമല്ല. ഇത് മസിൽ, അസ്ഥി, ശരീര ഘടന എന്നിവ കണക്കിലെടുക്കുന്നില്ല. കൃത്യമായ ആരോഗ്യ വിവരങ്ങൾക്ക് ഡോക്ടറെ സമീപിക്കുക."
+bmi_page_cta_title,Want a complete health check?,സമ്പൂർണ്ണ ആരോഗ്യ പരിശോധന വേണോ?
+bmi_page_cta_description,Take our full assessment for personalized risk scores and guidance.,വ്യക്തിഗത റിസ്ക് സ്കോറുകൾക്കായി പൂർണ്ണ വിലയിരുത്തൽ എടുക്കുക.
+bmi_category_underweight,Underweight,ഭാരക്കുറവ്
+bmi_category_underweight_desc,You may need to gain some weight. Consider consulting a healthcare provider.,നിങ്ങൾക്ക് അല്പം ഭാരം വർദ്ധിപ്പിക്കേണ്ടി വന്നേക്കാം. ഒരു ആരോഗ്യ ദാതാവിനെ സമീപിക്കുന്നത് പരിഗണിക്കുക.
+bmi_category_normal,Normal range,സാധാരണ പരിധി
+bmi_category_normal_desc,Great! Your weight is within the healthy range. Keep up the good habits!,നന്നായി! നിങ്ങളുടെ ഭാരം ആരോഗ്യകരമായ പരിധിക്കുള്ളിലാണ്. നല്ല ശീലങ്ങൾ തുടരുക!
+bmi_category_overweight,Overweight,ഭാരക്കൂടുതൽ
+bmi_category_overweight_desc,You may benefit from lifestyle changes. Small steps can make a big difference.,ജീവിതശൈലി മാറ്റങ്ങൾ നിങ്ങൾക്ക് ഗുണം ചെയ്യും. ചെറിയ മാറ്റങ്ങൾ വലിയ വ്യത്യാസം ഉണ്ടാക്കും.
+bmi_category_obese_1,Obese class I,ഒബീസ് ക്ലാസ് I
+bmi_category_obese_1_desc,Consider consulting a healthcare provider for personalized guidance and weight management strategies.,വ്യക്തിഗത മാർഗ്ഗനിർദ്ദേശത്തിനും ഭാര നിയന്ത്രണ തന്ത്രങ്ങൾക്കും ഒരു ആരോഗ്യ ദാതാവിനെ സമീപിക്കുന്നത് പരിഗണിക്കുക.
+bmi_category_obese_2,Obese class II,ഒബീസ് ക്ലാസ് II
+bmi_category_obese_2_desc,It's important to consult a healthcare provider for comprehensive health assessment and support.,സമഗ്രമായ ആരോഗ്യ വിലയിരുത്തലിനും പിന്തുണയ്ക്കും ഒരു ആരോഗ്യ ദാതാവിനെ സമീപിക്കുന്നത് പ്രധാനമാണ്.
+bmi_category_obese_3,Obese class III,ഒബീസ് ക്ലാസ് III
+bmi_category_obese_3_desc,Please consult a healthcare provider urgently for specialized medical guidance and intervention.,പ്രത്യേക വൈദ്യസഹായത്തിനും ഇടപെടലിനും ദയവായി ഒരു ആരോഗ്യ ദാതാവിനെ സമീപിക്കുക.
+bp_page_badge,BP Tool,BP ടൂൾ
+bp_page_title,Blood Pressure Interpreter,രക്തസമ്മർദ്ദ വ്യാഖ്യാതാവ്
+bp_page_subtitle,Understand what your BP reading means,നിങ്ങളുടെ BP റീഡിംഗ് എന്താണ് അർത്ഥമാക്കുന്നതെന്ന് മനസ്സിലാക്കുക
+bp_page_input_title,Enter your BP reading,നിങ്ങളുടെ BP റീഡിംഗ് നൽകുക
+bp_page_input_description,Enter the numbers shown on your BP monitor,BP മോണിറ്ററിൽ കാണിക്കുന്ന നമ്പറുകൾ നൽകുക
+bp_page_systolic,Systolic (top no.),സിസ്റ്റോളിക് (മുകളിലെ നമ്പർ)
+bp_page_diastolic,Diastolic (bottom no.),ഡയസ്റ്റോളിക് (താഴത്തെ നമ്പർ)
+bp_page_unit,mmHg,mmHg
+bp_page_check_reading,Check Reading,റീഡിംഗ് പരിശോധിക്കുക
+bp_page_your_reading,Your Reading,നിങ്ങളുടെ റീഡിംഗ്
+bp_page_invalid_range,"The values you entered seem unusually high (Systolic > 250 or Diastolic > 150). Please double-check your BP monitor reading. If the values are correct, seek immediate medical attention.","നൽകിയ മൂല്യങ്ങൾ അസാധാരണമായി ഉയർന്നതാണ് (സിസ്റ്റോളിക് > 250 അല്ലെങ്കിൽ ഡയസ്റ്റോളിക് > 150). ദയവായി റീഡിംഗ് വീണ്ടും പരിശോധിക്കുക. ശരിയാണെങ്കിൽ, ഉടൻ വൈദ്യസഹായം തേടുക."
+bp_page_recommendations,Recommendations:,ശുപാർശകൾ:
+bp_page_categories_title,Blood Pressure Categories,രക്തസമ്മർദ്ദ വിഭാഗങ്ങൾ
+bp_page_tips_title,Tips for accurate readings,കൃത്യമായ റീഡിംഗുകൾക്കുള്ള നുറുങ്ങുകൾ
+bp_page_tips_description,"Ensure the person has not exercised, had tea/coffee, or used tobacco in the last 30 minutes. Person should rest comfortably and quietly for 5 minutes before the reading.","കഴിഞ്ഞ 30 മിനിറ്റിൽ വ്യായാമം ചെയ്യുകയോ, ചായ/കാപ്പി കുടിക്കുകയോ, പുകയില ഉപയോഗിക്കുകയോ ചെയ്തിട്ടില്ലെന്ന് ഉറപ്പാക്കുക. പരിശോധനയ്ക്ക് മുമ്പ് 5 മിനിറ്റ് വിശ്രമിക്കുക."
+bp_category_hypotension,Hypotension,ഹൈപ്പോടെൻഷൻ
+bp_category_hypotension_desc,Your blood pressure is low. This may cause dizziness or fainting.,നിങ്ങളുടെ രക്തസമ്മർദ്ദം കുറവാണ്. ഇത് തലകറക്കം അല്ലെങ്കിൽ ബോധക്ഷയം ഉണ്ടാക്കാം.
+bp_category_normal,Normal,സാധാരണ
+bp_category_normal_desc,Your blood pressure is within the healthy range. Keep up the healthy lifestyle!,നിങ്ങളുടെ രക്തസമ്മർദ്ദം ആരോഗ്യകരമായ പരിധിയിലാണ്. ആരോഗ്യകരമായ ജീവിതശൈലി തുടരുക!
+bp_category_stage1,Stage 1 Hypertension,ഘട്ടം 1 ഹൈപ്പർടെൻഷൻ
+bp_category_stage1_desc,Your blood pressure is high. Consider consulting a healthcare provider.,രക്തസമ്മർദ്ദം കൂടുതലാണ്. ഒരു ഡോക്ടറെ കണ്ട് ഉപദേശം തേടുക.
+bp_category_stage2,Stage 2 Hypertension,ഘട്ടം 2 ഹൈപ്പർടെൻഷൻ
+bp_category_stage2_desc,Your blood pressure is significantly high. Please see a doctor soon.,രക്തസമ്മർദ്ദം വളരെ കൂടുതലാണ്. ഉടൻ തന്നെ ഒരു ഡോക്ടറെ കാണുക.
+bp_category_crisis,Hypertensive Crisis,ഹൈപ്പർടെൻസീവ് ക്രൈസിസ്
+bp_category_crisis_desc,This is a medical emergency. Seek immediate medical attention!,ഇതൊരു മെഡിക്കൽ എമർജൻസിയാണ്. അടിയന്തിര വൈദ്യസഹായം തേടുക!
+bp_category_crisis_alert_title,Seek Immediate Medical Attention,ഉടനടി വൈദ്യസഹായം തേടുക
+bp_category_crisis_alert_desc,A reading this high requires emergency care. Please go to the nearest hospital or call emergency services immediately.,ഇത്രയും ഉയർന്ന റീഡിംഗിന് അടിയന്തര പരിചരണം ആവശ്യമാണ്. അടുത്തുള്ള ആശുപത്രിയിലേക്ക് പോകുക അല്ലെങ്കിൽ അടിയന്തര സേവനങ്ങളെ വിളിക്കുക.
+sugar_page_badge,Sugar Tool,ഷുഗർ ടൂൾ
+sugar_page_title,Blood Sugar Interpreter,രക്തത്തിലെ പഞ്ചസാര വ്യാഖ്യാതാവ്
+sugar_page_subtitle,Understand what your blood sugar reading means,നിങ്ങളുടെ രക്തത്തിലെ പഞ്ചസാര റീഡിംഗ് എന്താണ് അർത്ഥമാക്കുന്നതെന്ന് മനസ്സിലാക്കുക
+sugar_page_input_title,Enter your reading,നിങ്ങളുടെ റീഡിംഗ് നൽകുക
+sugar_page_input_description,Select the test type and enter your value,ടെസ്റ്റ് തരം തിരഞ്ഞെടുത്ത് മൂല്യം നൽകുക
+sugar_page_test_type,Test Type,ടെസ്റ്റ് തരം
+sugar_page_check_reading,Check Reading,റീഡിംഗ് പരിശോധിക്കുക
+sugar_page_your_reading,Your,നിങ്ങളുടെ
+sugar_page_value_too_high,This value seems unusually high. Please double-check your reading or consult a healthcare provider immediately.,ഈ മൂല്യം അസാധാരണമായി ഉയർന്നതായി തോന്നുന്നു. റീഡിംഗ് പരിശോധിക്കുക അല്ലെങ്കിൽ ഉടൻ ഡോക്ടറെ സമീപിക്കുക.
+sugar_page_recommendations,Recommendations:,ശുപാർശകൾ:
+sugar_page_reference_title,Blood Sugar Reference Ranges,രക്തത്തിലെ പഞ്ചസാര റഫറൻസ് ശ്രേണികൾ
+sugar_page_important_title,Important Note,പ്രധാന കുറിപ്പ്
+sugar_page_important_desc,A single reading isn't enough for diagnosis. Diabetes is typically confirmed with two separate tests. Always consult a healthcare provider for proper diagnosis and treatment.,ഒരു റീഡിംഗ് മാത്രം രോഗനിർണയത്തിന് പര്യാപ്തമല്ല. പ്രമേഹം സാധാരണയായി രണ്ട് പ്രത്യേക ടെസ്റ്റുകൾ ഉപയോഗിച്ച് സ്ഥിരീകരിക്കുന്നു. ശരിയായ രോഗനിർണയത്തിനും ചികിത്സയ്ക്കും എല്ലായ്പ്പോഴും ഒരു ആരോഗ്യ ദാതാവിനെ സമീപിക്കുക.
+sugar_test_fbs,Fasting Blood Sugar (FBS),ഫാസ്റ്റിംഗ് ബ്ലഡ് ഷുഗർ (FBS)
+sugar_test_fbs_desc,Measured after 8+ hours of fasting,8 മണിക്കൂറിലധികം ഭക്ഷണം കഴിക്കാതിരുന്ന ശേഷം
+sugar_test_rbs,Random Blood Sugar (RBS),റാൻഡം ബ്ലഡ് ഷുഗർ (RBS)
+sugar_test_rbs_desc,Measured at any time of day,ദിവസത്തിൽ എപ്പോൾ വേണമെങ്കിലും അളക്കുന്നു
+sugar_test_ppbs,2-hour PPBS,2-മണിക്കൂർ PPBS
+sugar_test_ppbs_desc,Measured 2 hours after a meal,ഭക്ഷണം കഴിഞ്ഞ് 2 മണിക്കൂറിന് ശേഷം
+sugar_test_hba1c,HbA1c,HbA1c
+sugar_test_hba1c_desc,Average blood sugar over 2-3 months,കഴിഞ്ഞ 2-3 മാസത്തെ ശരാശരി പഞ്ചസാരയുടെ അളവ്
+sugar_result_hypoglycaemia,Hypoglycaemia,ഹൈപ്പോഗ്ലൈസീമിയ
+sugar_result_hypoglycaemia_desc,Your blood sugar is too low. This can be dangerous and requires immediate attention.,"രക്തത്തിലെ പഞ്ചസാര വളരെ കുറവാണ്. ഇത് അപകടകരമാണ്, അടിയന്തര ശ്രദ്ധ ആവശ്യമാണ്."
+sugar_result_normal,Normal,സാധാരണ
+sugar_result_normal_desc,Your blood sugar is within the healthy range.,നിങ്ങളുടെ രക്തത്തിലെ പഞ്ചസാര ആരോഗ്യകരമായ പരിധിയിലാണ്.
+sugar_result_elevated,Elevated,ഉയർന്ന
+sugar_result_elevated_desc,Your random blood sugar is elevated. Consider getting a fasting test or HbA1c for better assessment.,റാൻഡം ബ്ലഡ് ഷുഗർ കൂടുതലാണ്. കൃത്യമായ വിവരത്തിന് ഫാസ്റ്റിംഗ് അല്ലെങ്കിൽ HbA1c ടെസ്റ്റ് നടത്തുക.
+sugar_result_prediabetes,Pre-diabetes,പ്രീ-ഡയബറ്റിസ്
+sugar_result_prediabetes_desc,Your blood sugar is higher than normal. Lifestyle changes can help prevent diabetes.,പഞ്ചസാരയുടെ അളവ് സാധാരണയേക്കാൾ കൂടുതലാണ്. ജീവിതശൈലി മാറ്റങ്ങൾ പ്രമേഹം തടയാൻ സഹായിക്കും.
+sugar_result_diabetes,Diabetes Mellitus,ഡയബറ്റിസ് മെല്ലിറ്റസ്
+sugar_result_diabetes_desc,Your blood sugar is in the diabetes range. Please consult a doctor for proper diagnosis.,പഞ്ചസാരയുടെ അളവ് പ്രമേഹ പരിധിയിലാണ്. കൃത്യമായ രോഗനിർണയത്തിന് ഡോക്ടറെ സമീപിക്കുക.
+cancer_page_badge,Screening Tool,സ്ക്രീനിംഗ് ടൂൾ
+cancer_page_title,Cancer Symptom Checker,കാൻസർ ലക്ഷണ പരിശോധന
+cancer_page_subtitle,Early detection saves lives. Answer honestly — this is for your awareness.,നേരത്തെ കണ്ടെത്തൽ ജീവൻ രക്ഷിക്കുന്നു. സത്യസന്ധമായി ഉത്തരം നൽകുക — ഇത് നിങ്ങളുടെ അവബോധത്തിനാണ്.
+cancer_page_gender_title,"First, tell us your gender","ആദ്യം, നിങ്ങളുടെ ലിംഗം പറയുക"
+cancer_page_gender_description,This helps us ask the right questions,ശരിയായ ചോദ്യങ്ങൾ ചോദിക്കാൻ ഇത് സഹായിക്കുന്നു
+cancer_page_male,Male,പുരുഷൻ
+cancer_page_female,Female,സ്ത്രീ
+cancer_page_check_symptoms,Check Symptoms,ലക്ഷണങ്ങൾ പരിശോധിക്കുക
+cancer_page_find_facility,Find nearby health facility,അടുത്തുള്ള ആരോഗ്യ കേന്ദ്രം കണ്ടെത്തുക
+cancer_page_about_title,About this screening,ഈ സ്ക്രീനിംഗിനെക്കുറിച്ച്
+cancer_page_about_desc,This tool helps identify potential warning signs that may need medical attention. It is not a diagnosis. Many symptoms can have causes other than cancer. Only a healthcare professional can provide a proper diagnosis.,മെഡിക്കൽ ശ്രദ്ധ ആവശ്യമായേക്കാവുന്ന സാധ്യതയുള്ള മുന്നറിയിപ്പ് ലക്ഷണങ്ങൾ തിരിച്ചറിയാൻ ഈ ഉപകരണം സഹായിക്കുന്നു. ഇത് രോഗനിർണയമല്ല. പല ലക്ഷണങ്ങൾക്കും കാൻസർ അല്ലാത്ത കാരണങ്ങൾ ഉണ്ടാകാം. ഒരു ആരോഗ്യ പ്രൊഫഷണലിന് മാത്രമേ ശരിയായ രോഗനിർണയം നൽകാൻ കഴിയൂ.
+jak_page_badge,Find JAK,JAK കണ്ടെത്തുക
+jak_page_title,Find Your Janakeeya Arogya Kendram,ജനകീയ ആരോഗ്യ കേന്ദ്രം കണ്ടെത്തുക
+jak_page_subtitle,Locate the nearest primary health centre in your area,അടുത്തുള്ള പ്രാഥമിക ആരോഗ്യ കേന്ദ്രം കണ്ടെത്തുക
+jak_page_what_is_title,What is Janakeeya Arogya Kendram?,ജനകീയ ആരോഗ്യ കേന്ദ്രം എന്താണ്?
+jak_page_what_is_desc_1,"Janakeeya Arogya Kendram (JAK) is Kerala's network of family health centres that provide comprehensive primary healthcare services to communities. These centres are the first point of contact for preventive, promotive, and curative healthcare.",ജനകീയ ആരോഗ്യ കേന്ദ്രം (JAK) എന്നത് കേരളത്തിലെ കുടുംബാരോഗ്യ കേന്ദ്രങ്ങളുടെ (Family Health Centres) ശൃംഖലയാണ്. പ്രാഥമിക ആരോഗ്യ സേവനങ്ങൾ ജനങ്ങളിലേക്ക് എത്തിക്കുന്നതിനുള്ള ആദ്യ പടിയാണിത്.
+jak_page_what_is_desc_2,"JAKs operate under the National Health Mission and offer free consultations, essential medicines, diagnostic services, and referral support.","ദേശീയ ആരോഗ്യ ദൗത്യത്തിന് (NHM) കീഴിൽ പ്രവർത്തിക്കുന്ന ഇവിടെ സൗജന്യ പരിശോധന, മരുന്നുകൾ, ലാബ് സൗകര്യങ്ങൾ എന്നിവ ലഭിക്കുന്നു."
+jak_page_services_title,Services Available at JAK,JAK-ൽ ലഭ്യമായ സേവനങ്ങൾ
+jak_page_service_opd,General OPD,ജനറൽ OPD
+jak_page_service_ncd,NCD Screening,NCD സ്ക്രീനിംഗ്
+jak_page_service_medicines,Free Medicines,സൗജന്യ മരുന്നുകൾ
+jak_page_service_family,Family Health,ഫാമിലി ഹെൽത്ത്
+jak_page_service_lab,Lab Services,ലാബ് സേവനങ്ങൾ
+jak_page_service_tele,Teleconsultation,ടെലികൺസൾട്ടേഷൻ
+jak_page_search_title,Search for JAK,JAK-നായി തിരയുക
+jak_page_search_desc,Find a Janakeeya Arogya Kendram near you,നിങ്ങളുടെ അടുത്തുള്ള ജനകീയ ആരോഗ്യ കേന്ദ്രം കണ്ടെത്തുക
+jak_page_select_district,Select District,ജില്ല തിരഞ്ഞെടുക്കുക
+jak_page_district_placeholder,Choose your district,നിങ്ങളുടെ ജില്ല തിരഞ്ഞെടുക്കുക
+jak_page_search_label,Search by name or location,പേരോ സ്ഥലമോ ഉപയോഗിച്ച് തിരയുക
+jak_page_search_placeholder,"e.g., Panchayat name, area...","ഉദാ: പഞ്ചായത്ത് പേര്, പ്രദേശം..."
+jak_page_coming_soon_title,Coming Soon,ഉടൻ വരുന്നു
+jak_page_coming_soon_desc,"We're working on adding the complete directory of Janakeeya Arogya Kendrams. In the meantime, please contact your local ASHA worker or visit the nearest government health facility for assistance.","ജനകീയ ആരോഗ്യ കേന്ദ്രങ്ങളുടെ പൂർണ്ണ ഡയറക്ടറി ചേർക്കാൻ ഞങ്ങൾ പ്രവർത്തിക്കുന്നു. ഇതിനിടയിൽ, നിങ്ങളുടെ പ്രാദേശിക ASHA വർക്കറുമായി ബന്ധപ്പെടുക അല്ലെങ്കിൽ അടുത്തുള്ള സർക്കാർ ആരോഗ്യ കേന്ദ്രം സന്ദർശിക്കുക."
+jak_page_other_ways_title,Other Ways to Find Help,സഹായം കണ്ടെത്താനുള്ള മറ്റ് വഴികൾ
+jak_page_helpline_title,Health Helpline,ഹെൽത്ത് ഹെൽപ്പ്‌ലൈൻ
+jak_page_helpline_desc,Call 104 for health information,ആരോഗ്യ വിവരങ്ങൾക്ക് 104 വിളിക്കുക
+jak_page_asha_title,Contact ASHA Worker,ASHA വർക്കറുമായി ബന്ധപ്പെടുക
+jak_page_asha_desc,Your local ASHA can guide you to the nearest facility,നിങ്ങളുടെ പ്രാദേശിക ASHA അടുത്തുള്ള കേന്ദ്രത്തിലേക്ക് മാർഗ്ഗനിർദ്ദേശം നൽകും
+jak_page_phc_title,Visit PHC/CHC,PHC/CHC സന്ദർശിക്കുക
+jak_page_phc_desc,Go to your nearest Primary Health Centre,നിങ്ങളുടെ അടുത്തുള്ള പ്രാഥമിക ആരോഗ്യ കേന്ദ്രത്തിലേക്ക് പോകുക
+jak_page_hours_title,Typical Operating Hours,സാധാരണ പ്രവർത്തന സമയം
+jak_page_hours_weekdays,Monday - Saturday,തിങ്കൾ - ശനി
+jak_page_hours_weekdays_time,8:00 AM - 4:00 PM,8:00 AM - 4:00 PM
+jak_page_hours_emergency,Emergency Services,എമർജൻസി സേവനങ്ങൾ
+jak_page_hours_emergency_time,24/7 (at select centres),24/7 (തിരഞ്ഞെടുത്ത കേന്ദ്രങ്ങളിൽ)
+jak_page_hours_weekends,Sunday & Holidays,ഞായർ & അവധി ദിനങ്ങൾ
+jak_page_hours_weekends_time,Emergency only,എമർജൻസി മാത്രം
+jak_page_hours_note,* Hours may vary by location. Please call ahead to confirm.,* സമയം സ്ഥലം അനുസരിച്ച് വ്യത്യാസപ്പെടാം. സ്ഥിരീകരിക്കാൻ മുൻകൂട്ടി വിളിക്കുക.
+jak_page_what_to_bring_title,What to Bring,എന്ത് കൊണ്ടുവരണം
+jak_page_what_to_bring_1,Aadhaar card or any government ID,ആധാർ കാർഡ് അല്ലെങ്കിൽ ഏതെങ്കിലും സർക്കാർ ID
+jak_page_what_to_bring_2,UHID card (if you have one),UHID കാർഡ് (ഉണ്ടെങ്കിൽ)
+jak_page_what_to_bring_3,Previous medical records (if any),മുമ്പത്തെ മെഡിക്കൽ രേഖകൾ (ഉണ്ടെങ്കിൽ)
+jak_page_what_to_bring_4,List of current medications,നിലവിലെ മരുന്നുകളുടെ ലിസ്റ്റ്
+jak_page_cta_title,Check your health first,ആദ്യം നിങ്ങളുടെ ആരോഗ്യം പരിശോധിക്കുക
+jak_page_cta_desc,Take our quick assessment before your visit to understand your risk factors.,നിങ്ങളുടെ അപകടസാധ്യത ഘടകങ്ങൾ മനസ്സിലാക്കാൻ സന്ദർശനത്തിന് മുമ്പ് ഞങ്ങളുടെ വേഗത്തിലുള്ള വിലയിരുത്തൽ എടുക്കുക.
+jak_page_cta_button,Take Health Assessment,ആരോഗ്യ വിലയിരുത്തൽ എടുക്കുക
+jak_page_footer,Janakeeya Arogya Kendrams are operated by the Government of Kerala.,ജനകീയ ആരോഗ്യ കേന്ദ്രങ്ങൾ കേരള സർക്കാർ നടത്തുന്നതാണ്.
+uhid_page_badge,UHID Tool,UHID ടൂൾ
+uhid_page_title,Generate Your UHID,നിങ്ങളുടെ UHID സൃഷ്ടിക്കുക
+uhid_page_subtitle,Your Unique Health Identifier for Kerala's digital health ecosystem,കേരളത്തിന്റെ ഡിജിറ്റൽ ആരോഗ്യ ആവാസവ്യവസ്ഥയ്ക്കായി യുണീക് ഹെൽത്ത് ഐഡന്റിഫയർ
+uhid_page_what_is_title,What is UHID?,UHID എന്താണ്?
+uhid_page_what_is_desc_1,UHID (Unique Health Identifier) is a unique identification number assigned to every citizen under Kerala's State Digital Health Mission. It serves as your digital health identity across all government healthcare facilities in Kerala.,കേരളത്തിലെ എല്ലാ പൗരന്മാർക്കും സംസ്ഥാന ഡിജിറ്റൽ ഹെൽത്ത് മിഷൻ നൽകുന്ന തിരിച്ചറിയൽ നമ്പറാണ് UHID. സർക്കാർ ആശുപത്രികളിൽ ചികിത്സ തേടുമ്പോൾ ഇത് ഉപയോഗിക്കാം.
+uhid_page_what_is_desc_2,"With UHID, all your health records from government hospitals, PHCs, and health centers are linked together, making healthcare delivery smoother and more efficient.",UHID വഴി സർക്കാർ ആശുപത്രികളിലെയും പ്രാഥമിക ആരോഗ്യ കേന്ദ്രങ്ങളിലെയും നിങ്ങളുടെ ചികിത്സാ വിവരങ്ങൾ ഒരൊറ്റ ഐഡിയിൽ ലഭ്യമാകും.
+uhid_page_benefits_title,Benefits of UHID,UHID-ന്റെ ആനുകൂല്യങ്ങൾ
+uhid_page_benefit_1,Access all your medical records in one place,എല്ലാ മെഡിക്കൽ രേഖകളും ഒരിടത്ത് ആക്സസ് ചെയ്യുക
+uhid_page_benefit_2,Seamless care across Kerala's government hospitals,കേരളത്തിലെ സർക്കാർ ആശുപത്രികളിലുടനീളം സുഗമമായ പരിചരണം
+uhid_page_benefit_3,Secure and private health data storage,ആരോഗ്യ വിവരങ്ങൾ സുരക്ഷിതമായി സൂക്ഷിക്കാം
+uhid_page_benefit_4,Easy access through mobile and web portal,"മൊബൈൽ, വെബ് പോർട്ടൽ വഴി എളുപ്പത്തിൽ ആക്സസ്"
+uhid_page_benefit_5,Faster registration at healthcare facilities,ആശുപത്രികളിൽ വേഗത്തിൽ രജിസ്റ്റർ ചെയ്യാം
+uhid_page_how_to_title,How to Register,എങ്ങനെ രജിസ്റ്റർ ചെയ്യാം
+uhid_page_how_to_desc,You'll need your Aadhaar number linked with a mobile number,മൊബൈൽ നമ്പറുമായി ലിങ്ക് ചെയ്ത നിങ്ങളുടെ ആധാർ നമ്പർ ആവശ്യമാണ്
+uhid_page_step_1,Click the button below to visit the eHealth Kerala portal,eHealth Kerala പോർട്ടൽ സന്ദർശിക്കാൻ താഴെയുള്ള ബട്ടൺ ക്ലിക്ക് ചെയ്യുക
+uhid_page_step_2,Select 'Create UHID / Link Mobile Number with UHID','UHID സൃഷ്ടിക്കുക / UHID-മായി മൊബൈൽ നമ്പർ ലിങ്ക് ചെയ്യുക' തിരഞ്ഞെടുക്കുക
+uhid_page_step_3,Enter your Aadhaar number,നിങ്ങളുടെ ആധാർ നമ്പർ നൽകുക
+uhid_page_step_4,Verify using OTP sent to your Aadhaar-linked mobile,ആധാർ ലിങ്ക് ചെയ്ത മൊബൈലിലേക്ക് അയച്ച OTP ഉപയോഗിച്ച് സ്ഥിരീകരിക്കുക
+uhid_page_step_5,Confirm your details and your UHID will be generated,"നിങ്ങളുടെ വിശദാംശങ്ങൾ സ്ഥിരീകരിക്കുക, UHID സൃഷ്ടിക്കപ്പെടും"
+uhid_page_cta,Go to eHealth Kerala Portal,eHealth Kerala പോർട്ടലിലേക്ക് പോകുക
+uhid_page_already_have_title,Already have a UHID?,ഇതിനകം UHID ഉണ്ടോ?
+uhid_page_already_have_desc,"You can use the same portal to log in, view your health records, and manage your profile.",ലോഗിൻ ചെയ്യാനും ആരോഗ്യ രേഖകൾ കാണാനും പ്രൊഫൈൽ നിയന്ത്രിക്കാനും അതേ പോർട്ടൽ ഉപയോഗിക്കാം.
+uhid_page_faq_q1,What if my mobile isn't linked with Aadhaar?,എന്റെ മൊബൈൽ ആധാറുമായി ലിങ്ക് ചെയ്തിട്ടില്ലെങ്കിൽ എന്തുചെയ്യും?
+uhid_page_faq_a1,"If your mobile number is not linked with Aadhaar, you can visit the nearest government hospital reception desk to create your UHID with assistance from healthcare staff.","നിങ്ങളുടെ മൊബൈൽ നമ്പർ ആധാറുമായി ലിങ്ക് ചെയ്തിട്ടില്ലെങ്കിൽ, അടുത്തുള്ള സർക്കാർ ആശുപത്രി റിസപ്ഷൻ ഡെസ്കിൽ ആരോഗ്യ ജീവനക്കാരുടെ സഹായത്തോടെ UHID സൃഷ്ടിക്കാം."
+uhid_page_faq_q2,Is my health data secure?,എന്റെ ആരോഗ്യ ഡാറ്റ സുരക്ഷിതമാണോ?
+uhid_page_faq_a2,Yes. The State Digital Health Mission follows strict data protection guidelines. Your health records are encrypted and can only be accessed by authorized healthcare providers when you visit a facility.,"അതെ. സ്റ്റേറ്റ് ഡിജിറ്റൽ ഹെൽത്ത് മിഷൻ കർശനമായ ഡാറ്റ സംരക്ഷണ മാർഗ്ഗനിർദ്ദേശങ്ങൾ പാലിക്കുന്നു. നിങ്ങളുടെ ആരോഗ്യ രേഖകൾ എൻക്രിപ്റ്റ് ചെയ്തിരിക്കുന്നു, നിങ്ങൾ ഒരു കേന്ദ്രം സന്ദർശിക്കുമ്പോൾ അംഗീകൃത ആരോഗ്യ ദാതാക്കൾക്ക് മാത്രമേ ആക്സസ് ചെയ്യാൻ കഴിയൂ."
+uhid_page_faq_q3,Can I use UHID at private hospitals?,സ്വകാര്യ ആശുപത്രികളിൽ UHID ഉപയോഗിക്കാമോ?
+uhid_page_faq_a3,"Currently, UHID is primarily used in government healthcare facilities. However, integration with private hospitals is being expanded under the State Digital Health Mission.","നിലവിൽ, UHID പ്രധാനമായും സർക്കാർ ആരോഗ്യ കേന്ദ്രങ്ങളിൽ ഉപയോഗിക്കുന്നു. എന്നിരുന്നാലും, സ്റ്റേറ്റ് ഡിജിറ്റൽ ഹെൽത്ത് മിഷന്റെ കീഴിൽ സ്വകാര്യ ആശുപത്രികളുമായുള്ള സംയോജനം വിപുലീകരിക്കുന്നു."
+uhid_page_health_check_title,Want a health check?,ആരോഗ്യ പരിശോധന വേണോ?
+uhid_page_health_check_desc,Take our quick assessment for personalized risk scores and guidance.,വ്യക്തിഗത റിസ്ക് സ്കോറുകൾക്കും മാർഗ്ഗനിർദ്ദേശത്തിനും ഞങ്ങളുടെ വേഗത്തിലുള്ള വിലയിരുത്തൽ എടുക്കുക.
+uhid_page_health_check_button,Take Health Assessment,ആരോഗ്യ വിലയിരുത്തൽ എടുക്കുക
+uhid_page_footer,"UHID is managed by the State Digital Health Mission, Kerala.","UHID സ്റ്റേറ്റ് ഡിജിറ്റൽ ഹെൽത്ത് മിഷൻ, കേരള നിയന്ത്രിക്കുന്നു."
+disclaimer_alert_title,Important,പ്രധാനം
+disclaimer_alert_description,"This tool provides general risk information and is not a diagnosis. It does not provide treatment advice. If you have symptoms or concerns, consult a doctor or visit your nearest health facility.","ഈ ഉപകരണം പൊതുവായ റിസ്ക് വിവരങ്ങൾ നൽകുന്നു, രോഗനിർണയമല്ല. ലക്ഷണങ്ങളുണ്ടെങ്കിൽ ഡോക്ടറെ സമീപിക്കുക."
+status_normal,Normal,സാധാരണ
+status_elevated,Elevated,ഉയർന്ന
+status_high,High,ഉയർന്ന
+status_low,Low,കുറഞ്ഞ
+status_underweight,Underweight,ഭാരക്കുറവ്
+status_overweight,Overweight,ഭാരക്കൂടുതൽ
+status_obese,Obese,ഒബീസ്
+status_prediabetes,Pre-diabetes,പ്രീ-ഡയബറ്റിസ്
+status_diabetes,Diabetes Mellitus,ഡയബറ്റിസ് മെല്ലിറ്റസ്
+status_hypoglycaemia,Hypoglycaemia,ഹൈപ്പോഗ്ലൈസീമിയ
+status_hypotension,Hypotension,ഹൈപ്പോടെൻഷൻ
+status_stage1_hypertension,Stage 1 Hypertension,ഘട്ടം 1 ഹൈപ്പർടെൻഷൻ
+status_stage2_hypertension,Stage 2 Hypertension,ഘട്ടം 2 ഹൈപ്പർടെൻഷൻ
+status_hypertensive_crisis,Hypertensive Crisis,ഹൈപ്പർടെൻസീവ് ക്രൈസിസ്
+legacy_title,"Health as a Right, Happiness as a Commitment.","ആരോഗ്യം ആനന്ദം - ആരോഗ്യം അവകാശം, ആനന്ദം നമ്മുടെ വാഗ്ദാനം."
+legacy_quote,Health is not a privilege—it is a fundamental right. Arogyam Anandam reflects our collective resolve to ensure that quality healthcare and wellbeing reach every household across Kerala.,ആരോഗ്യം ഒരു ആനുകൂല്യമല്ല - അത് ഓരോ പൗരന്റെയും അടിസ്ഥാന അവകാശമാണ്. ഗുണമേന്മയുള്ള ആരോഗ്യപരിചരണവും സംരക്ഷണവും സമഗ്രമായ ക്ഷേമവും കേരളത്തിലെ ഓരോ വീടുകളിലും എത്തിക്കണമെന്ന നമ്മുടെ കൂട്ടായ ദൃഢനിശ്ചയത്തിന്റെ പ്രതിഫലനമാണ് ആരോഗ്യം ആനന്ദം.
+legacy_author,"Shri. Pinarayi Vijayan, Hon'ble Chief Minister of Kerala","ശ്രീ. പിണറായി വിജയൻ, ബഹുമാനപ്പെട്ട കേരള മുഖ്യമന്ത്രി"
+health_minister_title,Ensuring Health and Well-being,ആരോഗ്യ - ക്ഷേമം ഉറപ്പ്.
+health_minister_quote,"The Government is firmly committed to taking the vision of “Health is Happiness” beyond treatment alone and bringing holistic wellbeing encompassing prevention, care, rehabilitation, and mental health, to every household across Kerala.","“ആരോഗ്യം ആനന്ദം” എന്ന ദർശനം ചികിത്സയിലൊതുങ്ങാതെ, പ്രതിരോധം, പരിചരണം, പുനരധിവാസം, മാനസികാരോഗ്യം ഉൾപ്പെടെയുള്ള സമഗ്ര ക്ഷേമം കേരളത്തിലെ ഓരോ വീട്ടിലേക്കും എത്തിക്കാനുള്ള സർക്കാരിന്റെ ദൃഢപ്രതിജ്ഞയാണ്."
+health_minister_author,"Smt. Veena George, Minister for Health, Woman and Child Development","ശ്രീമതി വീണ ജോർജ്, ആരോഗ്യ, വനിതാ ശിശു വികസന മന്ത്രി"
