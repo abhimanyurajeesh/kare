@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { AssessmentProvider } from "@/lib/assessment-context";
 import { I18nProvider } from "@/lib/i18n-context";
 import { Anek_Malayalam, Inter } from "next/font/google";
+
 const anekMalayalam = Anek_Malayalam({
   subsets: ["latin"],
   variable: "--font-anek-malayalam",
@@ -28,8 +29,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Healthy Life Campaign - Health Risk Assessment",
   description:
-    "Check your health risks in 5 minutes. A free, private health risk assessment tool.",
-  metadataBase: new URL("https://health.kerala.care"),
+    "Check your health risks in 5 minutes. A free, private health risk assessment tool. Eat well · Act well · Sleep well · Care well",
+  metadataBase: new URL(
+    process.env.SITE_URL || "https://healthylife.ohc.network"
+  ),
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },
@@ -40,8 +43,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Healthy Life Campaign - Health Risk Assessment",
     description:
-      "Check your health risks in 5 minutes. Free, private health risk assessment tool. Eat well · Act well · Sleep well · Care well",
-    url: "https://health.kerala.care",
+      "Check your health risks in 5 minutes. A free, private health risk assessment tool. Eat well · Act well · Sleep well · Care well",
+    url: process.env.SITE_URL || "https://healthylife.ohc.network",
     siteName: "Healthy Life Campaign",
     locale: "en_US",
     type: "website",
