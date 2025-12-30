@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { AssessmentProvider } from "@/lib/assessment-context";
 import { I18nProvider } from "@/lib/i18n-context";
 import { Anek_Malayalam, Inter } from "next/font/google";
+
 const anekMalayalam = Anek_Malayalam({
   subsets: ["latin"],
   variable: "--font-anek-malayalam",
