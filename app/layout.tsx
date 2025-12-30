@@ -35,9 +35,7 @@ export const metadata: Metadata = {
       { url: "/icon.svg", type: "image/svg+xml" },
       { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
     ],
-    apple: [
-      { url: "/apple-icon.svg", type: "image/svg+xml" },
-    ],
+    apple: [{ url: "/apple-icon.svg", type: "image/svg+xml" }],
   },
   openGraph: {
     title: "Healthy Life Campaign - Health Risk Assessment",
@@ -71,9 +69,7 @@ export default function RootLayout({
 }>) {
   return (
     <html className={`${inter.variable} ${anekMalayalam.variable}`}>
-      <body
-        className={`antialiased min-h-screen bg-slate-50`}
-      >
+      <body className={`antialiased min-h-screen bg-slate-50`}>
         <I18nProvider>
           <AssessmentProvider>{children}</AssessmentProvider>
         </I18nProvider>
