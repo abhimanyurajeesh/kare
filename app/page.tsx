@@ -31,17 +31,25 @@ import { useI18n } from "@/lib/i18n-context";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { Footer } from "@/components/footer";
 import Title from "@/components/ui/title";
+import { recordEvent } from "@/lib/rum";
 
 export default function LandingPage() {
   const { resetAssessment } = useAssessment();
   const { t } = useI18n();
 
   const handleStartAssessment = () => {
+    console.log("start_assessment_click");
+    recordEvent("start_assessment_click");
     resetAssessment();
+  };
+  
+  const handleToolClick = (toolName: string) => {
+    recordEvent(`tool_click_${toolName}`);
   };
 
   const scrollToTools = (e: React.MouseEvent) => {
     e.preventDefault();
+    recordEvent("scroll_to_tools_click");
     const toolsSection = document.getElementById("tools");
     if (toolsSection) {
       toolsSection.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -262,7 +270,7 @@ export default function LandingPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* BMI Calculator */}
-            <Link href="/tools/bmi-calculator" className="group">
+            <Link href="/tools/bmi-calculator" className="group" onClick={() => handleToolClick("bmi_calculator")}>
               <Card className="h-full bg-linear-to-br from-emerald-50 to-teal-50 border-emerald-200 hover:shadow-lg hover:shadow-emerald-500/10 transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                   <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-emerald-500 to-teal-600 flex items-center justify-center mb-4 shadow-lg shadow-emerald-500/30 group-hover:scale-110 transition-transform">
@@ -285,7 +293,7 @@ export default function LandingPage() {
             </Link>
 
             {/* BP Tracker */}
-            <Link href="/tools/bp-checker" className="group">
+            <Link href="/tools/bp-checker" className="group" onClick={() => handleToolClick("bp_checker")}>
               <Card className="h-full bg-linear-to-br from-rose-50 to-pink-50 border-rose-200 hover:shadow-lg hover:shadow-rose-500/10 transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                   <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-rose-500 to-pink-600 flex items-center justify-center mb-4 shadow-lg shadow-rose-500/30 group-hover:scale-110 transition-transform">
@@ -307,7 +315,7 @@ export default function LandingPage() {
             </Link>
 
             {/* Blood Sugar Checker */}
-            <Link href="/tools/sugar-checker" className="group">
+            <Link href="/tools/sugar-checker" className="group" onClick={() => handleToolClick("sugar_checker")}>
               <Card className="h-full bg-linear-to-br from-amber-50 to-orange-50 border-amber-200 hover:shadow-lg hover:shadow-amber-500/10 transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                   <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-amber-500 to-orange-600 flex items-center justify-center mb-4 shadow-lg shadow-amber-500/30 group-hover:scale-110 transition-transform">
@@ -330,7 +338,7 @@ export default function LandingPage() {
             </Link>
 
             {/* Cancer Screening */}
-            <Link href="/tools/cancer-screening" className="group">
+            <Link href="/tools/cancer-screening" className="group" onClick={() => handleToolClick("cancer_screening")}>
               <Card className="h-full bg-linear-to-br from-purple-50 to-violet-50 border-purple-200 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                   <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-purple-500 to-violet-600 flex items-center justify-center mb-4 shadow-lg shadow-purple-500/30 group-hover:scale-110 transition-transform">
@@ -353,7 +361,7 @@ export default function LandingPage() {
             </Link>
 
             {/* UHID Registration */}
-            <Link href="/tools/uhid-registration" className="group">
+            <Link href="/tools/uhid-registration" className="group" onClick={() => handleToolClick("uhid_registration")}>
               <Card className="h-full bg-linear-to-br from-sky-50 to-blue-50 border-sky-200 hover:shadow-lg hover:shadow-sky-500/10 transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                   <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-sky-500 to-blue-600 flex items-center justify-center mb-4 shadow-lg shadow-sky-500/30 group-hover:scale-110 transition-transform">
@@ -376,7 +384,7 @@ export default function LandingPage() {
             </Link>
 
             {/* Find JAK */}
-            <Link href="/tools/find-jak" className="group">
+            <Link href="/tools/find-jak" className="group" onClick={() => handleToolClick("find_jak")}>
               <Card className="h-full bg-linear-to-br from-teal-50 to-cyan-50 border-teal-200 hover:shadow-lg hover:shadow-teal-500/10 transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                   <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-teal-500 to-emerald-600 flex items-center justify-center mb-4 shadow-lg shadow-teal-500/30 group-hover:scale-110 transition-transform">

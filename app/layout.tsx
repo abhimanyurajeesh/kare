@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { AssessmentProvider } from "@/lib/assessment-context";
 import { I18nProvider } from "@/lib/i18n-context";
+import { RumInit } from "@/components/analytics/rum-init";
 import { Anek_Malayalam, Inter } from "next/font/google";
 
 const anekMalayalam = Anek_Malayalam({
@@ -16,15 +16,6 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Healthy Life Campaign - Health Risk Assessment",
@@ -71,6 +62,7 @@ export default function RootLayout({
   return (
     <html className={`${inter.variable} ${anekMalayalam.variable}`}>
       <body className={`antialiased min-h-screen bg-slate-50`}>
+        <RumInit />
         <I18nProvider>
           <AssessmentProvider>{children}</AssessmentProvider>
         </I18nProvider>
