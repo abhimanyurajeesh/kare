@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import {
   Heart,
   Calculator,
@@ -20,16 +19,12 @@ import {
   Utensils,
   ChevronRight,
   Shield,
-  Clock,
-  Sparkles,
   HeartPulse,
   Droplet,
-  Users,
   ArrowRight,
   Ribbon,
   IdCard,
   Building2,
-  Github,
 } from "lucide-react";
 import { useAssessment } from "@/lib/assessment-context";
 import { useI18n } from "@/lib/i18n-context";
@@ -95,28 +90,42 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-100 via-transparent to-transparent opacity-60" />
-        <div className="max-w-6xl mx-auto px-4 py-20 md:py-32 relative">
-          <div className="text-center max-w-3xl mx-auto">
-            <Badge className="bg-emerald-100 text-emerald-800 border-emerald-200 mb-6">
-              <Sparkles className="w-3 h-3 mr-1" />
+      <section className="relative overflow-hidden min-h-[500px] md:min-h-[600px]">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/hero.png"
+            alt="Doctor Owl examining Turtle - Your Health Companion"
+            fill
+            className="object-cover object-left"
+            priority
+          />
+          {/* Gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-emerald-50/80 sm:bg-linear-to-r from-transparent via-transparent to-emerald-50/95 md:to-emerald-50/90 sm:hidden" />
+          <div className="absolute inset-0 sm:bg-linear-to-r from-transparent via-transparent to-emerald-50/95 md:to-emerald-50/90" />
+          <div className="absolute inset-0 sm:bg-linear-to-r from-transparent via-transparent to-white/80 md:via-white/20 md:to-white/70" />
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative max-w-6xl mx-auto px-4 py-16 md:py-24 min-h-[500px] md:min-h-[600px] flex items-center">
+          <div className="ml-auto w-full md:w-1/2 lg:w-1/2 text-center md:text-left">
+            <p className="text-lg md:text-xl text-slate-600 mb-2 font-medium">
               {t("hero_badge")}
-            </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 mb-6">
+            </p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-4">
               {t("hero_title")}
-              <span className="block text-emerald-600">
+              <span className="block text-emerald-600 text-5xl md:text-6xl lg:text-7xl">
                 {t("hero_title_highlight")}
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed">
+            <p className="text-base md:text-lg text-slate-600 mb-8 leading-relaxed max-w-lg">
               {t("hero_description")}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Link href="/assessment/step-1" onClick={handleStartAssessment}>
                 <Button
                   size="lg"
-                  className="bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg shadow-emerald-500/30 gap-2 w-full sm:w-auto"
+                  className="bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg shadow-emerald-500/30 gap-2 w-full sm:w-auto cursor-pointer"
                 >
                   {t("hero_cta_primary")}
                   <ArrowRight className="w-5 h-5" />
@@ -126,7 +135,7 @@ export default function LandingPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="gap-2 w-full sm:w-auto"
+                  className="gap-2 w-full sm:w-auto cursor-pointer"
                 >
                   <Calculator className="w-5 h-5" />
                   {t("hero_cta_secondary")}
@@ -135,48 +144,10 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
-
-        {/* Stats */}
-        <div className="max-w-4xl mx-auto px-4 pb-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              {
-                icon: Clock,
-                label: t("stats_quick_desc"),
-                value: t("stats_quick"),
-              },
-              {
-                icon: Shield,
-                label: t("stats_secure_desc"),
-                value: t("stats_secure"),
-              },
-              {
-                icon: Calculator,
-                label: t("stats_free_desc"),
-                value: t("stats_free"),
-              },
-              {
-                icon: Users,
-                label: t("stats_easy_desc"),
-                value: t("stats_easy"),
-              },
-            ].map((stat, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-xl border border-slate-200 p-4 text-center shadow-sm"
-              >
-                <stat.icon className="w-6 h-6 text-emerald-600 mx-auto mb-2" />
-                <p className="text-lg font-semibold text-slate-900">
-                  {stat.value}
-                </p>
-                <p className="text-xs text-slate-500">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
 
-      <section id="legacy-of-compassion" className="pt-20">
+      {/* Chief Minister Section */}
+      <section id="legacy-of-compassion">
         <div className="bg-white shadow-md rounded-lg max-w-6xl mx-auto my-4">
           <div className="container mx-auto px-4 py-4">
             <div className="max-w-6xl mx-auto">
@@ -197,6 +168,37 @@ export default function LandingPage() {
                   <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                     <cite className="text-primary-800 font-semibold text-lg text-center md:text-left">
                       {t("legacy_author")}
+                    </cite>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="legacy-of-compassion" className="pt-20">
+        <div className="bg-white shadow-md rounded-lg max-w-6xl mx-auto my-4">
+          <div className="container mx-auto px-4 py-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="flex flex-col md:flex-row items-center gap-y-8 pb-4">
+                <div className="w-full md:w-1/3">
+                  <Image
+                    src="/hm-portrait.png"
+                    alt="Health Minister"
+                    width={346}
+                    height={368}
+                  />
+                </div>
+                <div className="w-full md:w-2/3 space-y-4 md:pr-10">
+                  <Title>{t("health_minister_title")}</Title>
+                  <blockquote className="text-gray-600 leading-relaxed md:pr-16">
+                    &ldquo;{t("health_minister_quote")}&rdquo;
+                  </blockquote>
+                  <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <cite className="text-primary-800 font-semibold text-lg text-center md:text-left">
+                      {t("health_minister_author")}
                     </cite>
                   </div>
                 </div>

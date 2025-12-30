@@ -1,7 +1,6 @@
 {
   "app_name": "Healthy Life",
   "app_tagline": "Health & Wellness Tools",
-
   "common_back_to_home": "Back to Home",
   "common_back": "Back",
   "common_next": "Next",
@@ -21,14 +20,12 @@
   "common_privacy": "Privacy",
   "common_disclaimer": "Disclaimer",
   "common_start_assessment": "Start Assessment",
-
   "hero_badge": "Free Health Tools",
   "hero_title": "Your health journey",
   "hero_title_highlight": "starts here",
   "hero_description": "Free tools to understand your health better. Calculate your BMI, assess your health risks, and get personalized guidance — all in one place.",
   "hero_cta_primary": "Take Full Assessment",
   "hero_cta_secondary": "Quick BMI Check",
-
   "stats_quick": "Quick",
   "stats_quick_desc": "5 min assessment",
   "stats_secure": "Secure",
@@ -37,15 +34,12 @@
   "stats_free_desc": "Instant results",
   "stats_easy": "Easy",
   "stats_easy_desc": "For everyone",
-
   "tools_section_title": "Health Tools",
   "tools_title": "Quick health calculators",
   "tools_description": "Use our free tools to get instant insights about your health metrics. No sign-up required, and your data stays on your device.",
-
   "tool_bmi_title": "BMI Calculator",
   "tool_bmi_description": "Calculate your Body Mass Index and understand what it means for your health.",
   "tool_bmi_cta": "Calculate now",
-
   "tool_bp_title": "BP Interpreter",
   "tool_bp_description": "Enter your blood pressure reading and understand if it's within healthy range.",
   "tool_bp_cta": "Check now",
@@ -65,7 +59,6 @@
   "tool_bp_diastolic_header": "Diastolic",
   "tool_bp_tips_title": "Tips for accurate readings",
   "tool_bp_tips_description": "Ensure the person has not exercised, had tea/coffee, or used tobacco in the last 30 minutes. Rest comfortably and quietly for 5 minutes before the reading.",
-
   "tool_sugar_title": "Blood Sugar Check",
   "tool_sugar_description": "Interpret your blood sugar readings (FBS, RBS, PPBS, or HbA1c) instantly.",
   "tool_sugar_cta": "Check now",
@@ -79,11 +72,9 @@
   "tool_sugar_reference_title": "Blood Sugar Reference Ranges",
   "tool_sugar_note_title": "Important Note",
   "tool_sugar_note_description": "A single reading isn't enough for diagnosis. Diabetes is typically confirmed with two separate tests. Always consult a healthcare provider for proper diagnosis and treatment.",
-
   "tool_cta_title": "Want a complete health check?",
   "tool_cta_description": "Take our full assessment for personalized risk scores and guidance.",
   "tool_cta_button": "Start Assessment",
-
   "tool_cancer_title": "Cancer Symptom Check",
   "tool_cancer_description": "Screen for early warning signs. Early detection saves lives.",
   "tool_cancer_cta": "Check now",
@@ -114,7 +105,6 @@
   "tool_cancer_about_title": "About this screening",
   "tool_cancer_about_description": "This tool helps identify potential warning signs that may need medical attention. It is not a diagnosis. Many symptoms can have causes other than cancer. Only a healthcare professional can provide a proper diagnosis.",
   "tool_cancer_cta_description": "Take our full assessment for personalized risk scores and guidance.",
-
   "tool_uhid_title": "Generate UHID",
   "tool_uhid_description": "Get your Unique Health ID for Kerala's digital health system.",
   "tool_uhid_cta": "Get started",
@@ -148,7 +138,6 @@
   "tool_uhid_cta_title": "Want a health check?",
   "tool_uhid_cta_description": "Take our quick assessment for personalized risk scores and guidance.",
   "tool_uhid_cta_button": "Take Health Assessment",
-
   "tool_jak_title": "Find JAK",
   "tool_jak_description": "Locate your nearest Janakeeya Arogya Kendram health centre.",
   "tool_jak_cta": "Find now",
@@ -202,7 +191,6 @@
   "tool_jak_cta_title": "Check your health first",
   "tool_jak_cta_description": "Take our quick assessment before your visit to understand your risk factors.",
   "tool_jak_cta_button": "Take Health Assessment",
-
   "assessment_badge": "Comprehensive Check",
   "assessment_title": "Complete Health Risk Assessment",
   "assessment_description": "Take our 5-minute comprehensive assessment to understand your health risks and get personalized recommendations. Based on the Community-Based Assessment Checklist (CBAC), this tool screens for non-communicable disease risks and early warning signs.",
@@ -214,7 +202,6 @@
   "assessment_cta": "Start Full Assessment",
   "assessment_card_title": "Health Assessment",
   "assessment_card_subtitle": "4 steps • 5 minutes • Free",
-
   "assessment_step1_title": "Basic Information",
   "assessment_step1_desc": "Age, gender, activity",
   "assessment_step2_title": "Body Measurements",
@@ -223,14 +210,12 @@
   "assessment_step3_desc": "CBAC questionnaire",
   "assessment_step4_title": "Summary & Guidance",
   "assessment_step4_desc": "Results, tips & advice",
-
   "privacy_title": "Your privacy is our priority",
   "privacy_description": "We don't ask for your name, phone number, or any personal identifiers. All calculations happen on your device, and your data never leaves your browser.",
   "privacy_badge_no_signup": "No sign-up required",
   "privacy_badge_no_data": "No data stored",
   "privacy_badge_no_tracking": "No tracking",
   "privacy_badge_anonymous": "100% anonymous",
-
   "privacy_dialog_title": "Privacy",
   "privacy_dialog_what_we_dont_collect": "What we don't collect:",
   "privacy_dialog_what_we_dont_collect_desc": "Your name, phone number, email, Aadhaar, address, or any other personal identifiers.",
@@ -238,12 +223,10 @@
   "privacy_dialog_what_happens_desc": "All calculations happen on your device. Your answers are stored temporarily in your browser and are cleared when you restart the assessment.",
   "privacy_dialog_pdf": "PDF downloads:",
   "privacy_dialog_pdf_desc": "When you download your summary, it saves directly to your device. We don't see or store it.",
-
   "disclaimer_dialog_title": "Important Disclaimer",
   "disclaimer_dialog_p1": "This tool provides general health risk information and is not a medical diagnosis.",
   "disclaimer_dialog_p2": "It does not provide treatment advice. The results are for awareness and educational purposes only.",
   "disclaimer_dialog_p3": "If you have symptoms, health concerns, or receive a high-risk result, please consult a doctor or visit your nearest health facility for proper evaluation.",
-
   "footer_disclaimer": "This tool provides general health information and is not a medical diagnosis.",
   "footer_consult_advice": "Always consult a healthcare professional for medical advice.",
   "footer_developed_by": "Developed and Maintained by the People of Kerala",
@@ -251,26 +234,21 @@
   "footer_copyright": "© {{year}} Healthy Life Campaign. All tools are free to use.",
   "footer_awareness": "This is a health awareness tool. It does not diagnose disease or prescribe treatment.",
   "footer_resource_1": "Health and Family Welfare Department",
-
   "step1_title": "About you",
   "step1_subtitle": "This helps us tailor your risk score and tips.",
   "step1_card_title": "Basic Information",
   "step1_card_description": "All fields help us provide better guidance",
-
   "step1_age_label": "Age (completed years)",
   "step1_age_placeholder": "e.g., 42",
   "step1_age_tooltip": "Enter your age in full years",
   "step1_age_helper": "Enter your age in full years.",
   "step1_age_error_required": "Please enter your age",
   "step1_age_error_invalid": "Please enter a valid age (1-120)",
-
   "step1_underage_alert": "This tool is designed for adults. You can continue, but results may be less relevant.",
-
   "step1_gender_label": "Gender",
   "step1_gender_male": "Male",
   "step1_gender_female": "Female",
   "step1_gender_other": "Other",
-
   "step1_activity_label": "Physical activity level",
   "step1_activity_sedentary": "Sedentary",
   "step1_activity_sedentary_desc": "Very little activity",
@@ -278,10 +256,8 @@
   "step1_activity_moderate_desc": "Some activity, under 150 minutes/week",
   "step1_activity_adequate": "Adequate",
   "step1_activity_adequate_desc": "150 minutes/week or more",
-
   "step2_title": "Body measurements & vitals",
   "step2_subtitle": "We'll calculate your BMI and check your readings.",
-
   "step2_body_title": "Body measurements",
   "step2_height_label": "Height (cm)",
   "step2_height_placeholder": "e.g., 165",
@@ -291,10 +267,8 @@
   "step2_weight_placeholder": "e.g., 70",
   "step2_weight_error": "Please enter your weight",
   "step2_weight_error_invalid": "Please enter a valid weight (10-500 kg)",
-
   "step2_bmi_label": "Your BMI",
   "step2_bmi_disclaimer": "BMI is a screening measure and doesn't diagnose illness.",
-
   "step2_bp_title": "Blood pressure",
   "step2_bp_description": "If you know your recent BP reading",
   "step2_bp_systolic": "Systolic (mmHg)",
@@ -307,7 +281,6 @@
   "step2_bp_enter": "Enter BP",
   "step2_bp_systolic_error": "Please enter systolic pressure",
   "step2_bp_diastolic_error": "Please enter diastolic pressure",
-
   "step2_sugar_title": "Blood sugar",
   "step2_sugar_description": "If you know your recent blood sugar reading",
   "step2_sugar_test_type": "Test type",
@@ -324,10 +297,8 @@
   "step2_sugar_skipped": "Skipped — will continue without blood sugar",
   "step2_sugar_enter": "Enter value",
   "step2_sugar_value_error": "Please enter blood sugar value",
-
   "step2_elevated_warning_title": "Elevated reading detected",
   "step2_elevated_warning_description": "Your blood pressure or blood sugar is higher than normal. On the next screen, we'll provide guidance on next steps.",
-
   "advisory_title": "We recommend speaking to a doctor",
   "advisory_description": "Your entered blood pressure or blood sugar is higher than normal. This tool can't interpret risk scores safely when these are high. Please consult a doctor at your nearest Family Health Centre for further evaluation.",
   "advisory_measurements_title": "Your measurements",
@@ -340,21 +311,17 @@
   "advisory_why_bp": "For blood pressure: Readings of 140/90 mmHg or higher suggest you should speak with a healthcare provider about management and lifestyle changes.",
   "advisory_why_sugar": "For blood sugar: Elevated readings may indicate pre-diabetes or diabetes, which requires proper medical evaluation and testing.",
   "advisory_why_conclusion": "This is why we recommend consulting a doctor before continuing with the general risk assessment.",
-
   "step3_title": "NCD Risk Check",
   "step3_subtitle": "This checklist estimates risk. It does not diagnose disease.",
   "step3_card_title": "Risk factors",
   "step3_card_description": "Answer these questions to calculate your CBAC score",
-
   "step3_tobacco_label": "Do you use tobacco?",
   "step3_tobacco_never": "Never used",
   "step3_tobacco_past": "Used in past / occasionally",
   "step3_tobacco_daily": "Use daily",
-
   "step3_alcohol_label": "Do you consume alcohol daily?",
   "step3_alcohol_no": "No",
   "step3_alcohol_yes": "Yes",
-
   "step3_waist_label": "Waist circumference",
   "step3_waist_how_to_measure": "How to measure",
   "step3_waist_how_to_measure_title": "How to measure waist circumference",
@@ -373,61 +340,49 @@
   "step3_waist_select_note": "We ask this only to calculate the checklist score.",
   "step3_waist_placeholder": "Enter waist circumference in cm",
   "step3_waist_thresholds": "Thresholds: Normal ≤{{low}} cm, Elevated {{lowPlus}}-{{high}} cm, High >{{high}} cm",
-
   "step3_family_history_label": "Family history of diabetes, hypertension, or heart disease?",
   "step3_family_history_no": "No",
   "step3_family_history_yes": "Yes",
-
   "step3_score_label": "Your CBAC Score",
   "step3_score_higher_risk": "Higher risk",
   "step3_score_lower_risk": "Lower risk",
   "step3_score_high_note": "Score > 4 indicates higher NCD risk. Please consult a doctor for evaluation.",
   "step3_score_low_note": "Score ≤ 4 indicates lower risk. Continue with healthy habits.",
-
   "step3_high_risk_alert_title": "Higher risk detected",
   "step3_high_risk_alert_description": "Your score suggests higher risk for diabetes or hypertension. We recommend visiting the nearest Janakeeya Arogya Kendram for further evaluation.",
-
   "step4_title": "Your Summary & Guidance",
   "step4_subtitle_date": "Assessment completed on {{date}}",
-
   "step4_consultation_title": "We recommend consulting a doctor",
   "step4_consultation_description": "Based on your assessment, please visit the nearest Janakeeya Arogya Kendram for further evaluation, or contact your ASHA for assistance.",
   "step4_consultation_find_jak": "Find nearby JAK",
-
   "step4_measurements_title": "Measurements",
   "step4_measurements_bmi": "BMI",
   "step4_measurements_bp": "Blood Pressure",
   "step4_measurements_sugar": "Blood Sugar",
   "step4_measurements_not_entered": "Not entered",
-
   "step4_risk_score_title": "Risk Score",
   "step4_cbac_score": "CBAC Score",
-
   "step4_key_advice_title": "Key Advice",
   "step4_advice_visit_jak": "Please visit the nearest Janakeeya Arogya Kendram for NCD risk evaluation.",
   "step4_advice_tobacco": "Consider seeking tobacco cessation support; reducing tobacco lowers risk over time.",
   "step4_advice_alcohol": "Reducing daily alcohol can improve long-term health; consider support services if needed.",
   "step4_advice_activity": "Aim for at least 150 minutes/week of moderate activity, starting gradually.",
-
   "step4_focus_areas_title": "Your Focus Areas",
   "step4_focus_areas_description": "Based on your answers, here are areas where small changes can help",
   "step4_focus_tobacco": "Tobacco",
   "step4_focus_alcohol": "Alcohol",
   "step4_focus_activity": "Activity",
-
   "step4_tobacco_guidance_title": "Tobacco Cessation Support",
   "step4_tobacco_tip_1": "Set a quit date and tell someone you trust",
   "step4_tobacco_tip_2": "Reduce triggers (after meals, stress moments)",
   "step4_tobacco_tip_3": "Keep your hands busy with healthy alternatives",
   "step4_tobacco_tip_4": "Ask at your nearest JAK about quit programs",
-
   "step4_alcohol_guidance_title": "Alcohol Reduction Support",
   "step4_alcohol_tip_1": "Track how often you drink each week",
   "step4_alcohol_tip_2": "Plan alcohol-free days and stick to them",
   "step4_alcohol_tip_3": "Choose smaller portions when you do drink",
   "step4_alcohol_tip_4": "Seek de-addiction support if cutting down is difficult",
   "step4_alcohol_support_note": "Professional support is available if you find it difficult to reduce on your own.",
-
   "step4_activity_guidance_title": "Activity Plan",
   "step4_activity_starter_plan": "Starter plan:",
   "step4_activity_week1": "Week 1",
@@ -437,15 +392,12 @@
   "step4_activity_week3": "Week 3+",
   "step4_activity_week3_plan": "Build toward 150 minutes/week total",
   "step4_activity_strength_tip": "Add strength: Try simple bodyweight exercises (squats, wall push-ups) 2 days/week for added benefit.",
-
   "step4_good_track_title": "You're on a good track!",
   "step4_good_track_description": "Keep up your healthy habits with regular physical activity, balanced diet, regular check-ups, and stress management.",
-
   "step4_personalized_tips_title": "Personalised Tips",
   "step4_diet_tips": "Diet Tips",
   "step4_activity_tips": "Activity Tips",
   "step4_for_blood_sugar": "For blood sugar:",
-
   "step4_diet_underweight_1": "Add nutrient-dense meals and snacks",
   "step4_diet_underweight_2": "Include protein sources daily (eggs, dal, milk, fish)",
   "step4_diet_underweight_3": "Eat small, frequent meals",
@@ -456,12 +408,10 @@
   "step4_diet_normal_1": "Maintain balanced meals with variety",
   "step4_diet_normal_2": "Include fruits and vegetables daily",
   "step4_diet_normal_3": "Stay hydrated with water",
-
   "step4_sugar_tip_1": "Choose whole grains over refined carbs",
   "step4_sugar_tip_2": "Limit sweets and sugary drinks",
   "step4_sugar_tip_3": "Don't skip meals; prefer steady meal timing",
   "step4_sugar_tip_4": "Consult a doctor for proper testing",
-
   "step4_activity_sedentary_1": "Start with 10 minutes/day walking",
   "step4_activity_sedentary_2": "Take short breaks from sitting every hour",
   "step4_activity_sedentary_3": "Use stairs when possible",
@@ -471,7 +421,6 @@
   "step4_activity_adequate_1": "Maintain your current routine",
   "step4_activity_adequate_2": "Add strength exercises twice weekly",
   "step4_activity_adequate_3": "Try new activities to stay motivated",
-
   "step4_download_title": "Download Summary (PDF)",
   "step4_download_dialog_title": "Download your summary",
   "step4_download_dialog_description": "Generate a beautifully formatted PDF with all your assessment results.",
@@ -485,10 +434,8 @@
   "step4_download_success_desc": "Check your downloads folder",
   "step4_download_error": "Failed to generate PDF",
   "step4_download_error_desc": "Please try again",
-
   "step5_title": "Cancer symptom check",
   "step5_subtitle": "Early detection helps. Answer honestly — this is for your awareness.",
-
   "step5_general_symptoms_title": "General symptoms",
   "step5_general_symptoms_description": "Have you experienced any of these in the past few months?",
   "step5_symptom_non_healing_ulcer": "Non-healing ulcer (wound that doesn't heal for more than 2 weeks)",
@@ -498,7 +445,6 @@
   "step5_symptom_weight_loss": "Unexplained weight loss",
   "step5_symptom_blood_sputum": "Blood in sputum (coughed-up mucus)",
   "step5_symptom_persistent_cough": "Persistent cough (more than 2 weeks)",
-
   "step5_women_symptoms_title": "Women-specific symptoms",
   "step5_women_symptoms_description": "Additional symptoms to check",
   "step5_symptom_breast_lump": "Lump in the breast",
@@ -506,12 +452,10 @@
   "step5_symptom_breast_shape": "Change in breast shape or size",
   "step5_symptom_postmenopausal_bleeding": "Bleeding after menopause",
   "step5_symptom_bleeding_intercourse": "Bleeding after intercourse",
-
   "step5_result_symptoms_title": "Please consult a doctor",
   "step5_result_symptoms_description": "You reported one or more symptoms that need medical evaluation. Please consult a doctor at the nearest health facility for further evaluation. Early detection can make a significant difference.",
   "step5_result_no_symptoms_title": "No symptoms reported",
   "step5_result_no_symptoms_description": "Consider routine screening once every 5 years. If you notice new symptoms later, consult a health facility promptly.",
-
   "step5_breast_exam_title": "Self-breast examination guide",
   "step5_breast_exam_how_to": "How to perform a self-breast examination:",
   "step5_breast_exam_step_1": "Stand in front of a mirror with shoulders straight and arms on hips",
@@ -522,7 +466,6 @@
   "step5_breast_exam_step_6": "Cover the entire breast from top to bottom, side to side",
   "step5_breast_exam_step_7": "Feel your breasts while standing or sitting, such as in the shower",
   "step5_breast_exam_note": "Seek help if you find a new lump, thickening, or any change. Monthly self-exams help you know what's normal for your body.",
-
   "bmi_page_badge": "BMI Tool",
   "bmi_page_title": "BMI Calculator",
   "bmi_page_subtitle": "Calculate your Body Mass Index instantly",
@@ -535,7 +478,6 @@
   "bmi_page_about_description": "BMI is a screening tool, not a diagnostic measure. It doesn't account for muscle mass, bone density, or overall body composition. For a complete health assessment, consult a healthcare provider.",
   "bmi_page_cta_title": "Want a complete health check?",
   "bmi_page_cta_description": "Take our full assessment for personalized risk scores and guidance.",
-
   "bmi_category_underweight": "Underweight",
   "bmi_category_underweight_desc": "You may need to gain some weight. Consider consulting a healthcare provider.",
   "bmi_category_normal": "Normal range",
@@ -548,7 +490,6 @@
   "bmi_category_obese_2_desc": "It's important to consult a healthcare provider for comprehensive health assessment and support.",
   "bmi_category_obese_3": "Obese class III",
   "bmi_category_obese_3_desc": "Please consult a healthcare provider urgently for specialized medical guidance and intervention.",
-
   "bp_page_badge": "BP Tool",
   "bp_page_title": "Blood Pressure Interpreter",
   "bp_page_subtitle": "Understand what your BP reading means",
@@ -564,7 +505,6 @@
   "bp_page_categories_title": "Blood Pressure Categories",
   "bp_page_tips_title": "Tips for accurate readings",
   "bp_page_tips_description": "Ensure the person has not exercised, had tea/coffee, or used tobacco in the last 30 minutes. Person should rest comfortably and quietly for 5 minutes before the reading.",
-
   "bp_category_hypotension": "Hypotension",
   "bp_category_hypotension_desc": "Your blood pressure is low. This may cause dizziness or fainting.",
   "bp_category_normal": "Normal",
@@ -577,7 +517,6 @@
   "bp_category_crisis_desc": "This is a medical emergency. Seek immediate medical attention!",
   "bp_category_crisis_alert_title": "Seek Immediate Medical Attention",
   "bp_category_crisis_alert_desc": "A reading this high requires emergency care. Please go to the nearest hospital or call emergency services immediately.",
-
   "sugar_page_badge": "Sugar Tool",
   "sugar_page_title": "Blood Sugar Interpreter",
   "sugar_page_subtitle": "Understand what your blood sugar reading means",
@@ -591,7 +530,6 @@
   "sugar_page_reference_title": "Blood Sugar Reference Ranges",
   "sugar_page_important_title": "Important Note",
   "sugar_page_important_desc": "A single reading isn't enough for diagnosis. Diabetes is typically confirmed with two separate tests. Always consult a healthcare provider for proper diagnosis and treatment.",
-
   "sugar_test_fbs": "Fasting Blood Sugar (FBS)",
   "sugar_test_fbs_desc": "Measured after 8+ hours of fasting",
   "sugar_test_rbs": "Random Blood Sugar (RBS)",
@@ -600,7 +538,6 @@
   "sugar_test_ppbs_desc": "Measured 2 hours after a meal",
   "sugar_test_hba1c": "HbA1c",
   "sugar_test_hba1c_desc": "Average blood sugar over 2-3 months",
-
   "sugar_result_hypoglycaemia": "Hypoglycaemia",
   "sugar_result_hypoglycaemia_desc": "Your blood sugar is too low. This can be dangerous and requires immediate attention.",
   "sugar_result_normal": "Normal",
@@ -611,7 +548,6 @@
   "sugar_result_prediabetes_desc": "Your blood sugar is higher than normal. Lifestyle changes can help prevent diabetes.",
   "sugar_result_diabetes": "Diabetes Mellitus",
   "sugar_result_diabetes_desc": "Your blood sugar is in the diabetes range. Please consult a doctor for proper diagnosis.",
-
   "cancer_page_badge": "Screening Tool",
   "cancer_page_title": "Cancer Symptom Checker",
   "cancer_page_subtitle": "Early detection saves lives. Answer honestly — this is for your awareness.",
@@ -623,7 +559,6 @@
   "cancer_page_find_facility": "Find nearby health facility",
   "cancer_page_about_title": "About this screening",
   "cancer_page_about_desc": "This tool helps identify potential warning signs that may need medical attention. It is not a diagnosis. Many symptoms can have causes other than cancer. Only a healthcare professional can provide a proper diagnosis.",
-
   "jak_page_badge": "Find JAK",
   "jak_page_title": "Find Your Janakeeya Arogya Kendram",
   "jak_page_subtitle": "Locate the nearest primary health centre in your area",
@@ -669,7 +604,6 @@
   "jak_page_cta_desc": "Take our quick assessment before your visit to understand your risk factors.",
   "jak_page_cta_button": "Take Health Assessment",
   "jak_page_footer": "Janakeeya Arogya Kendrams are operated by the Government of Kerala.",
-
   "uhid_page_badge": "UHID Tool",
   "uhid_page_title": "Generate Your UHID",
   "uhid_page_subtitle": "Your Unique Health Identifier for Kerala's digital health ecosystem",
@@ -702,10 +636,8 @@
   "uhid_page_health_check_desc": "Take our quick assessment for personalized risk scores and guidance.",
   "uhid_page_health_check_button": "Take Health Assessment",
   "uhid_page_footer": "UHID is managed by the State Digital Health Mission, Kerala.",
-
   "disclaimer_alert_title": "Important",
   "disclaimer_alert_description": "This tool provides general risk information and is not a diagnosis. It does not provide treatment advice. If you have symptoms or concerns, consult a doctor or visit your nearest health facility.",
-
   "status_normal": "Normal",
   "status_elevated": "Elevated",
   "status_high": "High",
@@ -720,8 +652,10 @@
   "status_stage1_hypertension": "Stage 1 Hypertension",
   "status_stage2_hypertension": "Stage 2 Hypertension",
   "status_hypertensive_crisis": "Hypertensive Crisis",
-
-  "legacy_title": "Legacy of Compassion",
-  "legacy_quote": "A social movement should be initiated to ensure quality palliative care to all people and families requiring care irrespective of rural-urban & APL/BPL differentiation.",
-  "legacy_author": "Shri. Pinarayi Vijayan, Hon'ble Chief Minister of Kerala"
+  "legacy_title": "Health as a Right, Happiness as a Commitment.",
+  "legacy_quote": "Health is not a privilege—it is a fundamental right. Arogyam Anandam reflects our collective resolve to ensure that quality healthcare and wellbeing reach every household across Kerala.",
+  "legacy_author": "Shri. Pinarayi Vijayan, Hon'ble Chief Minister of Kerala",
+  "health_minister_title": "Ensuring Health and Well-being",
+  "health_minister_quote": "The Government is firmly committed to taking the vision of “Health is Happiness” beyond treatment alone and bringing holistic wellbeing encompassing prevention, care, rehabilitation, and mental health, to every household across Kerala.",
+  "health_minister_author": "Smt. Veena George, Minister for Health, Woman and Child Development "
 }
