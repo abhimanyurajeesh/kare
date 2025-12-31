@@ -474,8 +474,8 @@ export default function LaunchPage() {
               <div className="relative">
                 <div className="absolute -inset-8 rounded-full bg-gradient-to-r from-emerald-500/30 via-teal-500/30 to-cyan-500/30 blur-xl animate-spin-slow" />
                 <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-cyan-500/20 via-emerald-500/20 to-teal-500/20 blur-lg animate-spin-slow-reverse" />
-                <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-3xl bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-500 flex items-center justify-center shadow-2xl shadow-emerald-500/50 animate-float">
-                  <Heart className="w-12 h-12 md:w-16 md:h-16 text-white animate-heartbeat" />
+                <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-3xl bg-white flex items-center justify-center shadow-2xl shadow-emerald-500/50 animate-float">
+                  <Image src="/vibe-4-wellness-logo.png" alt="Vibe 4 Wellness" width={45} height={36} className="object-contain opacity-40 animate-float-slow" />
                   <Sparkles className="absolute -top-2 -right-2 w-6 h-6 text-yellow-300 animate-sparkle" />
                   <Zap className="absolute -bottom-2 -left-2 w-5 h-5 text-cyan-300 animate-sparkle-delay" />
                   <Star className="absolute top-0 -left-3 w-4 h-4 text-pink-300 animate-twinkle" />
@@ -496,7 +496,7 @@ export default function LaunchPage() {
                 className={`inline-block transition-all duration-500 ${textReveal >= 2 ? "opacity-100 translate-y-0 rotate-0" : "opacity-0 translate-y-full rotate-12"}`}
               >
                 <span className="bg-gradient-to-r from-emerald-300 via-teal-200 to-cyan-300 bg-clip-text text-transparent animate-shimmer-text inline-block hover:scale-110 transition-transform">
-                  Healthy
+                  Vibe 4
                 </span>
               </span>
               <span className="inline-block mx-3" />
@@ -504,7 +504,7 @@ export default function LaunchPage() {
                 className={`inline-block transition-all duration-500 delay-150 ${textReveal >= 2 ? "opacity-100 translate-y-0 rotate-0" : "opacity-0 translate-y-full -rotate-12"}`}
               >
                 <span className="bg-gradient-to-r from-cyan-300 via-teal-200 to-emerald-300 bg-clip-text text-transparent animate-shimmer-text-reverse inline-block hover:scale-110 transition-transform">
-                  Life
+                  Wellness
                 </span>
               </span>
             </h1>
@@ -906,7 +906,7 @@ export default function LaunchPage() {
             </div>
 
             <p className="text-xl md:text-3xl text-emerald-200/90 mb-4 animate-bounce tracking-wide">
-              Welcome to Healthy Life Kerala!
+              Welcome to Healthy Life Kerala
             </p>
 
             <div className="mt-8 flex items-center justify-center gap-2 text-emerald-300/70">
