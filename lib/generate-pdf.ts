@@ -16,7 +16,7 @@ interface PDFData {
   activityTips: string[];
 }
 
-export function generateHealthPDF({
+export async function generateHealthPDF({
   data,
   bmi,
   bmiCategory,
@@ -91,46 +91,28 @@ export function generateHealthPDF({
     );
   };
 
-  // Helper: Draw heart shape (emerald heart)
-  // const drawHeart = (cx: number, cy: number, size: number) => {
-  //   // Set fill color to emerald for the heart
-  //   doc.setFillColor(emerald600[0], emerald600[1], emerald600[2]);
+  const addLogoIcon = async (x: number, y: number, size: number) => {
+    try {
+      const iconPath = "/icon-invert.png";
+      const img = await fetch(iconPath);
+      const blob = await img.blob();
+      const reader = new FileReader();
 
-  //   // Heart proportions
-  //   const w = size * 0.5; // half width
-  //   const h = size * 0.55; // height
-
-  //   // Top bumps (two circles)
-  //   const bumpRadius = w * 0.52;
-  //   const bumpY = cy - h * 0.25;
-
-  //   // Left bump
-  //   doc.circle(cx - w * 0.5, bumpY, bumpRadius, "F");
-  //   // Right bump
-  //   doc.circle(cx + w * 0.5, bumpY, bumpRadius, "F");
-
-  //   // Center rectangle to fill gap
-  //   doc.rect(cx - w * 0.4, bumpY - bumpRadius * 0.2, w, bumpRadius * 1.2, "F");
-
-  //   // Bottom triangle
-  //   doc.triangle(
-  //     cx - w - bumpRadius * 0.10,
-  //     bumpY + bumpRadius * 0.4,
-  //     cx + w + bumpRadius * 0.10,
-  //     bumpY + bumpRadius * 0.4,
-  //     cx,
-  //     cy + h * 0.7,
-  //     "F"
-  //   );
-  // };
-
-  const drawHeart = (cx: number, cy: number, size: number) => {
-    // Set fill color
-    doc.setFillColor(emerald600[0], emerald600[1], emerald600[2]);
+      return new Promise<void>((resolve) => {
+        reader.onload = () => {
+          const base64 = reader.result as string;
+          doc.addImage(base64, "PNG", x - size / 2, y - size / 2, size, size);
+          resolve();
+        };
+        reader.readAsDataURL(blob);
+      });
+    } catch (error) {
+      console.error("Failed to load icon:", error);
+    }
   };
 
   // Header
-  const addHeader = () => {
+  const addHeader = async () => {
     // Green header bar
     doc.setFillColor(emerald600[0], emerald600[1], emerald600[2]);
     doc.rect(0, 0, pageWidth, 40, "F");
@@ -139,14 +121,13 @@ export function generateHealthPDF({
     doc.setFillColor(white[0], white[1], white[2]);
     doc.circle(margin + 14, 20, 14, "F");
 
-    // Draw emerald heart inside the white circle - bigger size
-    drawHeart(margin + 14, 19, 16);
+    await addLogoIcon(margin + 14, 20, 24);
 
     // Title
     doc.setTextColor(white[0], white[1], white[2]);
     doc.setFontSize(18);
     doc.setFont("helvetica", "bold");
-    doc.text("Healthy Life Campaign", margin + 32, 16);
+    doc.text("Healthy Life", margin + 32, 16);
 
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
@@ -292,20 +273,20 @@ export function generateHealthPDF({
 
     // Warning icon (triangle with !)
     doc.setFillColor(amber800[0], amber800[1], amber800[2]);
-    const iconX = margin + 8;
-    const iconY = y + 8;
+    const iconX = margin + 6;
+    const iconY = y + 6;
     // Draw triangle
     doc.triangle(iconX, iconY + 6, iconX + 6, iconY + 6, iconX + 3, iconY, "F");
-    doc.setFillColor(amber100[0], amber100[1], amber100[2]);
+    doc.setTextColor(white[0], white[1], white[2]);
     doc.setFont("helvetica", "bold");
-    doc.setFontSize(6);
-    doc.text("!", iconX + 2, iconY + 5);
+    doc.setFontSize(7);
+    doc.text("!", iconX + 2.5, iconY + 5);
 
     // Title
     doc.setFont("helvetica", "bold");
     doc.setFontSize(10);
     doc.setTextColor(amber800[0], amber800[1], amber800[2]);
-    doc.text("Important Disclaimer", margin + 16, y + 9);
+    doc.text("Important Disclaimer", margin + 18, y + 10);
 
     // Text
     doc.setFont("helvetica", "normal");
@@ -350,7 +331,7 @@ export function generateHealthPDF({
 
   // ========== Generate PDF Content ==========
 
-  addHeader();
+  await addHeader();
 
   // === PAGE 1: Measurements & Risk Assessment ===
 
