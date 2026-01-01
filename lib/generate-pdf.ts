@@ -76,7 +76,7 @@ export async function generateHealthPDF({
     doc.setFontSize(8);
     doc.setTextColor(slate400[0], slate400[1], slate400[2]);
     doc.text(
-      `© ${new Date().getFullYear()} Healthy Life Campaign`,
+      `© ${new Date().getFullYear()} Healthy Life`,
       margin,
       footerY
     );
@@ -85,8 +85,8 @@ export async function generateHealthPDF({
     doc.text(pageText, pageWidth / 2 - doc.getTextWidth(pageText) / 2, footerY);
 
     doc.text(
-      "www.healthylife.campaign",
-      pageWidth - margin - doc.getTextWidth("www.healthylife.campaign"),
+      "health.kerala.care",
+      pageWidth - margin - doc.getTextWidth("health.kerala.care"),
       footerY
     );
   };
