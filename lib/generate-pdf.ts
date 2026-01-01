@@ -93,7 +93,7 @@ export async function generateHealthPDF({
 
   const addLogoIcon = async (x: number, y: number, size: number) => {
     try {
-      const iconPath = "/icon-invert.png";
+      const iconPath = "/vibe-4-wellness-logo.png";
       const img = await fetch(iconPath);
       const blob = await img.blob();
       const reader = new FileReader();
@@ -121,7 +121,7 @@ export async function generateHealthPDF({
     doc.setFillColor(white[0], white[1], white[2]);
     doc.circle(margin + 14, 20, 14, "F");
 
-    await addLogoIcon(margin + 14, 20, 24);
+    await addLogoIcon(margin + 14, 20, 20);
 
     // Title
     doc.setTextColor(white[0], white[1], white[2]);
