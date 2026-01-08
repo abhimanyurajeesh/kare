@@ -40,36 +40,36 @@ export default function Step5Page() {
   const GENERAL_SYMPTOMS = [
     {
       id: "non_healing_ulcer",
-      label: t("step5_symptom_non_healing_ulcer"),
+      label: t("cancer_symptom_non_healing_ulcer"),
     },
-    { id: "lumps", label: t("step5_symptom_lumps") },
+    { id: "lumps", label: t("cancer_symptom_lumps") },
     {
       id: "difficulty_swallowing",
-      label: t("step5_symptom_difficulty_swallowing"),
+      label: t("cancer_symptom_difficulty_swallowing"),
     },
     {
       id: "voice_change",
-      label: t("step5_symptom_voice_change"),
+      label: t("cancer_symptom_voice_change"),
     },
-    { id: "weight_loss", label: t("step5_symptom_weight_loss") },
-    { id: "blood_sputum", label: t("step5_symptom_blood_sputum") },
-    { id: "persistent_cough", label: t("step5_symptom_persistent_cough") },
+    { id: "weight_loss", label: t("cancer_symptom_weight_loss") },
+    { id: "blood_sputum", label: t("cancer_symptom_blood_sputum") },
+    { id: "persistent_cough", label: t("cancer_symptom_persistent_cough") },
   ];
 
   const WOMEN_SYMPTOMS = [
-    { id: "breast_lump", label: t("step5_symptom_breast_lump") },
+    { id: "breast_lump", label: t("cancer_symptom_breast_lump") },
     {
       id: "nipple_discharge",
-      label: t("step5_symptom_nipple_discharge"),
+      label: t("cancer_symptom_nipple_discharge"),
     },
-    { id: "breast_shape", label: t("step5_symptom_breast_shape") },
+    { id: "breast_shape", label: t("cancer_symptom_breast_shape") },
     {
       id: "postmenopausal_bleeding",
-      label: t("step5_symptom_postmenopausal_bleeding"),
+      label: t("cancer_symptom_postmenopausal_bleeding"),
     },
     {
       id: "bleeding_intercourse",
-      label: t("step5_symptom_bleeding_intercourse"),
+      label: t("cancer_symptom_bleeding_intercourse"),
     },
   ];
 
@@ -179,10 +179,10 @@ export default function Step5Page() {
           <Card className="bg-white border border-slate-200 shadow-sm">
             <CardHeader className="pb-3">
               <CardTitle className="text-base font-semibold">
-                {t("step5_women_symptoms_title")}
+                {t("cancer_women_symptoms_title")}
               </CardTitle>
               <CardDescription>
-                {t("step5_women_symptoms_description")}
+                {t("cancer_women_symptoms_description")}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">

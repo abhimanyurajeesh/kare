@@ -36,33 +36,6 @@ import {
   Ribbon,
 } from "lucide-react";
 
-const GENERAL_SYMPTOMS = [
-  {
-    id: "non_healing_ulcer",
-    label: "Non-healing ulcer (wound that doesn't heal for more than 2 weeks)",
-  },
-  { id: "lumps", label: "Lumps or swellings anywhere in the body" },
-  { id: "difficulty_swallowing", label: "Difficulty swallowing" },
-  {
-    id: "voice_change",
-    label: "Change in voice (hoarseness lasting more than 2 weeks)",
-  },
-  { id: "weight_loss", label: "Unexplained weight loss" },
-  { id: "blood_sputum", label: "Blood in sputum (coughed-up mucus)" },
-  { id: "persistent_cough", label: "Persistent cough (more than 2 weeks)" },
-];
-
-const WOMEN_SYMPTOMS = [
-  { id: "breast_lump", label: "Lump in the breast" },
-  {
-    id: "nipple_discharge",
-    label: "Nipple discharge (other than breast milk)",
-  },
-  { id: "breast_shape", label: "Change in breast shape or size" },
-  { id: "postmenopausal_bleeding", label: "Bleeding after menopause" },
-  { id: "bleeding_intercourse", label: "Bleeding after intercourse" },
-];
-
 export default function CancerScreeningPage() {
   const [gender, setGender] = useState<"male" | "female" | null>(null);
   const [generalSymptoms, setGeneralSymptoms] = useState<
@@ -73,6 +46,42 @@ export default function CancerScreeningPage() {
   );
   const [showResult, setShowResult] = useState(false);
   const { t } = useI18n();
+
+  const GENERAL_SYMPTOMS = [
+    {
+      id: "non_healing_ulcer",
+      label: t("cancer_symptom_non_healing_ulcer"),
+    },
+    { id: "lumps", label: t("cancer_symptom_lumps") },
+    {
+      id: "difficulty_swallowing",
+      label: t("cancer_symptom_difficulty_swallowing"),
+    },
+    {
+      id: "voice_change",
+      label: t("cancer_symptom_voice_change"),
+    },
+    { id: "weight_loss", label: t("cancer_symptom_weight_loss") },
+    { id: "blood_sputum", label: t("cancer_symptom_blood_sputum") },
+    { id: "persistent_cough", label: t("cancer_symptom_persistent_cough") },
+  ];
+
+  const WOMEN_SYMPTOMS = [
+    { id: "breast_lump", label: t("cancer_symptom_breast_lump") },
+    {
+      id: "nipple_discharge",
+      label: t("cancer_symptom_nipple_discharge"),
+    },
+    { id: "breast_shape", label: t("cancer_symptom_breast_shape") },
+    {
+      id: "postmenopausal_bleeding",
+      label: t("cancer_symptom_postmenopausal_bleeding"),
+    },
+    {
+      id: "bleeding_intercourse",
+      label: t("cancer_symptom_bleeding_intercourse"),
+    },
+  ];
 
   const showWomenSection = gender === "female";
 

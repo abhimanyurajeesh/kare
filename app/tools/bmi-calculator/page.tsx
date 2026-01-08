@@ -34,45 +34,39 @@ import { useI18n } from "@/lib/i18n-context";
 const BMI_CATEGORIES = [
   {
     max: 18.5,
-    label: "Underweight",
+    labelKey: "bmi_category_underweight",
+    descKey: "bmi_category_underweight_desc",
     color: "sky",
-    description:
-      "You may need to gain some weight. Consider consulting a healthcare provider.",
   },
   {
     max: 25,
-    label: "Normal range",
+    labelKey: "bmi_category_normal",
+    descKey: "bmi_category_normal_desc",
     color: "emerald",
-    description:
-      "Great! Your weight is within the healthy range. Keep up the good habits!",
   },
   {
     max: 30,
-    label: "Overweight",
+    labelKey: "bmi_category_overweight",
+    descKey: "bmi_category_overweight_desc",
     color: "amber",
-    description:
-      "You may benefit from lifestyle changes. Small steps can make a big difference.",
   },
   {
     max: 35,
-    label: "Obese class I",
+    labelKey: "bmi_category_obese_1",
+    descKey: "bmi_category_obese_1_desc",
     color: "orange",
-    description:
-      "Consider consulting a healthcare provider for personalized guidance and weight management strategies.",
   },
   {
     max: 40,
-    label: "Obese class II",
+    labelKey: "bmi_category_obese_2",
+    descKey: "bmi_category_obese_2_desc",
     color: "rose",
-    description:
-      "It's important to consult a healthcare provider for comprehensive health assessment and support.",
   },
   {
     max: Infinity,
-    label: "Obese class III",
+    labelKey: "bmi_category_obese_3",
+    descKey: "bmi_category_obese_3_desc",
     color: "red",
-    description:
-      "Please consult a healthcare provider urgently for specialized medical guidance and intervention.",
   },
 ];
 
@@ -251,11 +245,11 @@ export default function BMICalculatorPage() {
                   </div>
                   <StatusBadge
                     status={getStatusType(category.color)}
-                    label={category.label}
+                    label={t(category.labelKey)}
                     className="text-base px-4 py-1"
                   />
                   <p className="text-sm text-slate-700 max-w-sm mx-auto">
-                    {category.description}
+                    {t(category.descKey)}
                   </p>
                 </div>
               </CardContent>
@@ -275,7 +269,7 @@ export default function BMICalculatorPage() {
                   <div
                     key={i}
                     className={`flex items-center justify-between p-2 rounded-md ${
-                      showResult && category?.label === cat.label
+                      showResult && category?.labelKey === cat.labelKey
                         ? "ring-2 ring-offset-1 ring-slate-400"
                         : ""
                     }`}
@@ -293,7 +287,7 @@ export default function BMICalculatorPage() {
                         )}
                       />
                       <span className="text-sm text-slate-700">
-                        {cat.label}
+                        {t(cat.labelKey)}
                       </span>
                     </div>
                     <span className="text-sm text-slate-500">
