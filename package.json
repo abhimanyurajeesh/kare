@@ -1,6 +1,7 @@
 {
-  "name": "care_campaign",
-  "version": "0.1.0",
+  "name": "kare-landing",
+  "version": "1.0.0",
+  "description": "KARE - Kerala United Against Rare Diseases - Official Landing Page",
   "private": true,
   "scripts": {
     "dev": "next dev",

@@ -4,11 +4,17 @@ import { Toaster } from "@/components/ui/sonner";
 import { AssessmentProvider } from "@/lib/assessment-context";
 import { I18nProvider } from "@/lib/i18n-context";
 import { RumInit } from "@/components/analytics/rum-init";
-import { Anek_Malayalam, Inter } from "next/font/google";
+import { Anek_Malayalam, Poppins, Inter } from "next/font/google";
 
 const anekMalayalam = Anek_Malayalam({
   subsets: ["latin"],
   variable: "--font-anek-malayalam",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
 });
 
 const inter = Inter({
@@ -18,39 +24,45 @@ const inter = Inter({
 
 
 export const metadata: Metadata = {
-  title: "Vibe 4 Wellness - Health Risk Assessment",
+  title: "KARE - Kerala United Against Rare Diseases",
   description:
-    "Check your health risks in 5 minutes. A free, private health risk assessment tool.",
-  metadataBase: new URL("https://health.kerala.care"),
+    "Support KARE, Kerala's pioneering government program providing comprehensive treatment and care for children with rare diseases like SMA, Gaucher, Pompe, and MPS. India's first state-funded rare disease treatment programme.",
+  metadataBase: new URL("https://kare.kerala.gov.in"),
   icons: {
     icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/kare-logo.jpg", type: "image/jpeg" },
       { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
     ],
-    apple: [{ url: "/apple-icon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/kare-logo.jpg", type: "image/jpeg" }],
   },
   openGraph: {
-    title: "Vibe 4 Wellness - Health Risk Assessment",
+    title: "KARE - Kerala United Against Rare Diseases",
     description:
-      "Check your health risks in 5 minutes. Free, private health risk assessment tool. Eat well · Act well · Sleep well · Care well",
-    url: "https://health.kerala.care",
-    siteName: "Vibe 4 Wellness",
-    locale: "en_US",
+      "Support Kerala's pioneering rare disease treatment programme. India's first state-funded initiative for SMA, Gaucher, Pompe, and MPS. Donate to help transform lives.",
+    url: "https://kare.kerala.gov.in",
+    siteName: "KARE - Kerala United Against Rare Diseases",
+    locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vibe 4 Wellness - Health Risk Assessment",
+    title: "KARE - Kerala United Against Rare Diseases",
     description:
-      "Check your health risks in 5 minutes. Free, private health risk assessment tool.",
+      "Support Kerala's pioneering rare disease treatment programme. Donate to help transform lives.",
   },
   keywords: [
-    "health assessment",
-    "health risk",
-    "Kerala health",
-    "preventive healthcare",
-    "wellness check",
-    "health screening",
+    "KARE",
+    "Kerala rare diseases",
+    "SMA treatment Kerala",
+    "rare disease support",
+    "Government of Kerala",
+    "Spinal Muscular Atrophy",
+    "Gaucher disease",
+    "Pompe disease",
+    "MPS treatment",
+    "donate rare disease",
+    "Kerala healthcare",
+    "child health Kerala",
   ],
 };
 
@@ -60,8 +72,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className={`${inter.variable} ${anekMalayalam.variable}`}>
-      <body className={`antialiased min-h-screen bg-slate-50`}>
+    <html className={`${inter.variable} ${poppins.variable} ${anekMalayalam.variable}`}>
+      <body className={`antialiased min-h-screen bg-white font-sans`}>
         <RumInit />
         <I18nProvider>
           <AssessmentProvider>{children}</AssessmentProvider>

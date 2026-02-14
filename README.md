@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# KARE - Kerala United Against Rare Diseases
 
-## Getting Started
+**KARE (Kerala United Against Rare Diseases)** is a comprehensive care programme initiated by the Government of Kerala to support individuals affected by rare diseases.
 
-First, run the development server:
+## About
+
+KARE focuses on:
+- Prevention and early identification
+- Provision of treatment wherever available
+- Access to medicines, appropriate therapies, and assistive technological devices
+- Home-based services and psychosocial support for parents and caregivers
+
+As part of this initiative, the Government of Kerala became the **first state in India** to launch a state-funded treatment programme for Spinal Muscular Atrophy (SMA), which was formally initiated in March 2022.
+
+## Diseases Covered
+
+- **SMA** (Spinal Muscular Atrophy)
+- **Gaucher Disease**
+- **Pompe Disease**
+- **MPS** (Mucopolysaccharidoses)
+- And other rare diseases
+
+## Fundraising Goal
+
+Through KARE, we aim to raise **₹100 crore** over the next 3 years to ensure uninterrupted care for existing patients and inclusion of other rare disease categories.
+
+## Donate
+
+**Bank Details:**
+- **Bank:** State Bank of India, Trivandrum City (70028)
+- **Account Number:** 39229924684
+- **IFSC Code:** SBIN0070028
+
+## Tech Stack
+
+This website is built with:
+- [Next.js 16](https://nextjs.org/) - React Framework
+- [Tailwind CSS 4](https://tailwindcss.com/) - Utility-first CSS
+- [Radix UI](https://www.radix-ui.com/) - Accessible components
+- [Lucide React](https://lucide.dev/) - Icons
+
+## Development
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This site can be deployed on [Vercel](https://vercel.com) or any Node.js hosting platform.
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
+Government of Kerala Initiative. All rights reserved.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*Supporting children with rare diseases across Kerala*

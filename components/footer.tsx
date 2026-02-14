@@ -1,67 +1,85 @@
 "use client";
 
 import Image from "next/image";
-import { useI18n } from "@/lib/i18n-context";
-
-interface ResourceLink {
-  label: string;
-  link: string;
-}
+import Link from "next/link";
 
 export function Footer() {
-  const { t } = useI18n();
-
-  const resources: ResourceLink[] = [
-    {
-      label: t("footer_resource_1") || "Resource 1",
-      link: "https://dhs.kerala.gov.in/en/dhs/",
-    },
-  ];
-
   return (
-    <footer className="bg-linear-to-r from-[#057252] to-[#059669] text-white py-8 md:py-16">
+    <footer className="bg-linear-to-r from-[#006B6B] to-[#1A365D] text-white py-12 md:py-16">
       <div className="container mx-auto max-w-6xl px-5 md:px-10">
-        <div className="flex flex-col gap-12 md:flex-row md:items-center md:justify-between">
-          <div className="flex flex-col gap-2 w-full md:w-auto">
-            <Image
-              src="/kerala-dark_state_logo.png"
-              alt="Kerala Care Logo"
-              width={150}
-              height={150}
-              className="mx-auto md:mx-0 mb-4 md:mb-0 p-2 invert"
-            />
-            {resources.map((link) => (
-              <a
-                href={link.link}
-                key={link.label}
-                className="text-sm text-green-200 hover:text-green-100 items-center md:items-end text-center md:text-left transition-all duration-200 ease-in-out hover:underline hover:underline-offset-2"
-              >
-                {link.label}
-              </a>
-            ))}
+        <div className="grid md:grid-cols-3 gap-12">
+          {/* Logo & Description */}
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <Image
+                src="/kare-logo.jpg"
+                alt="KARE Logo"
+                width={50}
+                height={50}
+                className="rounded-full"
+              />
+              <div>
+                <span className="text-xl font-bold">KARE</span>
+                <p className="text-xs text-gray-300">Kerala United Against Rare Diseases</p>
+              </div>
+            </div>
+            <p className="text-sm text-gray-300 leading-relaxed">
+              A comprehensive care programme initiated by the Government of Kerala 
+              to support individuals affected by rare diseases.
+            </p>
           </div>
-          <div className="w-full md:w-1/2 flex flex-col items-center md:items-end text-center md:text-right">
-            <Image
-              src="/keralacare-banner-logo.svg"
-              alt="Kerala Care Logo"
-              width={168}
-              height={46}
-              className="mb-4 md:mb-0"
-            />
-            <div className="text-sm text-gray-50 mt-4 md:mt-6 max-w-sm md:max-w-md">
-              <div dangerouslySetInnerHTML={{ __html: t("footer_text") }} />
+
+          {/* Quick Links */}
+          <div className="space-y-4">
+            <h3 className="font-semibold text-lg">Quick Links</h3>
+            <ul className="space-y-2 text-sm text-gray-300">
+              <li>
+                <Link href="https://dhs.kerala.gov.in" className="hover:text-white transition-colors">
+                  Directorate of Health Services, Kerala
+                </Link>
+              </li>
+              <li>
+                <Link href="https://kerala.gov.in" className="hover:text-white transition-colors">
+                  Government of Kerala
+                </Link>
+              </li>
+              <li>
+                <Link href="https://health.kerala.gov.in" className="hover:text-white transition-colors">
+                  Health Department, Kerala
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact & Bank Details */}
+          <div className="space-y-4">
+            <h3 className="font-semibold text-lg">Donate</h3>
+            <div className="text-sm text-gray-300 space-y-1">
+              <p><span className="text-gray-400">Bank:</span> State Bank of India</p>
+              <p><span className="text-gray-400">A/C:</span> 39229924684</p>
+              <p><span className="text-gray-400">IFSC:</span> SBIN0070028</p>
             </div>
-            <div className="text-sm text-gray-50 mt-4 md:mt-6 font-semibold">
-              {t("footer_developed_by")}
-            </div>
-            <div>
-              <p className="text-xs text-center md:text-right mt-2">
-                {t("footer_disclaimer")}
-                <br />
-                {t("footer_consult_advice")}
-              </p>
+            <div className="pt-2">
+              <Image
+                src="/Kerala-sarkar-Emblem.png"
+                alt="Government of Kerala"
+                width={100}
+                height={70}
+                className="object-contain opacity-80"
+              />
             </div>
           </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-white/20 mt-12 pt-8 text-center text-sm text-gray-300">
+          <p>
+            © {new Date().getFullYear()} KARE - Kerala United Against Rare Diseases. 
+            Government of Kerala Initiative.
+          </p>
+          <p className="mt-2 text-xs text-gray-400">
+            All donations directly support treatment and care for children with rare diseases in Kerala.
+          </p>
         </div>
       </div>
     </footer>
