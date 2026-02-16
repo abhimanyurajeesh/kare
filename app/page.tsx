@@ -120,6 +120,8 @@ function StatCard({ stat, isVisible }: { stat: { label: string; value: number; s
   );
 }
 
+const GRID_LOGIN_URL = "https://care.kerala.gov.in/login";
+
 export default function KARELandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [lightbox, setLightbox] = useState<{ isOpen: boolean; src: string; alt: string }>({ isOpen: false, src: "", alt: "" });
@@ -243,6 +245,14 @@ export default function KARELandingPage() {
               >
                 Gallery
               </button>
+              <a
+                href={GRID_LOGIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-gray-600 hover:text-[#006B6B] transition-colors"
+              >
+                Grid Login
+              </a>
               <button
                 onClick={() => scrollToSection("donate")}
                 className="bg-[#F5A623] hover:bg-[#E09000] text-white px-6 py-2 rounded-lg font-semibold transition-colors"
@@ -282,6 +292,14 @@ export default function KARELandingPage() {
                 >
                   Gallery
                 </button>
+                <a
+                  href={GRID_LOGIN_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-left text-gray-600 hover:text-[#006B6B] py-2"
+                >
+                  Grid Login
+                </a>
                 <button
                   onClick={() => scrollToSection("donate")}
                   className="bg-[#F5A623] hover:bg-[#E09000] text-white px-6 py-3 rounded-lg font-semibold transition-colors text-center"
